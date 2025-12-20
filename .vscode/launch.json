@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Invoicelyzer: Process Invoice",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${file}"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true
+        },
+        {
+            "name": "Invoicelyzer: Process Invoice (Debug)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "${file}"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "INVOICELYZER_LOG_LEVEL": "DEBUG"
+            },
+            "justMyCode": true
+        },
+        {
+            "name": "Invoicelyzer: Email Monitor",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--monitor-email"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+            "justMyCode": true
+        },
+        {
+            "name": "Invoicelyzer: Email Monitor (Single Check - Debug)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--monitor-email"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "INVOICELYZER_EMAIL_CONTINUOUS": "false",
+                "INVOICELYZER_LOG_LEVEL": "DEBUG"
+            },
+            "justMyCode": true
+        }
+    ]
+}
