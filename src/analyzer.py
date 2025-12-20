@@ -137,7 +137,7 @@ class InvoiceAnalyzer:
             invoice_data = self._extract_json(response_text)
             logger.debug(f"Parsed JSON with {len(invoice_data)} fields: {list(invoice_data.keys())}")
             
-            # Validate required fields
+            # Validate required fields and calculations
             self._validate_invoice_data(invoice_data)
             
             logger.info(
@@ -218,7 +218,7 @@ class InvoiceAnalyzer:
         return prompt
     
     def _validate_invoice_data(self, data: Dict) -> None:
-        """Validate that invoice data has required structure."""
+        """Validate that invoice data has required structure and correct calculations."""
         logger.debug("Validating invoice data structure")
         
         required_fields = ["store", "date", "items", "total"]
@@ -236,17 +236,80 @@ class InvoiceAnalyzer:
             logger.warning("No items found in invoice")
             raise ValueError("No items found in invoice")
         
-        # Validate item structure
+        # Tolerance for floating point comparison (1 cent)
+        TOLERANCE = 0.01
+        
+        # Validate item structure and calculations
+        calculated_total = 0.0
         for i, item in enumerate(data["items"]):
             required_item_fields = ["name", "quantity", "unit_price", "total_price"]
             missing_item_fields = [field for field in required_item_fields if field not in item]
             
             if missing_item_fields:
-                logger.warning(f"Item {i} missing fields: {missing_item_fields}")
+                logger.warning(f"Item {i} ({item.get('name', 'unknown')}) missing fields: {missing_item_fields}")
+                continue
+            
+            # Validate item total = quantity * unit_price
+            try:
+                quantity = float(item["quantity"])
+                unit_price = float(item["unit_price"])
+                total_price = float(item["total_price"])
+                
+                expected_total = round(quantity * unit_price, 2)
+                
+                if abs(expected_total - total_price) > TOLERANCE:
+                    logger.warning(
+                        f"Item {i} ({item['name']}): Price mismatch! "
+                        f"Expected {expected_total:.2f} ({quantity} × {unit_price:.2f}), "
+                        f"but got {total_price:.2f}. "
+                        f"Difference: {abs(expected_total - total_price):.2f}"
+                    )
+                    # Correct the total_price
+                    item["total_price"] = expected_total
+                    item["_price_corrected"] = True
+                    logger.info(f"Corrected item {i} total_price to {expected_total:.2f}")
+                
+                calculated_total += item["total_price"]
+                
+            except (ValueError, TypeError) as e:
+                logger.error(f"Item {i} ({item.get('name', 'unknown')}): Invalid numeric values - {e}")
+                continue
             
             # Category is optional
             if "category" in item:
                 logger.debug(f"Item {i} ({item['name']}) has category: {item['category']}")
         
-        logger.debug(f"Validation passed: {len(data['items'])} items found")
+        # Validate invoice total = sum of item totals
+        try:
+            invoice_total = float(data["total"])
+            calculated_total = round(calculated_total, 2)
+            
+            if abs(calculated_total - invoice_total) > TOLERANCE:
+                logger.warning(
+                    f"Invoice total mismatch! "
+                    f"Sum of items: {calculated_total:.2f}, "
+                    f"Invoice total: {invoice_total:.2f}. "
+                    f"Difference: {abs(calculated_total - invoice_total):.2f}"
+                )
+                
+                # Decide which total to trust
+                # Usually the invoice total is more reliable
+                if abs(calculated_total - invoice_total) > 1.00:
+                    logger.error(
+                        f"Large discrepancy (>1.00€) between calculated and invoice total. "
+                        f"Invoice data may be incorrect!"
+                    )
+                
+                # Add metadata about the discrepancy
+                if "_metadata" not in data:
+                    data["_metadata"] = {}
+                data["_metadata"]["total_discrepancy"] = round(abs(calculated_total - invoice_total), 2)
+                data["_metadata"]["calculated_total"] = calculated_total
+                data["_metadata"]["invoice_total"] = invoice_total
+            else:
+                logger.debug(f"Invoice total validation passed: {invoice_total:.2f}")
         
+        except (ValueError, TypeError) as e:
+            logger.error(f"Invalid invoice total value: {e}")
+        
+        logger.debug(f"Validation passed: {len(data['items'])} items found")
