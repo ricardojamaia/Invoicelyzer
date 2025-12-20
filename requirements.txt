@@ -4,7 +4,7 @@ pypdf==4.0.1
 # Email Processing (IMAP)
 imap-tools==1.7.3
 
-# HTTP client for Ollama API
+# HTTP client
 requests==2.31.0
 
 # For better date parsing
