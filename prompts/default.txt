@@ -20,24 +20,43 @@ Estrutura JSON obrigatória:
 IMPORTANTE:
 - Responde APENAS com o objeto JSON, nada mais
 - Não adiciones explicações, comentários ou texto adicional
-- Junta produtos multi-linha (ex: "BIFE VACA" + "NACIONAL" = "BIFE VACA NACIONAL")
 - Converte quantidades: "0,234 KG" → 0.234
 - Converte preços: "2,50€" → 2.50
-- Se as quantidades aparecerem na mesma linha da descrição (e.g."LEITE UHT M/G MIMOSA 6*1L 5,94") então o preço refere-se ao total.
+- Os campos "quantity", "unit_price" e "total_price" são OBRIGATÓRIOS
 - Usa null se campo não disponível
 - Remove espaços extras e caracteres especiais dos nomes de produtos
-- Para lojas: Continente, Pingo Doce, Lidl, Auchan, Jumbo, Intermarché
+
+DATA E HORA DA FATURA:
+- A data da fatura está sempre em formato "dd/mm/aaaa" ou "dd-mm-aaaa"
+- A data é seguida da hora "hh:mm"
+- Converte SEMPRE a data para o formato "YYYY-MM-DD"
+
+PRODUTOS:
+- As descrições dos produtos são SEMPRE precedidas da catagoria do imposto (e.g. "(A)", "(B)", "(C)")
+
+QUANTIDADES:
+- As quantidades são sempre indicadas na linha seguinte à descrição conjuntamente com o preço unitário e o preço total (e.g. "0,770 X 2,59 1,99")
+
+PREÇOS:
+- NUNCA apliques descontos aos preços indicados. Os descontos já se encontram reflectidos no preço.
+- O preço unitário está SEMPRE indicado. Ou na linha da descrição - se a quantidade for 1 - ou na linha seguinte - se a quantidade for diferente de 1.
+- O preço total do item está SEMPRE indicado - não é necessário calcula-lo.
+- o preço total encontra-se no final da linha da descrição - se a quantidade for 1 - ou no final da linha seguinte se a quantidade for diferente de 1.
 
 CATEGORIAS:
-- Identifica cabeçalhos de categoria (ex: "Laticinios/Beb. Veg.", "Frutas e Legumes", "Mercearia", "Talho", "Peixaria", "Charcutaria e Queijos", "Padaria", "Bebidas", "Higiene", "Limpeza", "Vinho e Espirituosas")
+- Identifica cabeçalhos de categoria.
+- Os cabeçalhos terminam com dois pontos ':'
+- As categorias incluem: "Laticinios/Beb. Veg.", "Frutas e Legumes", "Mercearia", "Mercearia Salgada", "Mercearia Doce", "Talho", "Peixaria", "Charcutaria e Queijos", "Padaria", "Bebidas", "Higiene", "Limpeza", "Vinho e Espirituosas", "Bens Essenciais", "Take Away"
+- Podem existir outras categorias para além das listadas anteriormente
 - Atribui cada produto à sua categoria baseado no cabeçalho anterior
 - Se não houver categoria, usa null
 
 IGNORA ESTAS LINHAS:
-- Linhas com "POUPANCA" ou "POUPANÇA" (são descontos/promoções, não produtos)
+- Linhas com "POUPANCA", "POUPANÇA", "DESCONTO DIRETO" (são descontos/promoções, não produtos)
 - Linhas de cabeçalho, rodapé ou publicidade
 - Linhas de totais parciais
 - Linhas de informação fiscal ou legal
 
 VALIDAÇÕES
-- Confirma sempre que o total da factura é igual à soma de todos os items
+- Valida SEMPRE para cada item que "quantity" x "unit_price" = "total_price"
+- Valida SEMPRE que o "total" da fatura corresponde ao somatório do "total_price" de todos os items
