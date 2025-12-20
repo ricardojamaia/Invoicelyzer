@@ -3,60 +3,129 @@ Extrai informação desta fatura de supermercado português. Responde APENAS com
 Texto da fatura:
 {raw_text}
 
-Estrutura JSON obrigatória:
+=== FORMATO DA FATURA ===
+
+CATEGORIAS:
+- Aparecem seguidas de dois pontos ':'
+- Exemplo: "Take Away:", "Frutas e Legumes:", "Mercearia:"
+- Cada produto pertence à categoria do último cabeçalho encontrado
+
+PRODUTOS COM QUANTIDADE = 1:
+Formato: (TAXA) NOME_PRODUTO PREÇO
+Exemplo:
+  "(B) LEITE MIMOSA 1L 0,89"
+  → name: "LEITE MIMOSA 1L"
+  → category: categoria atual
+  → quantity: 1.0
+  → unit_price: 0.89
+  → total_price: 0.89
+
+PRODUTOS COM QUANTIDADE ≠ 1:
+Formato linha 1: (TAXA) NOME_PRODUTO
+Formato linha 2: QUANTIDADE X PREÇO_UNITARIO PREÇO_TOTAL
+Exemplo:
+  "(A) COUVE BROCOLO"
+  "0,770 X 2,59 1,99"
+  → name: "COUVE BROCOLO"
+  → category: categoria atual
+  → quantity: 0.770
+  → unit_price: 2.59
+  → total_price: 1.99
+
+Outro exemplo:
+  "(B) CALDO VERDE 800GR CZ CNT"
+  "2 X 2,49 4,98"
+  → name: "CALDO VERDE 800GR CZ CNT"
+  → category: "Take Away" (se o cabeçalho anterior era "Take Away:")
+  → quantity: 2.0
+  → unit_price: 2.49
+  → total_price: 4.98
+
+=== INSTRUÇÕES DE CONVERSÃO ===
+
+QUANTIDADES:
+- "0,770 X 2,59 1,99" → quantity: 0.770
+- "2 X 2,49 4,98" → quantity: 2.0
+- Se só há preço (sem X), então quantity: 1.0
+
+PREÇOS:
+- Converte vírgula para ponto: "2,59" → 2.59
+- Remove símbolo euro: "0,89€" → 0.89
+- Números decimais: "1,99" → 1.99
+
+DATAS:
+- "20/12/2024" → "2024-12-20"
+- "20-12-2024" → "2024-12-20"
+- Formato obrigatório: YYYY-MM-DD
+
+=== IGNORAR ===
+
+NUNCA incluir como produtos:
+- Linhas com "POUPANCA", "POUPANÇA", "DESCONTO"
+- Linhas com "TOTAL", "SUBTOTAL"
+- Linhas só com números (totais de secção)
+- Cabeçalhos e rodapés
+- Informação fiscal
+
+=== ESTRUTURA JSON ===
+
 {{
   "store": "nome do supermercado",
-  "location": "morada",
+  "location": "morada completa",
   "date": "YYYY-MM-DD",
   "time": "HH:MM",
   "items": [
-    {{"name": "produto", "category": "categoria", "quantity": 1.0, "unit_price": 0.0, "total_price": 0.0}}
+    {{
+      "name": "nome do produto (sem taxa fiscal, sem quantidade)",
+      "category": "categoria do cabeçalho anterior ou null",
+      "quantity": 1.0,
+      "unit_price": 1.50,
+      "total_price": 1.50
+    }}
   ],
-  "total": 0.0,
-  "payment_method": "método",
-  "invoice_number": "número"
+  "total": 10.50,
+  "payment_method": "método de pagamento",
+  "invoice_number": "número da fatura"
 }}
 
-IMPORTANTE:
-- Responde APENAS com o objeto JSON, nada mais
-- Não adiciones explicações, comentários ou texto adicional
-- Converte quantidades: "0,234 KG" → 0.234
-- Converte preços: "2,50€" → 2.50
-- Os campos "quantity", "unit_price" e "total_price" são OBRIGATÓRIOS
-- Usa null se campo não disponível
-- Remove espaços extras e caracteres especiais dos nomes de produtos
+=== VALIDAÇÕES CRÍTICAS ===
 
-DATA E HORA DA FATURA:
-- A data da fatura está sempre em formato "dd/mm/aaaa" ou "dd-mm-aaaa"
-- A data é seguida da hora "hh:mm"
-- Converte SEMPRE a data para o formato "YYYY-MM-DD"
+Para CADA item:
+1. quantity × unit_price = total_price (margem de erro: 0.01€)
+2. Se a multiplicação não bater, corrige o total_price
 
-PRODUTOS:
-- As descrições dos produtos são SEMPRE precedidas da catagoria do imposto (e.g. "(A)", "(B)", "(C)")
+Para a fatura completa:
+3. Soma de todos os total_price = total da fatura
 
-QUANTIDADES:
-- As quantidades são sempre indicadas na linha seguinte à descrição conjuntamente com o preço unitário e o preço total (e.g. "0,770 X 2,59 1,99")
+=== EXEMPLOS COMPLETOS ===
 
-PREÇOS:
-- NUNCA apliques descontos aos preços indicados. Os descontos já se encontram reflectidos no preço.
-- O preço unitário está SEMPRE indicado. Ou na linha da descrição - se a quantidade for 1 - ou na linha seguinte - se a quantidade for diferente de 1.
-- O preço total do item está SEMPRE indicado - não é necessário calcula-lo.
-- o preço total encontra-se no final da linha da descrição - se a quantidade for 1 - ou no final da linha seguinte se a quantidade for diferente de 1.
+Entrada:
+```
+Take Away:
+(B) CALDO VERDE 800GR CZ CNT
+2 X 2,49 4,98
+(A) COUVE BROCOLO
+0,770 X 2,59 1,99
+```
 
-CATEGORIAS:
-- Identifica cabeçalhos de categoria.
-- Os cabeçalhos terminam com dois pontos ':'
-- As categorias incluem: "Laticinios/Beb. Veg.", "Frutas e Legumes", "Mercearia", "Mercearia Salgada", "Mercearia Doce", "Talho", "Peixaria", "Charcutaria e Queijos", "Padaria", "Bebidas", "Higiene", "Limpeza", "Vinho e Espirituosas", "Bens Essenciais", "Take Away"
-- Podem existir outras categorias para além das listadas anteriormente
-- Atribui cada produto à sua categoria baseado no cabeçalho anterior
-- Se não houver categoria, usa null
+Saída:
+{{
+  "items": [
+    {{
+      "name": "CALDO VERDE 800GR CZ CNT",
+      "category": "Take Away",
+      "quantity": 2.0,
+      "unit_price": 2.49,
+      "total_price": 4.98
+    }},
+    {{
+      "name": "COUVE BROCOLO",
+      "category": "Take Away",
+      "quantity": 0.770,
+      "unit_price": 2.59,
+      "total_price": 1.99
+    }}
+  ]
+}}
 
-IGNORA ESTAS LINHAS:
-- Linhas com "POUPANCA", "POUPANÇA", "DESCONTO DIRETO" (são descontos/promoções, não produtos)
-- Linhas de cabeçalho, rodapé ou publicidade
-- Linhas de totais parciais
-- Linhas de informação fiscal ou legal
-
-VALIDAÇÕES
-- Valida SEMPRE para cada item que "quantity" x "unit_price" = "total_price"
-- Valida SEMPRE que o "total" da fatura corresponde ao somatório do "total_price" de todos os items
+Responde APENAS com JSON válido. Sem explicações. Sem texto adicional.
