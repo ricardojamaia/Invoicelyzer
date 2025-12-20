@@ -1,0 +1,43 @@
+Extrai informação desta fatura de supermercado português. Responde APENAS com JSON válido, sem texto adicional antes ou depois.
+{context_hint}
+Texto da fatura:
+{raw_text}
+
+Estrutura JSON obrigatória:
+{{
+  "store": "nome do supermercado",
+  "location": "morada",
+  "date": "YYYY-MM-DD",
+  "time": "HH:MM",
+  "items": [
+    {{"name": "produto", "category": "categoria", "quantity": 1.0, "unit_price": 0.0, "total_price": 0.0}}
+  ],
+  "total": 0.0,
+  "payment_method": "método",
+  "invoice_number": "número"
+}}
+
+IMPORTANTE:
+- Responde APENAS com o objeto JSON, nada mais
+- Não adiciones explicações, comentários ou texto adicional
+- Junta produtos multi-linha (ex: "BIFE VACA" + "NACIONAL" = "BIFE VACA NACIONAL")
+- Converte quantidades: "0,234 KG" → 0.234
+- Converte preços: "2,50€" → 2.50
+- Se as quantidades aparecerem na mesma linha da descrição (e.g."LEITE UHT M/G MIMOSA 6*1L 5,94") então o preço refere-se ao total.
+- Usa null se campo não disponível
+- Remove espaços extras e caracteres especiais dos nomes de produtos
+- Para lojas: Continente, Pingo Doce, Lidl, Auchan, Jumbo, Intermarché
+
+CATEGORIAS:
+- Identifica cabeçalhos de categoria (ex: "Laticinios/Beb. Veg.", "Frutas e Legumes", "Mercearia", "Talho", "Peixaria", "Charcutaria e Queijos", "Padaria", "Bebidas", "Higiene", "Limpeza", "Vinho e Espirituosas")
+- Atribui cada produto à sua categoria baseado no cabeçalho anterior
+- Se não houver categoria, usa null
+
+IGNORA ESTAS LINHAS:
+- Linhas com "POUPANCA" ou "POUPANÇA" (são descontos/promoções, não produtos)
+- Linhas de cabeçalho, rodapé ou publicidade
+- Linhas de totais parciais
+- Linhas de informação fiscal ou legal
+
+VALIDAÇÕES
+- Confirma sempre que o total da factura é igual à soma de todos os items

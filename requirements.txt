@@ -1,0 +1,19 @@
+# PDF Processing
+pypdf==4.0.1
+
+# Email Processing (IMAP)
+imap-tools==1.7.3
+
+# HTTP client for Ollama API
+requests==2.31.0
+
+# For better date parsing
+python-dateutil==2.8.2
+
+# OCR for scanned PDFs (uncomment if needed)
+# pytesseract==0.3.10
+# pdf2image==1.17.0
+# Pillow==10.2.0
+
+# Database
+psycopg2-binary==2.9.11
