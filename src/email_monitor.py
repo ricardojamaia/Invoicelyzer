@@ -148,20 +148,26 @@ class EmailMonitor:
                             if att.filename.lower().endswith('.pdf'):
                                 logger.info(f"Found PDF attachment: {att.filename}")
                                 
-                                # Create permanent filename with timestamp
-                                timestamp = int(time.time())
+                                # Keep original filename, sanitized
                                 safe_filename = self._sanitize_filename(att.filename)
-                                pdf_filename = f"{timestamp}_{safe_filename}"
-                                pdf_path = sender_dir / pdf_filename
+                                pdf_path = sender_dir / safe_filename
+                                
+                                # Check if file already exists
+                                if pdf_path.exists():
+                                    logger.info(f"PDF already exists, using existing file: {pdf_path}")
+                                    # Don't save again, just process the existing file
+                                else:
+                                    # Save PDF to permanent location
+                                    try:
+                                        with open(pdf_path, 'wb') as f:
+                                            f.write(att.payload)
+                                        logger.info(f"Saved new PDF to: {pdf_path}")
+                                    except Exception as e:
+                                        logger.error(f"Failed to save PDF {att.filename}: {str(e)}", exc_info=True)
+                                        continue
                                 
                                 try:
-                                    # Save PDF to permanent location
-                                    with open(pdf_path, 'wb') as f:
-                                        f.write(att.payload)
-                                    
-                                    logger.info(f"Saved PDF to: {pdf_path}")
-                                    
-                                    # Process the PDF
+                                    # Process the PDF (existing or new)
                                     success = process_callback(str(pdf_path), msg.from_)
                                     
                                     if success:
@@ -174,11 +180,9 @@ class EmailMonitor:
                                             logger.debug(f"Marked email as read: {msg.uid}")
                                     else:
                                         logger.warning(f"Failed to process invoice from {msg.from_}")
-                                        # PDF is still saved even if processing failed
                                     
                                 except Exception as e:
                                     logger.error(f"Error processing attachment {att.filename}: {str(e)}", exc_info=True)
-                                    # PDF might be partially saved, but that's okay
                 
                 logger.info(f"Processed {processed_count} invoices")
                 return processed_count

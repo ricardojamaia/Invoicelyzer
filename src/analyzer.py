@@ -104,7 +104,8 @@ class InvoiceAnalyzer:
                 "format": "json",
                 "options": {
                     "temperature": 0.1,
-                    "num_predict": 4096
+                    "num_ctx": 16384,
+                    "num_predict": 16384
                 }
             }
             
