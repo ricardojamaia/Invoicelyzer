@@ -13,9 +13,12 @@ from typing import Optional, Dict, List
 
 from logger_config import setup_logger
 from processor import InvoiceProcessor
-from database import InvoiceDatabase
+from database import InvoiceDatabase, SchemaManager
 from email_monitor import EmailMonitor
-from email_processor import EmailInvoiceProcessor, save_invoice_json
+from email_processor import EmailInvoiceProcessor
+from storage import save_invoice_json
+
+logger = logging.getLogger("invoice_processor.main")
 
 
 def load_sender_config(config_path: str) -> Dict[str, List[str]]:
@@ -28,8 +31,6 @@ def load_sender_config(config_path: str) -> Dict[str, List[str]]:
     Returns:
         Dictionary mapping folder names to sender email lists
     """
-    logger = logging.getLogger("invoice_processor.main")
-    
     try:
         with open(config_path, 'r', encoding='utf-8') as f:
             sender_config = json.load(f)
@@ -60,7 +61,7 @@ def load_sender_config(config_path: str) -> Dict[str, List[str]]:
         raise
 
 
-def get_config() -> dict:
+def get_config() -> Dict:
     """
     Read configuration from environment variables.
     
@@ -69,7 +70,7 @@ def get_config() -> dict:
     """
     return {
         'llm_url': os.getenv('INVOICELYZER_LLM_URL', 'http://localhost:11434'),
-        'llm_model': os.getenv('INVOICELYZER_LLM_MODEL', 'llama3.2:3b'),
+        'llm_model': os.getenv('INVOICELYZER_LLM_MODEL', 'qwen2.5:14b'),
         'output_dir': os.getenv('INVOICELYZER_OUTPUT_DIR', './processed_invoices'),
         'log_level': os.getenv('INVOICELYZER_LOG_LEVEL', 'INFO'),
         'prompt_template': os.getenv('INVOICELYZER_PROMPT_TEMPLATE'),
@@ -88,20 +89,52 @@ def get_config() -> dict:
     }
 
 
+def init_database(config: Dict) -> Optional[InvoiceDatabase]:
+    """
+    Initialize database connection and schema.
+    
+    Args:
+        config: Configuration dictionary
+        
+    Returns:
+        Database instance or None if not configured
+    """
+    if not config.get('database_url'):
+        logger.info("No database configured, skipping database storage")
+        return None
+    
+    try:
+        # Create schema using SchemaManager
+        schema_manager = SchemaManager(config['database_url'])
+        schema_manager.create_schema()
+        logger.info("Database schema verified/created")
+        
+        # Create database instance
+        db = InvoiceDatabase(config['database_url'])
+        logger.info("Database initialized successfully")
+        return db
+        
+    except Exception as e:
+        logger.error(f"Failed to initialize database: {str(e)}", exc_info=True)
+        logger.warning("Continuing without database storage")
+        return None
+
+
 def process_invoice_file(
     pdf_path: str, 
-    config: dict, 
-    logger: logging.Logger,
-    db: Optional[InvoiceDatabase] = None
-) -> Optional[dict]:
+    config: Dict, 
+    db: Optional[InvoiceDatabase] = None,
+    sender: Optional[str] = None
+) -> Optional[Dict]:
     """
     Process a single invoice PDF file.
+    Works for both manual processing and email monitoring.
     
     Args:
         pdf_path: Path to PDF file
         config: Configuration dictionary
-        logger: Logger instance
         db: Database instance (optional)
+        sender: Email sender (optional, for email monitoring)
         
     Returns:
         Processed invoice data or None if error
@@ -119,6 +152,15 @@ def process_invoice_file(
         # Process invoice
         invoice_data = processor.process(pdf_path)
         
+        # Add metadata
+        if '_metadata' not in invoice_data:
+            invoice_data['_metadata'] = {}
+        
+        if sender:
+            invoice_data['_metadata']['email_sender'] = sender
+        
+        invoice_data['_metadata']['source_file'] = Path(pdf_path).name
+        
         # Save to database if configured
         if db:
             try:
@@ -130,7 +172,7 @@ def process_invoice_file(
         
         # Save to JSON if configured
         if config['save_json']:
-            json_file = save_invoice_json(invoice_data, config['output_dir'])
+            json_file = save_invoice_json(invoice_data, config['output_dir'], pdf_path)
             logger.info(f"✓ Saved JSON to: {json_file}")
         
         logger.info(f"✓ Successfully processed invoice")
@@ -142,39 +184,12 @@ def process_invoice_file(
         return None
 
 
-def init_database(config: dict, logger: logging.Logger) -> Optional[InvoiceDatabase]:
-    """
-    Initialize database connection and schema.
-    
-    Args:
-        config: Configuration dictionary
-        logger: Logger instance
-        
-    Returns:
-        Database instance or None if not configured
-    """
-    if not config.get('database_url'):
-        logger.info("No database configured, skipping database storage")
-        return None
-    
-    try:
-        db = InvoiceDatabase(config['database_url'])
-        db.create_schema()
-        logger.info("Database initialized successfully")
-        return db
-    except Exception as e:
-        logger.error(f"Failed to initialize database: {str(e)}")
-        logger.warning("Continuing without database storage")
-        return None
-
-
-def run_email_monitor(config: dict, logger: logging.Logger, db: Optional[InvoiceDatabase]):
+def run_email_monitor(config: Dict, db: Optional[InvoiceDatabase]) -> None:
     """
     Run email monitoring mode.
     
     Args:
         config: Configuration dictionary
-        logger: Logger instance
         db: Database instance
     """
     # Validate email configuration
@@ -209,13 +224,18 @@ def run_email_monitor(config: dict, logger: logging.Logger, db: Optional[Invoice
         prompt_template=config.get('prompt_template')
     )
     
-    # Initialize email processor
+    # Create callback that uses the same processing logic
+    def email_callback(pdf_path: str, sender: str) -> bool:
+        """Callback for email processing - reuses main processing logic."""
+        result = process_invoice_file(pdf_path, config, db, sender)
+        return result is not None
+    
+    # Initialize email processor with callback
     email_processor = EmailInvoiceProcessor(
         email_monitor=email_monitor,
         invoice_processor=invoice_processor,
         database=db,
-        save_json=config['save_json'],
-        output_dir=config['output_dir']
+        process_callback=email_callback
     )
     
     # Start monitoring
@@ -226,13 +246,14 @@ def run_email_monitor(config: dict, logger: logging.Logger, db: Optional[Invoice
     )
 
 
-def main():
+def main() -> None:
     """Main entry point."""
     
     # Get configuration
     config = get_config()
     
-    # Setup logging
+    # Setup logging (reassign module-level logger after setup)
+    global logger
     logger = setup_logger(level=config['log_level'])
     
     # Check if running in email monitoring mode
@@ -248,10 +269,10 @@ def main():
         logger.info("="*60)
         
         # Initialize database
-        db = init_database(config, logger)
+        db = init_database(config)
         
         # Run email monitor
-        run_email_monitor(config, logger, db)
+        run_email_monitor(config, db)
         return
     
     # Normal file processing mode
@@ -260,7 +281,7 @@ def main():
         print("   or: python main.py --monitor-email")
         print("\nEnvironment variables:")
         print("  INVOICELYZER_LLM_URL              - LLM API URL (default: http://localhost:11434)")
-        print("  INVOICELYZER_LLM_MODEL            - Model name (default: llama3.2:3b)")
+        print("  INVOICELYZER_LLM_MODEL            - Model name (default: qwen2.5:14b)")
         print("  INVOICELYZER_OUTPUT_DIR           - Output directory (default: ./processed_invoices)")
         print("  INVOICELYZER_LOG_LEVEL            - Logging level (default: INFO)")
         print("  INVOICELYZER_DATABASE_URL         - PostgreSQL connection string (optional)")
@@ -290,7 +311,7 @@ def main():
     logger.info("="*60)
     
     # Initialize database
-    db = init_database(config, logger)
+    db = init_database(config)
     
     # Process each PDF file
     pdf_files = sys.argv[1:]
@@ -304,7 +325,7 @@ def main():
         logger.info(f"Processing: {pdf_path}")
         logger.info("-"*60)
         
-        result = process_invoice_file(pdf_path, config, logger, db)
+        result = process_invoice_file(pdf_path, config, db)
         results.append({
             'file': pdf_path,
             'success': result is not None,
@@ -320,8 +341,8 @@ def main():
     logger.info(f"Successful:   {successful}")
     logger.info(f"Failed:       {len(results) - successful}")
     logger.info("="*60)
-    
+
 
 if __name__ == "__main__":
     main()
-
+    
