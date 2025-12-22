@@ -11,6 +11,11 @@
                 "${file}"
             ],
             "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "INVOICELYZER_EMAIL_ENABLED": "false",
+                "INVOICELYZER_PDF_STORAGE_DIR": "${workspaceFolder}/data/invoices/pdf",
+                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",                
+            },            
             "justMyCode": true
         },
         {
@@ -24,6 +29,9 @@
             ],
             "envFile": "${workspaceFolder}/.env",
             "env": {
+                "INVOICELYZER_EMAIL_ENABLED": "false",
+                "INVOICELYZER_PDF_STORAGE_DIR": "${workspaceFolder}/data/invoices/pdf",
+                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",                
                 "INVOICELYZER_LOG_LEVEL": "DEBUG"
             },
             "justMyCode": true
@@ -38,7 +46,12 @@
                 "--monitor-email"
             ],
             "envFile": "${workspaceFolder}/.env",
-            "justMyCode": true
+            "justMyCode": true,
+            "env": {
+                "INVOICELYZER_PDF_STORAGE_DIR": "${workspaceFolder}/data/invoices/pdf",
+                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",
+                "INVOICELYZER_LOG_LEVEL": "DEBUG"
+            },
         },
         {
             "name": "Invoicelyzer: Email Monitor (Single Check - Debug)",
@@ -52,8 +65,22 @@
             "envFile": "${workspaceFolder}/.env",
             "env": {
                 "INVOICELYZER_EMAIL_CONTINUOUS": "false",
+                "INVOICELYZER_PDF_STORAGE_DIR": "${workspaceFolder}/data/invoices/pdf",
+                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",
                 "INVOICELYZER_LOG_LEVEL": "DEBUG"
             },
+            "justMyCode": true
+        },
+        {
+            "name": "Invoicelyzer: Reset Schema",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/invoicelyzer-cli.py",
+            "console": "integratedTerminal",
+            "args": [
+                "reset"
+            ],
+            "envFile": "${workspaceFolder}/.env",
             "justMyCode": true
         }
     ]

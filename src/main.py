@@ -69,14 +69,27 @@ def get_config() -> Dict:
         Configuration dictionary
     """
     return {
+        # LLM Configuration
         'llm_url': os.getenv('INVOICELYZER_LLM_URL', 'http://localhost:11434'),
         'llm_model': os.getenv('INVOICELYZER_LLM_MODEL', 'qwen2.5:14b'),
-        'output_dir': os.getenv('INVOICELYZER_OUTPUT_DIR', './processed_invoices'),
-        'log_level': os.getenv('INVOICELYZER_LOG_LEVEL', 'INFO'),
         'prompt_template': os.getenv('INVOICELYZER_PROMPT_TEMPLATE'),
-        'database_url': os.getenv('INVOICELYZER_DATABASE_URL'),
+        
+        # Output Configuration
+        'output_dir': os.getenv('INVOICELYZER_OUTPUT_DIR', './processed_invoices'),
         'save_json': os.getenv('INVOICELYZER_SAVE_JSON', 'true').lower() == 'true',
-        # Email settings
+        
+        # Database Configuration
+        'database_url': os.getenv('INVOICELYZER_DATABASE_URL'),
+        
+        # Product Mapping Configuration
+        'enable_mapping': os.getenv('INVOICELYZER_ENABLE_MAPPING', 'true').lower() == 'true',
+        'mapping_use_ml': os.getenv('INVOICELYZER_MAPPING_USE_ML', 'true').lower() == 'true',
+        'mapping_ml_threshold': float(os.getenv('INVOICELYZER_MAPPING_ML_THRESHOLD', '0.4')),
+        
+        # Logging Configuration
+        'log_level': os.getenv('INVOICELYZER_LOG_LEVEL', 'INFO'),
+        
+        # Email Configuration
         'email_enabled': os.getenv('INVOICELYZER_EMAIL_ENABLED', 'false').lower() == 'true',
         'email_imap_server': os.getenv('INVOICELYZER_EMAIL_IMAP_SERVER'),
         'email_address': os.getenv('INVOICELYZER_EMAIL_ADDRESS'),
@@ -146,7 +159,11 @@ def process_invoice_file(
         processor = InvoiceProcessor(
             llm_url=config['llm_url'],
             model=config['llm_model'],
-            prompt_template=config.get('prompt_template')
+            prompt_template=config.get('prompt_template'),
+            database_url=config.get('database_url'),  # ADD THIS
+            enable_mapping=config.get('enable_mapping', True),  # ADD THIS
+            mapping_use_ml=config.get('mapping_use_ml', True),  # ADD THIS
+            mapping_ml_threshold=config.get('mapping_ml_threshold', 0.4)  # ADD THIS
         )
         
         # Process invoice
