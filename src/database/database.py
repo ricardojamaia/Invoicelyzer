@@ -1,18 +1,17 @@
 """
-Database operations for invoice storage and retrieval.
+Database operations for invoice storage and retrieval with product mapping support.
 """
 import logging
 from typing import Dict, List, Optional
 import psycopg2
 from psycopg2.extras import RealDictCursor
-from . import queries
 
 logger = logging.getLogger("invoice_processor.database")
 
 
 class InvoiceDatabase:
     """
-    Handle all database operations for invoices.
+    Handle all database operations for invoices with product mapping.
     """
     
     def __init__(self, connection_string: str):
@@ -34,6 +33,8 @@ class InvoiceDatabase:
         Returns:
             Invoice ID from database
         """
+        from . import queries
+        
         store = invoice_data.get('store')
         date = invoice_data.get('date')
         number = invoice_data.get('invoice_number')
@@ -80,6 +81,8 @@ class InvoiceDatabase:
         Returns:
             Invoice data with items, or None if not found
         """
+        from . import queries
+        
         logger.debug(f"Retrieving invoice ID: {invoice_id}")
         
         try:
@@ -126,6 +129,8 @@ class InvoiceDatabase:
         Returns:
             List of invoice dictionaries
         """
+        from . import queries
+        
         logger.info(f"Searching invoices: store={store}, date_from={date_from}, date_to={date_to}")
         
         try:
@@ -164,6 +169,8 @@ class InvoiceDatabase:
     
     def _insert_invoice(self, cur, invoice_data: Dict) -> int:
         """Insert new invoice and return ID."""
+        from . import queries
+        
         metadata = invoice_data.get('_metadata', {})
         
         cur.execute(queries.INSERT_INVOICE, (
@@ -182,6 +189,8 @@ class InvoiceDatabase:
     
     def _update_invoice(self, cur, invoice_id: int, invoice_data: Dict):
         """Update existing invoice."""
+        from . import queries
+        
         metadata = invoice_data.get('_metadata', {})
         
         cur.execute(queries.UPDATE_INVOICE, (
@@ -201,21 +210,25 @@ class InvoiceDatabase:
         - Insert new items
         - Delete removed items
         """
+        from . import queries
+        
         # Get existing items
         cur.execute(queries.GET_INVOICE_ITEMS, (invoice_id,))
         existing_items = cur.fetchall()
         
         # Build mapping by name
-        existing_by_name = {
-            item[1]: {  # item[1] is name
+        existing_by_name = {}
+        for item in existing_items:
+            existing_by_name[item[1]] = {  # item[1] is name
                 'id': item[0],
                 'category': item[2],
                 'quantity': item[3],
                 'unit_price': item[4],
-                'total_price': item[5]
+                'total_price': item[5],
+                'catalog_product_name': item[6],
+                'catalog_category': item[7],
+                'mapping_confidence': item[8]
             }
-            for item in existing_items
-        }
         
         processed_ids = set()
         stats = {'updated': 0, 'inserted': 0, 'deleted': 0}
@@ -234,6 +247,9 @@ class InvoiceDatabase:
                         new_item.get('quantity'),
                         new_item.get('unit_price'),
                         new_item.get('total_price'),
+                        new_item.get('catalog_product_name'),
+                        new_item.get('catalog_category'),
+                        new_item.get('mapping_confidence'),
                         existing['id']
                     ))
                     stats['updated'] += 1
@@ -247,7 +263,10 @@ class InvoiceDatabase:
                     new_item.get('category'),
                     new_item.get('quantity'),
                     new_item.get('unit_price'),
-                    new_item.get('total_price')
+                    new_item.get('total_price'),
+                    new_item.get('catalog_product_name'),
+                    new_item.get('catalog_category'),
+                    new_item.get('mapping_confidence')
                 ))
                 stats['inserted'] += 1
         
@@ -271,5 +290,8 @@ class InvoiceDatabase:
             existing['category'] != new_item.get('category') or
             existing['quantity'] != new_item.get('quantity') or
             existing['unit_price'] != new_item.get('unit_price') or
-            existing['total_price'] != new_item.get('total_price')
+            existing['total_price'] != new_item.get('total_price') or
+            existing['catalog_product_name'] != new_item.get('catalog_product_name') or
+            existing['catalog_category'] != new_item.get('catalog_category') or
+            existing['mapping_confidence'] != new_item.get('mapping_confidence')
         )
