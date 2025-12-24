@@ -18,6 +18,14 @@ from email_monitor import EmailMonitor
 from email_processor import EmailInvoiceProcessor
 from storage import save_invoice_json
 
+
+from exceptions import (
+    PermanentError,
+    TemporaryError,
+    is_permanent_error,
+    is_temporary_error
+)
+
 logger = logging.getLogger("invoice_processor.main")
 
 
@@ -167,7 +175,14 @@ def process_invoice_file(
         )
         
         # Process invoice
-        invoice_data = processor.process(pdf_path)
+        try:
+            invoice_data = processor.process(pdf_path)
+        except PermanentError as e:
+            logger.error(f"❌ Permanent: {e}")
+            return None
+        except TemporaryError as e:
+            logger.warning(f"⚠️ Temporary: {e}")
+            raise  # Re-raise for retry
         
         # Add metadata
         if '_metadata' not in invoice_data:
