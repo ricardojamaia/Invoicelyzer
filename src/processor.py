@@ -1,5 +1,5 @@
 """
-Invoice processor - Orchestrates PDF extraction, LLM analysis, and product mapping.
+Invoice processor with proper exception hierarchy.
 """
 import logging
 import os
@@ -7,16 +7,22 @@ from typing import Dict, Optional
 
 from parser import PDFTextExtractor
 from analyzer import InvoiceAnalyzer
+from exceptions import (
+    PermanentError,
+    TemporaryError,
+    PDFExtractionError,
+    ServiceUnavailableError,
+    NetworkError,
+    DatabaseError
+)
 
 logger = logging.getLogger("invoice_processor.processor")
 
 
 class InvoiceProcessor:
     """
-    Orchestrates the complete invoice processing pipeline:
-    1. Extract text from PDF
-    2. Analyze with LLM
-    3. Map products to catalog
+    Orchestrates the complete invoice processing pipeline.
+    Uses specific exception types for permanent vs temporary failures.
     """
     
     def __init__(
@@ -70,7 +76,7 @@ class InvoiceProcessor:
     
     def process(self, pdf_path: str, context: Optional[Dict] = None) -> Dict:
         """
-        Process a complete invoice from PDF to structured data with product mapping.
+        Process a complete invoice from PDF to structured data.
         
         Args:
             pdf_path: Path to PDF file
@@ -78,18 +84,60 @@ class InvoiceProcessor:
             
         Returns:
             Structured invoice data with mapped products
+            
+        Raises:
+            PDFExtractionError: If PDF cannot be read (permanent)
+            ServiceUnavailableError: If LLM service is down (temporary)
+            NetworkError: If network connection fails (temporary)
+            PermanentError: For other permanent failures
+            TemporaryError: For other temporary failures
         """
         logger.info(f"Processing invoice: {pdf_path}")
         
         # Step 1: Extract text from PDF
         logger.info("Step 1: Extracting text from PDF")
-        raw_text = self.extractor.extract_text(pdf_path)
-        logger.info(f"Extracted {len(raw_text)} characters")
+        try:
+            raw_text = self.extractor.extract_text(pdf_path)
+            logger.info(f"Extracted {len(raw_text)} characters")
+        
+        except PDFExtractionError as e:
+            # All PDF extraction errors are permanent
+            logger.error(f"❌ PDF extraction failed (permanent): {e}")
+            raise
         
         # Step 2: Analyze with LLM
         logger.info("Step 2: Analyzing invoice with LLM")
-        invoice_data = self.analyzer.analyze(raw_text, context)
-        logger.info(f"Analysis complete: {len(invoice_data.get('items', []))} items extracted")
+        try:
+            invoice_data = self.analyzer.analyze(raw_text, context)
+            logger.info(f"Analysis complete: {len(invoice_data.get('items', []))} items extracted")
+        
+        except ConnectionRefusedError as e:
+            # LLM service not responding - temporary
+            logger.warning(f"⚠️ LLM service unavailable (temporary): {e}")
+            raise ServiceUnavailableError(f"LLM service unavailable: {e}")
+        
+        except ConnectionError as e:
+            # Network connection issue - temporary
+            logger.warning(f"⚠️ Network error (temporary): {e}")
+            raise NetworkError(f"Network connection failed: {e}")
+        
+        except TimeoutError as e:
+            # Request timeout - temporary
+            logger.warning(f"⚠️ Request timeout (temporary): {e}")
+            raise ServiceUnavailableError(f"LLM request timed out: {e}")
+        
+        except Exception as e:
+            # Unknown LLM error
+            error_msg = str(e).lower()
+            
+            # Check if it's a known temporary error
+            if any(word in error_msg for word in ['timeout', 'connection', 'unavailable', 'refused']):
+                logger.warning(f"⚠️ LLM error (likely temporary): {e}")
+                raise ServiceUnavailableError(f"LLM error: {e}")
+            
+            # Otherwise treat as permanent
+            logger.error(f"❌ LLM analysis failed (permanent): {e}")
+            raise PermanentError(f"Analysis failed: {e}")
         
         # Add metadata
         if '_metadata' not in invoice_data:
@@ -114,7 +162,9 @@ class InvoiceProcessor:
                 invoice_data['_metadata']['mapping_rate'] = f"{mapped}/{total} ({mapped/total*100:.1f}%)"
                 
                 logger.info(f"Product mapping complete: {mapped}/{total} items mapped")
+            
             except Exception as e:
+                # Mapping failure is not critical - continue without
                 logger.error(f"Product mapping failed: {e}", exc_info=True)
                 logger.info("Continuing with unmapped products")
         else:
@@ -123,5 +173,5 @@ class InvoiceProcessor:
             else:
                 logger.debug("No items to map")
         
-        logger.info(f"Processing complete: {pdf_path}")
+        logger.info(f"✓ Processing complete: {pdf_path}")
         return invoice_data
