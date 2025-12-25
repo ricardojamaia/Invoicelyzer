@@ -1,24 +1,22 @@
-#!/usr/bin/env python3
 """
-Invoice Processor - Main entry point
-Processes Portuguese supermarket invoices from PDF files.
+Main entry point - ties everything together with proper dependency injection.
 """
-
 import os
 import sys
-import json
 import logging
 from pathlib import Path
-from typing import Optional, Dict, List
+from typing import Optional, Dict
 
 from logger_config import setup_logger
+from parser import PDFTextExtractor
+from analyzer import InvoiceAnalyzer
 from processor import InvoiceProcessor
+from mapper import ProductMapper
+from product_catalog import ProductCatalog
+from database_product_catalog import DatabaseProductCatalog
 from database import InvoiceDatabase, SchemaManager
 from email_monitor import EmailMonitor
-from email_processor import EmailInvoiceProcessor
 from storage import save_invoice_json
-
-
 from exceptions import (
     PermanentError,
     TemporaryError,
@@ -29,53 +27,8 @@ from exceptions import (
 logger = logging.getLogger("invoice_processor.main")
 
 
-def load_sender_config(config_path: str) -> Dict[str, List[str]]:
-    """
-    Load sender configuration from JSON file.
-    
-    Args:
-        config_path: Path to sender configuration JSON file
-        
-    Returns:
-        Dictionary mapping folder names to sender email lists
-    """
-    try:
-        with open(config_path, 'r', encoding='utf-8') as f:
-            sender_config = json.load(f)
-        
-        # Validate format
-        if not isinstance(sender_config, dict):
-            raise ValueError("Sender config must be a JSON object")
-        
-        for folder_name, emails in sender_config.items():
-            if not isinstance(emails, list):
-                raise ValueError(f"Sender list for '{folder_name}' must be an array")
-            if not all(isinstance(e, str) for e in emails):
-                raise ValueError(f"All senders for '{folder_name}' must be strings")
-        
-        total_senders = sum(len(emails) for emails in sender_config.values())
-        logger.info(f"Loaded sender config: {len(sender_config)} folders, {total_senders} total senders")
-        
-        return sender_config
-        
-    except FileNotFoundError:
-        logger.error(f"Sender config file not found: {config_path}")
-        raise
-    except json.JSONDecodeError as e:
-        logger.error(f"Invalid JSON in sender config: {e}")
-        raise
-    except Exception as e:
-        logger.error(f"Error loading sender config: {e}")
-        raise
-
-
 def get_config() -> Dict:
-    """
-    Read configuration from environment variables.
-    
-    Returns:
-        Configuration dictionary
-    """
+    """Read configuration from environment variables."""
     return {
         # LLM Configuration
         'llm_url': os.getenv('INVOICELYZER_LLM_URL', 'http://localhost:11434'),
@@ -102,12 +55,63 @@ def get_config() -> Dict:
         'email_imap_server': os.getenv('INVOICELYZER_EMAIL_IMAP_SERVER'),
         'email_address': os.getenv('INVOICELYZER_EMAIL_ADDRESS'),
         'email_password': os.getenv('INVOICELYZER_EMAIL_PASSWORD'),
-        'email_sender_config': os.getenv('INVOICELYZER_EMAIL_SENDER_CONFIG', './config/senders.json'),
         'email_check_interval': int(os.getenv('INVOICELYZER_EMAIL_CHECK_INTERVAL', '300')),
         'email_mark_read': os.getenv('INVOICELYZER_EMAIL_MARK_READ', 'true').lower() == 'true',
         'email_continuous': os.getenv('INVOICELYZER_EMAIL_CONTINUOUS', 'true').lower() == 'true',
         'pdf_storage_dir': os.getenv('INVOICELYZER_PDF_STORAGE_DIR', './invoices')
     }
+
+
+def create_invoice_processor(config: Dict) -> InvoiceProcessor:
+    """
+    Create InvoiceProcessor with all dependencies.
+    
+    Args:
+        config: Configuration dictionary
+        
+    Returns:
+        Configured InvoiceProcessor instance
+    """
+    logger.info("Creating invoice processor...")
+    
+    # Create parser
+    parser = PDFTextExtractor()
+    
+    # Create analyzer
+    analyzer = InvoiceAnalyzer(
+        llm_url=config['llm_url'],
+        model=config['llm_model'],
+        prompt_template=config.get('prompt_template')
+    )
+    
+    # Create mapper (optional)
+    mapper = None
+    if config['enable_mapping'] and config['database_url']:
+        try:
+            # Create product catalog (database-backed)
+            catalog = DatabaseProductCatalog(config['database_url'])
+            
+            # Create mapper with catalog and ML settings
+            mapper = ProductMapper(
+                catalog=catalog,
+                use_ml=config['mapping_use_ml'],
+                ml_threshold=config['mapping_ml_threshold']
+            )
+            
+            logger.info("✓ Product mapper enabled")
+        except Exception as e:
+            logger.warning(f"Failed to create product mapper: {e}")
+            logger.info("Continuing without product mapping")
+    
+    # Create processor
+    processor = InvoiceProcessor(
+        parser=parser,
+        analyzer=analyzer,
+        mapper=mapper
+    )
+    
+    logger.info("✓ Invoice processor created")
+    return processor
 
 
 def init_database(config: Dict) -> Optional[InvoiceDatabase]:
@@ -118,263 +122,327 @@ def init_database(config: Dict) -> Optional[InvoiceDatabase]:
         config: Configuration dictionary
         
     Returns:
-        Database instance or None if not configured
+        InvoiceDatabase instance or None
     """
     if not config.get('database_url'):
-        logger.info("No database configured, skipping database storage")
+        logger.info("No database configured")
         return None
     
     try:
-        # Create schema using SchemaManager
+        logger.info("Initializing database...")
+        
+        # Create schema if needed
         schema_manager = SchemaManager(config['database_url'])
         schema_manager.create_schema()
-        logger.info("Database schema verified/created")
+        logger.info("✓ Database schema verified")
         
         # Create database instance
         db = InvoiceDatabase(config['database_url'])
-        logger.info("Database initialized successfully")
-        return db
+        logger.info("✓ Database initialized")
         
+        return db
+    
     except Exception as e:
-        logger.error(f"Failed to initialize database: {str(e)}", exc_info=True)
-        logger.warning("Continuing without database storage")
+        logger.error(f"Failed to initialize database: {e}", exc_info=True)
+        logger.warning("Continuing without database")
         return None
 
 
 def process_invoice_file(
-    pdf_path: str, 
-    config: Dict, 
-    db: Optional[InvoiceDatabase] = None,
+    pdf_path: str,
+    processor: InvoiceProcessor,
+    database: Optional[InvoiceDatabase],
+    config: Dict,
     sender: Optional[str] = None
 ) -> Optional[Dict]:
     """
-    Process a single invoice PDF file.
-    Works for both manual processing and email monitoring.
+    Process a single invoice file.
+    
+    This is the callback function for email monitoring and batch processing.
     
     Args:
         pdf_path: Path to PDF file
+        processor: InvoiceProcessor instance
+        database: Database instance (optional)
         config: Configuration dictionary
-        db: Database instance (optional)
-        sender: Email sender (optional, for email monitoring)
+        sender: Email sender (optional)
         
     Returns:
-        Processed invoice data or None if error
+        Invoice data on success, None on permanent failure
+        
+    Raises:
+        TemporaryError: On temporary failures (should retry)
     """
     try:
-        logger.info(f"Processing file: {pdf_path}")
-        
-        # Initialize processor with config
-        processor = InvoiceProcessor(
-            llm_url=config['llm_url'],
-            model=config['llm_model'],
-            prompt_template=config.get('prompt_template'),
-            database_url=config.get('database_url'),  # ADD THIS
-            enable_mapping=config.get('enable_mapping', True),  # ADD THIS
-            mapping_use_ml=config.get('mapping_use_ml', True),  # ADD THIS
-            mapping_ml_threshold=config.get('mapping_ml_threshold', 0.4)  # ADD THIS
-        )
+        logger.info(f"Processing: {Path(pdf_path).name}")
         
         # Process invoice
         try:
             invoice_data = processor.process(pdf_path)
+        
         except PermanentError as e:
-            logger.error(f"❌ Permanent: {e}")
+            logger.error(f"❌ Permanent failure: {type(e).__name__}: {e}")
+            logger.warning("This will not succeed on retry")
             return None
+        
         except TemporaryError as e:
-            logger.warning(f"⚠️ Temporary: {e}")
-            raise  # Re-raise for retry
+            logger.warning(f"⚠️ Temporary failure: {type(e).__name__}: {e}")
+            logger.info("This might succeed later - will retry")
+            raise  # Re-raise for caller to handle
         
-        # Add metadata
-        if '_metadata' not in invoice_data:
-            invoice_data['_metadata'] = {}
-        
+        # Add sender to metadata if provided
         if sender:
             invoice_data['_metadata']['email_sender'] = sender
         
-        invoice_data['_metadata']['source_file'] = Path(pdf_path).name
-        
-        # Save to database if configured
-        if db:
+        # Save to database (best effort)
+        if database:
             try:
-                invoice_id = db.save_invoice(invoice_data)
-                logger.info(f"✓ Saved to database with ID: {invoice_id}")
+                invoice_id = database.save_invoice(invoice_data)
+                logger.info(f"✓ Saved to database (ID: {invoice_id})")
             except Exception as e:
-                logger.error(f"Failed to save to database: {str(e)}")
-                # Continue even if database save fails
+                logger.error(f"Database save failed: {e}")
+                logger.warning("Continuing without database save")
         
-        # Save to JSON if configured
+        # Save to JSON (best effort)
         if config['save_json']:
-            json_file = save_invoice_json(invoice_data, config['output_dir'], pdf_path)
-            logger.info(f"✓ Saved JSON to: {json_file}")
+            try:
+                json_file = save_invoice_json(
+                    invoice_data,
+                    config['output_dir'],
+                    pdf_path
+                )
+                logger.info(f"✓ Saved JSON: {Path(json_file).name}")
+            except Exception as e:
+                logger.error(f"JSON save failed: {e}")
         
         logger.info(f"✓ Successfully processed invoice")
-        
         return invoice_data
-        
+    
+    except TemporaryError:
+        # Re-raise temporary errors
+        raise
+    
     except Exception as e:
-        logger.error(f"✗ Failed to process {pdf_path}: {str(e)}", exc_info=True)
-        return None
+        # Unknown error - classify it
+        if is_permanent_error(e):
+            logger.error(f"❌ Permanent error: {e}")
+            return None
+        elif is_temporary_error(e):
+            logger.warning(f"⚠️ Temporary error: {e}")
+            raise TemporaryError(f"Temporary failure: {e}")
+        else:
+            # Unknown - treat as permanent
+            logger.error(f"❌ Unknown error (treating as permanent): {e}", exc_info=True)
+            return None
 
 
-def run_email_monitor(config: Dict, db: Optional[InvoiceDatabase]) -> None:
+def create_email_callback(
+    processor: InvoiceProcessor,
+    database: Optional[InvoiceDatabase],
+    config: Dict
+):
+    """
+    Create callback function for email monitoring.
+    
+    Args:
+        processor: InvoiceProcessor instance
+        database: Database instance
+        config: Configuration dictionary
+        
+    Returns:
+        Callback function(pdf_path, sender) -> bool
+    """
+    def callback(pdf_path: str, sender: str) -> bool:
+        """
+        Process PDF from email.
+        
+        Returns:
+            True = mark email as read
+            False = keep email unread (retry later)
+        """
+        try:
+            result = process_invoice_file(pdf_path, processor, database, config, sender)
+            
+            if result is None:
+                # Permanent failure - mark as read
+                logger.info("✓ Permanent failure - marking email as read")
+                return True
+            
+            # Success - mark as read
+            logger.info("✓ Success - marking email as read")
+            return True
+        
+        except TemporaryError as e:
+            # Temporary failure - keep unread
+            logger.info("⏳ Temporary failure - keeping email unread")
+            return False
+        
+        except Exception as e:
+            # Unknown error - mark as read to avoid loops
+            logger.error(f"❌ Unexpected error: {e}")
+            logger.info("✓ Marking email as read to avoid retry loop")
+            return True
+    
+    return callback
+
+
+def run_email_monitor(config: Dict):
     """
     Run email monitoring mode.
     
     Args:
         config: Configuration dictionary
-        db: Database instance
     """
+    logger.info("="*60)
+    logger.info("EMAIL MONITORING MODE")
+    logger.info("="*60)
+    
     # Validate email configuration
-    if not config['email_imap_server'] or not config['email_address'] or not config['email_password']:
-        logger.error("Email monitoring requires: INVOICELYZER_EMAIL_IMAP_SERVER, INVOICELYZER_EMAIL_ADDRESS, INVOICELYZER_EMAIL_PASSWORD")
-        sys.exit(1)
+    if not all([config.get('email_imap_server'),
+                config.get('email_address'),
+                config.get('email_password')]):
+        logger.error("Missing email configuration")
+        logger.error("Required: INVOICELYZER_EMAIL_IMAP_SERVER, INVOICELYZER_EMAIL_ADDRESS, INVOICELYZER_EMAIL_PASSWORD")
+        return 1
     
-    # Load sender configuration
-    try:
-        sender_config = load_sender_config(config['email_sender_config'])
-    except Exception as e:
-        logger.error(f"Failed to load sender configuration: {e}")
-        logger.info(f"Please create a sender config file at: {config['email_sender_config']}")
-        logger.info("See config/senders.example.json for format")
-        sys.exit(1)
+    # Initialize components
+    processor = create_invoice_processor(config)
+    database = init_database(config)
     
-    logger.info(f"PDF storage: {config['pdf_storage_dir']}")
-    
-    # Initialize email monitor
+    # Create email monitor
     email_monitor = EmailMonitor(
         imap_server=config['email_imap_server'],
         email=config['email_address'],
         password=config['email_password'],
-        sender_config=sender_config,
         pdf_storage_dir=config['pdf_storage_dir']
     )
     
-    # Initialize invoice processor
-    invoice_processor = InvoiceProcessor(
-        llm_url=config['llm_url'],
-        model=config['llm_model'],
-        prompt_template=config.get('prompt_template')
-    )
-    
-    # Create callback that uses the same processing logic
-    def email_callback(pdf_path: str, sender: str) -> bool:
-        """Callback for email processing - reuses main processing logic."""
-        result = process_invoice_file(pdf_path, config, db, sender)
-        return result is not None
-    
-    # Initialize email processor with callback
-    email_processor = EmailInvoiceProcessor(
-        email_monitor=email_monitor,
-        invoice_processor=invoice_processor,
-        database=db,
-        process_callback=email_callback
-    )
+    # Create callback
+    callback = create_email_callback(processor, database, config)
     
     # Start monitoring
-    email_processor.start_monitoring(
-        check_interval=config['email_check_interval'],
-        mark_as_read=config['email_mark_read'],
-        continuous=config['email_continuous']
-    )
+    if config['email_continuous']:
+        logger.info("Starting continuous monitoring...")
+        email_monitor.monitor_continuous(
+            process_callback=callback,
+            check_interval=config['email_check_interval'],
+            mark_as_read=config['email_mark_read']
+        )
+    else:
+        logger.info("Performing single check...")
+        count = email_monitor.check_new_emails(
+            process_callback=callback,
+            mark_as_read=config['email_mark_read']
+        )
+        logger.info(f"✓ Processed {count} emails")
+    
+    return 0
 
 
-def main() -> None:
-    """Main entry point."""
+def run_batch_processing(pdf_files: list, config: Dict):
+    """
+    Run batch processing mode.
     
-    # Get configuration
-    config = get_config()
-    
-    # Setup logging (reassign module-level logger after setup)
-    global logger
-    logger = setup_logger(level=config['log_level'])
-    
-    # Check if running in email monitoring mode
-    if '--monitor-email' in sys.argv or config['email_enabled']:
-        logger.info("="*60)
-        logger.info("Invoice Processor - Email Monitor Mode")
-        logger.info("="*60)
-        logger.info(f"Email:        {config['email_address']}")
-        logger.info(f"IMAP Server:  {config['email_imap_server']}")
-        logger.info(f"Check every:  {config['email_check_interval']}s")
-        logger.info(f"Continuous:   {config['email_continuous']}")
-        logger.info(f"Database:     {'Configured' if config.get('database_url') else 'Not configured'}")
-        logger.info("="*60)
-        
-        # Initialize database
-        db = init_database(config)
-        
-        # Run email monitor
-        run_email_monitor(config, db)
-        return
-    
-    # Normal file processing mode
-    if len(sys.argv) < 2:
-        print("Usage: python main.py <invoice.pdf> [invoice2.pdf ...]")
-        print("   or: python main.py --monitor-email")
-        print("\nEnvironment variables:")
-        print("  INVOICELYZER_LLM_URL              - LLM API URL (default: http://localhost:11434)")
-        print("  INVOICELYZER_LLM_MODEL            - Model name (default: qwen2.5:14b)")
-        print("  INVOICELYZER_OUTPUT_DIR           - Output directory (default: ./processed_invoices)")
-        print("  INVOICELYZER_LOG_LEVEL            - Logging level (default: INFO)")
-        print("  INVOICELYZER_DATABASE_URL         - PostgreSQL connection string (optional)")
-        print("  INVOICELYZER_SAVE_JSON            - Save JSON files (default: true)")
-        print("  INVOICELYZER_PROMPT_TEMPLATE      - Custom prompt template path (optional)")
-        print("\nEmail monitoring:")
-        print("  INVOICELYZER_EMAIL_ENABLED        - Enable email monitoring (default: false)")
-        print("  INVOICELYZER_EMAIL_IMAP_SERVER    - IMAP server (e.g., imap.gmail.com)")
-        print("  INVOICELYZER_EMAIL_ADDRESS        - Email address")
-        print("  INVOICELYZER_EMAIL_PASSWORD       - Email password or app password")
-        print("  INVOICELYZER_EMAIL_SENDER_CONFIG  - Path to sender config JSON (default: ./config/senders.json)")
-        print("  INVOICELYZER_EMAIL_CHECK_INTERVAL - Seconds between checks (default: 300)")
-        print("  INVOICELYZER_EMAIL_MARK_READ      - Mark processed emails as read (default: true)")
-        print("  INVOICELYZER_EMAIL_CONTINUOUS     - Run continuously (default: true)")
-        print("  INVOICELYZER_PDF_STORAGE_DIR      - PDF storage directory (default: ./invoices)")
-        sys.exit(1)
-    
+    Args:
+        pdf_files: List of PDF file paths
+        config: Configuration dictionary
+    """
     logger.info("="*60)
-    logger.info("Invoice Processor Started")
+    logger.info("BATCH PROCESSING MODE")
     logger.info("="*60)
-    logger.info(f"LLM URL:      {config['llm_url']}")
-    logger.info(f"Model:        {config['llm_model']}")
-    logger.info(f"Output dir:   {config['output_dir']}")
-    logger.info(f"Save JSON:    {config['save_json']}")
-    logger.info(f"Database:     {'Configured' if config.get('database_url') else 'Not configured'}")
-    logger.info(f"Log level:    {config['log_level']}")
-    logger.info("="*60)
+    logger.info(f"Files to process: {len(pdf_files)}")
+    logger.info("")
     
-    # Initialize database
-    db = init_database(config)
+    # Initialize components
+    processor = create_invoice_processor(config)
+    database = init_database(config)
     
-    # Process each PDF file
-    pdf_files = sys.argv[1:]
-    results = []
+    # Process each file
+    stats = {'success': 0, 'permanent': 0, 'temporary': 0}
     
-    for pdf_path in pdf_files:
-        if not Path(pdf_path).exists():
-            logger.error(f"File not found: {pdf_path}")
-            continue
+    for i, pdf_file in enumerate(pdf_files, 1):
+        logger.info(f"[{i}/{len(pdf_files)}] {Path(pdf_file).name}")
+        logger.info("="*60)
         
-        logger.info(f"Processing: {pdf_path}")
-        logger.info("-"*60)
+        try:
+            result = process_invoice_file(pdf_file, processor, database, config)
+            
+            if result:
+                logger.info(f"✓ SUCCESS")
+                stats['success'] += 1
+            else:
+                logger.warning(f"✗ FAILED (permanent)")
+                stats['permanent'] += 1
         
-        result = process_invoice_file(pdf_path, config, db)
-        results.append({
-            'file': pdf_path,
-            'success': result is not None,
-            'data': result
-        })
+        except TemporaryError as e:
+            logger.warning(f"⏳ TEMPORARY FAILURE")
+            logger.info(f"Error: {e}")
+            stats['temporary'] += 1
+        
+        except Exception as e:
+            logger.error(f"❌ ERROR: {e}")
+            stats['permanent'] += 1
+        
+        logger.info("")
     
     # Summary
     logger.info("="*60)
-    logger.info("PROCESSING SUMMARY")
+    logger.info("SUMMARY")
     logger.info("="*60)
-    successful = sum(1 for r in results if r['success'])
-    logger.info(f"Total files:  {len(results)}")
-    logger.info(f"Successful:   {successful}")
-    logger.info(f"Failed:       {len(results) - successful}")
+    logger.info(f"Total files:       {len(pdf_files)}")
+    logger.info(f"✓ Successful:      {stats['success']}")
+    logger.info(f"✗ Permanent fails: {stats['permanent']}")
+    logger.info(f"⏳ Temporary fails: {stats['temporary']}")
     logger.info("="*60)
+    
+    return 0
+
+
+def main():
+    """Main entry point."""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Invoice Processor')
+    parser.add_argument('files', nargs='*', help='PDF files to process')
+    parser.add_argument('--email', action='store_true', help='Run in email monitoring mode')
+    
+    args = parser.parse_args()
+    
+    # Load configuration
+    config = get_config()
+    
+    # Setup logging
+    global logger
+    logger = setup_logger(level=config['log_level'])
+    
+    logger.info("Invoicelyzer - Invoice Processing System")
+    logger.info("")
+    
+    try:
+        if args.email or config['email_enabled']:
+            # Email monitoring mode
+            return run_email_monitor(config)
+        
+        elif args.files:
+            # Batch processing mode
+            return run_batch_processing(args.files, config)
+        
+        else:
+            logger.error("No files specified and email mode not enabled")
+            logger.info("Usage:")
+            logger.info("  python main.py file1.pdf file2.pdf ...")
+            logger.info("  python main.py --email")
+            return 1
+    
+    except KeyboardInterrupt:
+        logger.info("\nStopped by user")
+        return 0
+    
+    except Exception as e:
+        logger.error(f"Fatal error: {e}", exc_info=True)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
-    
+    sys.exit(main())
+

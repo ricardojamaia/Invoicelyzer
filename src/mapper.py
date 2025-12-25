@@ -1,74 +1,62 @@
 """
-Product mapper for matching invoice items to catalog products.
-Uses hybrid approach: known rules from database + ML fallback.
+Product mapper using abstract ProductCatalog interface.
 """
 import logging
 import re
 import math
 from collections import defaultdict, Counter
-from typing import Dict, List, Optional, Tuple
-import psycopg2
+from typing import Dict, List, Optional
+
+from product_catalog import ProductCatalog
 
 logger = logging.getLogger("invoice_processor.mapper")
 
 
 class ProductMapper:
-    """
-    Maps invoice product names to catalog products using hybrid approach.
-    """
+    """Maps invoice product names to catalog products."""
     
-    def __init__(self, connection_string: str):
+    def __init__(self, catalog: ProductCatalog, use_ml: bool = True, ml_threshold: float = 0.4):
         """
-        Initialize mapper with database connection.
+        Initialize mapper with product catalog.
         
         Args:
-            connection_string: PostgreSQL connection string
+            catalog: ProductCatalog implementation
+            use_ml: Enable ML-based mapping for unknown products
+            ml_threshold: Minimum confidence threshold for ML mappings
         """
-        self.connection_string = connection_string
-        self.catalog = []
+        self.catalog = catalog
+        self.catalog_products = []
         self.known_mappings = {}
         self.idf_scores = {}
         self.product_features = {}
+        self.use_ml = use_ml
+        self.ml_threshold = ml_threshold
         
-        # Load data from database
-        self._load_from_database()
+        self._load_catalog_data()
         self._train_ml()
         
-        logger.info(f"ProductMapper initialized: {len(self.catalog)} catalog items, {len(self.known_mappings)} known mappings")
+        logger.info(f"ProductMapper initialized: {len(self.catalog_products)} products, {len(self.known_mappings)} mappings")
+        logger.info(f"  ML enabled: {use_ml}, threshold: {ml_threshold}")
     
-    def _load_from_database(self):
-        """Load catalog and known mappings from database."""
-        try:
-            with psycopg2.connect(self.connection_string) as conn:
-                with conn.cursor() as cur:
-                    # Load catalog
-                    cur.execute("""
-                        SELECT category, product_name 
-                        FROM product_catalog 
-                        ORDER BY category, product_name
-                    """)
-                    for row in cur.fetchall():
-                        self.catalog.append({
-                            'category': row[0],
-                            'product': row[1]
-                        })
-                    
-                    # Load known mappings
-                    cur.execute("""
-                        SELECT original_name, catalog_product, catalog_category, confidence
-                        FROM product_mappings
-                    """)
-                    for row in cur.fetchall():
-                        key = self._normalize_product(row[0])
-                        self.known_mappings[key] = {
-                            'product': row[1],
-                            'category': row[2],
-                            'confidence': row[3]
-                        }
-                    
-        except Exception as e:
-            logger.error(f"Failed to load mapper data: {str(e)}", exc_info=True)
-            raise
+    def _load_catalog_data(self):
+        """Load product catalog and known mappings."""
+        products = self.catalog.get_all_products()
+        self.catalog_products = [
+            {
+                'category': p['category'],
+                'product': p['product_name']
+            }
+            for p in products
+        ]
+        
+        mappings = self.catalog.get_all_known_mappings()
+        for original_name, mapping_info in mappings.items():
+            key = self._normalize_product(original_name)
+            self.known_mappings[key] = {
+                'product': mapping_info['product_name'],
+                'category': mapping_info['category'],
+                'confidence': mapping_info.get('confidence', 'Known')
+            }
     
     def _normalize_product(self, text: str) -> str:
         """Normalize product name for matching."""
@@ -77,7 +65,6 @@ class ProductMapper:
         
         text = text.upper().strip()
         
-        # Remove common codes and units
         patterns = [
             r'\bCNT\b', r'\bEMB\.?\b', r'\bKG\b', r'\bG\b', r'\bML\b', r'\bCL\b',
             r'\bLS\b', r'\bCAL\b', r'\bIGP\b', r'\bDOC\b', r'\bR0\b',
@@ -112,7 +99,6 @@ class ProductMapper:
             logger.warning("No known mappings to train ML model")
             return
         
-        # Calculate IDF scores
         word_docs = defaultdict(int)
         total_docs = len(self.known_mappings)
         
@@ -124,8 +110,7 @@ class ProductMapper:
         for word, n_docs in word_docs.items():
             self.idf_scores[word] = math.log(total_docs / (1 + n_docs))
         
-        # Pre-calculate catalog features
-        for item in self.catalog:
+        for item in self.catalog_products:
             prod = item['product']
             self.product_features[prod] = self._extract_features(prod)
     
@@ -160,22 +145,20 @@ class ProductMapper:
         return dot_product / (norm1 * norm2)
     
     def _map_via_ml(self, original_product: str, threshold: float = 0.4) -> Optional[Dict]:
-        """Map product using ML (fallback)."""
+        """Map product using ML."""
         features_orig = self._extract_features(original_product)
         words_orig = set(self._extract_keywords(original_product))
         
         best_score = 0
         best_match = None
         
-        for item in self.catalog:
+        for item in self.catalog_products:
             prod_cat = item['product']
             features_cat = self.product_features.get(prod_cat, {})
             words_cat = set(self._extract_keywords(prod_cat))
             
-            # TF-IDF cosine similarity
             score_tfidf = self._cosine_similarity(features_orig, features_cat)
             
-            # Jaccard similarity
             if words_orig and words_cat:
                 intersection = words_orig & words_cat
                 union = words_orig | words_cat
@@ -183,7 +166,6 @@ class ProductMapper:
             else:
                 score_jaccard = 0.0
             
-            # Combined score
             score = 0.6 * score_tfidf + 0.4 * score_jaccard
             
             if score > best_score:
@@ -206,13 +188,12 @@ class ProductMapper:
         
         Args:
             original_product: Product name from invoice
-            use_ml: If True, use ML as fallback
-            ml_threshold: Minimum threshold to accept ML mapping
+            use_ml: Use ML as fallback
+            ml_threshold: Minimum threshold for ML mapping
         
         Returns:
-            dict with produto, categoria, confianca, score
+            Dict with product, category, confidence, score
         """
-        # 1. Try exact match in known mappings
         normalized_key = self._normalize_product(original_product)
         
         if normalized_key in self.known_mappings:
@@ -224,17 +205,15 @@ class ProductMapper:
                 'score': 1.0
             }
         
-        # 2. Try partial match in known mappings
         for known_key, data in self.known_mappings.items():
             if len(normalized_key) > 10 and len(known_key) > 10:
                 if normalized_key in known_key or known_key in normalized_key:
-                    # Check keyword overlap
                     words_orig = set(self._extract_keywords(original_product))
                     words_known = set(self._extract_keywords(known_key))
                     
                     if words_orig and words_known:
                         overlap = len(words_orig & words_known) / len(words_orig | words_known)
-                        if overlap >= 0.5:  # 50% overlap
+                        if overlap >= 0.5:
                             return {
                                 'product': data['product'],
                                 'category': data['category'],
@@ -242,13 +221,11 @@ class ProductMapper:
                                 'score': overlap
                             }
         
-        # 3. Use ML as fallback
         if use_ml:
             ml_result = self._map_via_ml(original_product, ml_threshold)
             if ml_result:
                 return ml_result
         
-        # 4. Could not map
         return {
             'product': '',
             'category': '',
@@ -266,7 +243,7 @@ class ProductMapper:
             ml_threshold: ML confidence threshold
             
         Returns:
-            List of items with added catalog_product_name, catalog_category, mapping_confidence
+            List of items with catalog_product_name, catalog_category, mapping_confidence
         """
         logger.info(f"Mapping {len(items)} invoice items")
         
@@ -277,12 +254,10 @@ class ProductMapper:
             product_name = item.get('name', '')
             mapping = self.map_product(product_name, use_ml, ml_threshold)
             
-            # Add mapping to item
             item['catalog_product_name'] = mapping['product']
             item['catalog_category'] = mapping['category']
             item['mapping_confidence'] = mapping['confidence']
             
-            # Update stats
             if mapping['confidence'] == 'Known':
                 stats['known'] += 1
             elif mapping['confidence'].startswith('Partial'):
@@ -298,9 +273,10 @@ class ProductMapper:
         total_mapped = stats['known'] + stats['partial'] + stats['ml']
         
         logger.info(f"Mapping complete: {total_mapped}/{total} mapped ({total_mapped/total*100:.1f}%)")
-        logger.info(f"  Known: {stats['known']} ({stats['known']/total*100:.1f}%)")
-        logger.info(f"  Partial: {stats['partial']} ({stats['partial']/total*100:.1f}%)")
-        logger.info(f"  ML: {stats['ml']} ({stats['ml']/total*100:.1f}%)")
-        logger.info(f"  Unknown: {stats['unknown']} ({stats['unknown']/total*100:.1f}%)")
+        logger.debug(f"  Known: {stats['known']} ({stats['known']/total*100:.1f}%)")
+        logger.debug(f"  Partial: {stats['partial']} ({stats['partial']/total*100:.1f}%)")
+        logger.debug(f"  ML: {stats['ml']} ({stats['ml']/total*100:.1f}%)")
+        logger.debug(f"  Unknown: {stats['unknown']} ({stats['unknown']/total*100:.1f}%)")
         
         return mapped_items
+    
