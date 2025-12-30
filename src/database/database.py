@@ -1,27 +1,34 @@
 """
-Database operations for invoice storage and retrieval with product mapping support.
+Database operations for invoice storage and retrieval using SQLAlchemy ORM.
 """
 import logging
 from typing import Dict, List, Optional
-import psycopg2
-from psycopg2.extras import RealDictCursor
+from datetime import datetime
+
+from sqlalchemy import select, and_
+from sqlalchemy.orm import Session, selectinload
+
+from .models import Invoice, InvoiceItem
+from .session import SessionManager
 
 logger = logging.getLogger("invoice_processor.database")
 
 
 class InvoiceDatabase:
     """
-    Handle all database operations for invoices with product mapping.
+    Handle all database operations for invoices using SQLAlchemy ORM.
     """
     
-    def __init__(self, connection_string: str):
+    def __init__(self, connection_string: str, echo: bool = False):
         """
+        Initialize database with SQLAlchemy.
+        
         Args:
             connection_string: PostgreSQL connection string
-                             Format: postgresql://user:password@host:port/database
+            echo: If True, log all SQL statements
         """
-        self.connection_string = connection_string
-        logger.info("Initialized InvoiceDatabase")
+        self.session_manager = SessionManager(connection_string, echo=echo)
+        logger.info("Initialized InvoiceDatabase with SQLAlchemy")
     
     def save_invoice(self, invoice_data: Dict) -> int:
         """
@@ -33,43 +40,40 @@ class InvoiceDatabase:
         Returns:
             Invoice ID from database
         """
-        from . import queries
-        
         store = invoice_data.get('store')
         date = invoice_data.get('date')
         number = invoice_data.get('invoice_number')
         
         logger.info(f"Saving invoice: {store} - {date} - {number}")
         
-        try:
-            with psycopg2.connect(self.connection_string) as conn:
-                with conn.cursor() as cur:
-                    # Check if invoice exists
-                    cur.execute(queries.CHECK_INVOICE_EXISTS, (store, date, number))
-                    existing = cur.fetchone()
-                    
-                    if existing:
-                        invoice_id = existing[0]
-                        logger.info(f"Invoice exists (ID: {invoice_id}), updating...")
-                        self._update_invoice(cur, invoice_id, invoice_data)
-                    else:
-                        invoice_id = self._insert_invoice(cur, invoice_data)
-                        logger.info(f"Created new invoice (ID: {invoice_id})")
-                    
-                    # Update items
-                    self._sync_items(cur, invoice_id, invoice_data.get('items', []))
-                    
-                    conn.commit()
-                    
-                    action = "Updated" if existing else "Created"
-                    item_count = len(invoice_data.get('items', []))
-                    logger.info(f"{action} invoice with {item_count} items (ID: {invoice_id})")
-                    
-                    return invoice_id
-                    
-        except Exception as e:
-            logger.error(f"Failed to save invoice: {str(e)}", exc_info=True)
-            raise
+        with self.session_manager.session() as session:
+            # Check if invoice exists
+            stmt = select(Invoice).where(
+                and_(
+                    Invoice.store == store,
+                    Invoice.invoice_date == date,
+                    Invoice.invoice_number == number
+                )
+            )
+            existing_invoice = session.execute(stmt).scalar_one_or_none()
+            
+            if existing_invoice:
+                logger.info(f"Invoice exists (ID: {existing_invoice.id}), updating...")
+                invoice = self._update_invoice(session, existing_invoice, invoice_data)
+            else:
+                logger.info("Creating new invoice...")
+                invoice = self._create_invoice(session, invoice_data)
+            
+            # Sync items
+            self._sync_items(session, invoice, invoice_data.get('items', []))
+            
+            session.flush()  # Ensure invoice.id is available
+            
+            action = "Updated" if existing_invoice else "Created"
+            item_count = len(invoice.items)
+            logger.info(f"{action} invoice with {item_count} items (ID: {invoice.id})")
+            
+            return invoice.id
     
     def get_invoice(self, invoice_id: int) -> Optional[Dict]:
         """
@@ -81,34 +85,21 @@ class InvoiceDatabase:
         Returns:
             Invoice data with items, or None if not found
         """
-        from . import queries
-        
         logger.debug(f"Retrieving invoice ID: {invoice_id}")
         
-        try:
-            with psycopg2.connect(self.connection_string) as conn:
-                with conn.cursor(cursor_factory=RealDictCursor) as cur:
-                    # Get invoice
-                    cur.execute(queries.GET_INVOICE, (invoice_id,))
-                    invoice = cur.fetchone()
-                    
-                    if not invoice:
-                        logger.warning(f"Invoice not found: {invoice_id}")
-                        return None
-                    
-                    # Get items
-                    cur.execute(queries.GET_INVOICE_ITEMS, (invoice_id,))
-                    items = cur.fetchall()
-                    
-                    # Convert to dict and add items
-                    result = dict(invoice)
-                    result['items'] = [dict(item) for item in items]
-                    
-                    return result
-                    
-        except Exception as e:
-            logger.error(f"Failed to retrieve invoice: {str(e)}", exc_info=True)
-            raise
+        with self.session_manager.session() as session:
+            # Eager load items to avoid N+1 queries
+            stmt = select(Invoice).options(
+                selectinload(Invoice.items)
+            ).where(Invoice.id == invoice_id)
+            
+            invoice = session.execute(stmt).scalar_one_or_none()
+            
+            if not invoice:
+                logger.warning(f"Invoice not found: {invoice_id}")
+                return None
+            
+            return self._invoice_to_dict(invoice)
     
     def search_invoices(
         self,
@@ -129,169 +120,188 @@ class InvoiceDatabase:
         Returns:
             List of invoice dictionaries
         """
-        from . import queries
-        
         logger.info(f"Searching invoices: store={store}, date_from={date_from}, date_to={date_to}")
         
-        try:
-            with psycopg2.connect(self.connection_string) as conn:
-                with conn.cursor(cursor_factory=RealDictCursor) as cur:
-                    # Build query dynamically
-                    query = queries.SEARCH_INVOICES
-                    params = []
-                    
-                    if store:
-                        query += " AND store = %s"
-                        params.append(store)
-                    
-                    if date_from:
-                        query += " AND invoice_date >= %s"
-                        params.append(date_from)
-                    
-                    if date_to:
-                        query += " AND invoice_date <= %s"
-                        params.append(date_to)
-                    
-                    query += " ORDER BY invoice_date DESC, id DESC LIMIT %s"
-                    params.append(limit)
-                    
-                    cur.execute(query, params)
-                    invoices = cur.fetchall()
-                    
-                    logger.info(f"Found {len(invoices)} invoices")
-                    return [dict(inv) for inv in invoices]
-                    
-        except Exception as e:
-            logger.error(f"Failed to search invoices: {str(e)}", exc_info=True)
-            raise
+        with self.session_manager.session() as session:
+            # Build query
+            stmt = select(Invoice)
+            
+            conditions = []
+            if store:
+                conditions.append(Invoice.store == store)
+            if date_from:
+                conditions.append(Invoice.invoice_date >= date_from)
+            if date_to:
+                conditions.append(Invoice.invoice_date <= date_to)
+            
+            if conditions:
+                stmt = stmt.where(and_(*conditions))
+            
+            stmt = stmt.order_by(Invoice.invoice_date.desc(), Invoice.id.desc()).limit(limit)
+            
+            invoices = session.execute(stmt).scalars().all()
+            
+            logger.info(f"Found {len(invoices)} invoices")
+            return [self._invoice_to_dict(inv, include_items=False) for inv in invoices]
+    
+    def close(self):
+        """Close database connections."""
+        self.session_manager.close()
     
     # Private helper methods
     
-    def _insert_invoice(self, cur, invoice_data: Dict) -> int:
-        """Insert new invoice and return ID."""
-        from . import queries
-        
+    def _create_invoice(self, session: Session, invoice_data: Dict) -> Invoice:
+        """Create new invoice."""
         metadata = invoice_data.get('_metadata', {})
         
-        cur.execute(queries.INSERT_INVOICE, (
-            invoice_data.get('store'),
-            invoice_data.get('location'),
-            invoice_data.get('date'),
-            invoice_data.get('time'),
-            invoice_data.get('total'),
-            invoice_data.get('payment_method'),
-            invoice_data.get('invoice_number'),
-            metadata.get('source_file'),
-            metadata.get('raw_text_length')
-        ))
+        invoice = Invoice(
+            store=invoice_data.get('store'),
+            location=invoice_data.get('location'),
+            invoice_date=invoice_data.get('date'),
+            invoice_time=invoice_data.get('time'),
+            total=invoice_data.get('total'),
+            payment_method=invoice_data.get('payment_method'),
+            invoice_number=invoice_data.get('invoice_number'),
+            source_file=metadata.get('source_file'),
+            raw_text_length=metadata.get('raw_text_length')
+        )
         
-        return cur.fetchone()[0]
+        session.add(invoice)
+        session.flush()  # Get invoice.id
+        
+        logger.debug(f"Created invoice (ID: {invoice.id})")
+        return invoice
     
-    def _update_invoice(self, cur, invoice_id: int, invoice_data: Dict):
+    def _update_invoice(self, session: Session, invoice: Invoice, invoice_data: Dict) -> Invoice:
         """Update existing invoice."""
-        from . import queries
-        
         metadata = invoice_data.get('_metadata', {})
         
-        cur.execute(queries.UPDATE_INVOICE, (
-            invoice_data.get('location'),
-            invoice_data.get('time'),
-            invoice_data.get('total'),
-            invoice_data.get('payment_method'),
-            metadata.get('source_file'),
-            metadata.get('raw_text_length'),
-            invoice_id
-        ))
+        invoice.location = invoice_data.get('location')
+        invoice.invoice_time = invoice_data.get('time')
+        invoice.total = invoice_data.get('total')
+        invoice.payment_method = invoice_data.get('payment_method')
+        invoice.source_file = metadata.get('source_file')
+        invoice.raw_text_length = metadata.get('raw_text_length')
+        invoice.updated_at = datetime.utcnow()
+        
+        session.flush()
+        
+        logger.debug(f"Updated invoice (ID: {invoice.id})")
+        return invoice
     
-    def _sync_items(self, cur, invoice_id: int, new_items: List[Dict]):
+    def _sync_items(self, session: Session, invoice: Invoice, new_items: List[Dict]):
         """
         Synchronize items:
         - Update existing items (matched by name)
         - Insert new items
         - Delete removed items
         """
-        from . import queries
+        # Build mapping of existing items by name
+        existing_by_name = {item.name: item for item in invoice.items}
         
-        # Get existing items
-        cur.execute(queries.GET_INVOICE_ITEMS, (invoice_id,))
-        existing_items = cur.fetchall()
-        
-        # Build mapping by name
-        existing_by_name = {}
-        for item in existing_items:
-            existing_by_name[item[1]] = {  # item[1] is name
-                'id': item[0],
-                'category': item[2],
-                'quantity': item[3],
-                'unit_price': item[4],
-                'total_price': item[5],
-                'catalog_product_name': item[6],
-                'catalog_category': item[7],
-                'mapping_confidence': item[8]
-            }
-        
-        processed_ids = set()
+        processed_items = set()
         stats = {'updated': 0, 'inserted': 0, 'deleted': 0}
         
         # Process new items
-        for new_item in new_items:
-            name = new_item.get('name')
+        for item_data in new_items:
+            name = item_data.get('name')
             
             if name in existing_by_name:
                 # Update existing item
-                existing = existing_by_name[name]
+                item = existing_by_name[name]
                 
-                if self._item_changed(existing, new_item):
-                    cur.execute(queries.UPDATE_ITEM, (
-                        new_item.get('category'),
-                        new_item.get('quantity'),
-                        new_item.get('unit_price'),
-                        new_item.get('total_price'),
-                        new_item.get('catalog_product_name'),
-                        new_item.get('catalog_category'),
-                        new_item.get('mapping_confidence'),
-                        existing['id']
-                    ))
+                if self._should_update_item(item, item_data):
+                    self._update_item(item, item_data)
                     stats['updated'] += 1
                 
-                processed_ids.add(existing['id'])
+                processed_items.add(item)
             else:
-                # Insert new item
-                cur.execute(queries.INSERT_ITEM, (
-                    invoice_id,
-                    new_item.get('name'),
-                    new_item.get('category'),
-                    new_item.get('quantity'),
-                    new_item.get('unit_price'),
-                    new_item.get('total_price'),
-                    new_item.get('catalog_product_name'),
-                    new_item.get('catalog_category'),
-                    new_item.get('mapping_confidence')
-                ))
+                # Create new item
+                item = self._create_item(invoice, item_data)
+                session.add(item)
                 stats['inserted'] += 1
+                processed_items.add(item)
         
         # Delete items no longer present
-        items_to_delete = [
-            item['id']
-            for name, item in existing_by_name.items()
-            if item['id'] not in processed_ids
-        ]
+        for item in invoice.items[:]:  # Create copy to modify during iteration
+            if item not in processed_items:
+                session.delete(item)
+                stats['deleted'] += 1
         
-        if items_to_delete:
-            cur.execute(queries.DELETE_ITEMS, (items_to_delete,))
-            stats['deleted'] = len(items_to_delete)
-        
-        if stats['updated'] or stats['inserted'] or stats['deleted']:
+        if any(stats.values()):
             logger.info(f"Item sync: {stats['updated']} updated, {stats['inserted']} inserted, {stats['deleted']} deleted")
     
-    def _item_changed(self, existing: Dict, new_item: Dict) -> bool:
+    def _create_item(self, invoice: Invoice, item_data: Dict) -> InvoiceItem:
+        """Create new invoice item."""
+        return InvoiceItem(
+            invoice=invoice,
+            name=item_data.get('name'),
+            category=item_data.get('category'),
+            quantity=item_data.get('quantity'),
+            unit_price=item_data.get('unit_price'),
+            total_price=item_data.get('total_price'),
+            catalog_product_name=item_data.get('catalog_product_name'),
+            catalog_category=item_data.get('catalog_category'),
+            mapping_confidence=item_data.get('mapping_confidence')
+        )
+    
+    def _update_item(self, item: InvoiceItem, item_data: Dict):
+        """Update existing invoice item."""
+        item.category = item_data.get('category')
+        item.quantity = item_data.get('quantity')
+        item.unit_price = item_data.get('unit_price')
+        item.total_price = item_data.get('total_price')
+        item.catalog_product_name = item_data.get('catalog_product_name')
+        item.catalog_category = item_data.get('catalog_category')
+        item.mapping_confidence = item_data.get('mapping_confidence')
+        item.updated_at = datetime.utcnow()
+    
+    def _should_update_item(self, item: InvoiceItem, item_data: Dict) -> bool:
         """Check if item data has changed."""
         return (
-            existing['category'] != new_item.get('category') or
-            existing['quantity'] != new_item.get('quantity') or
-            existing['unit_price'] != new_item.get('unit_price') or
-            existing['total_price'] != new_item.get('total_price') or
-            existing['catalog_product_name'] != new_item.get('catalog_product_name') or
-            existing['catalog_category'] != new_item.get('catalog_category') or
-            existing['mapping_confidence'] != new_item.get('mapping_confidence')
+            item.category != item_data.get('category') or
+            item.quantity != item_data.get('quantity') or
+            item.unit_price != item_data.get('unit_price') or
+            item.total_price != item_data.get('total_price') or
+            item.catalog_product_name != item_data.get('catalog_product_name') or
+            item.catalog_category != item_data.get('catalog_category') or
+            item.mapping_confidence != item_data.get('mapping_confidence')
         )
+    
+    def _invoice_to_dict(self, invoice: Invoice, include_items: bool = True) -> Dict:
+        """Convert Invoice ORM object to dictionary."""
+        result = {
+            'id': invoice.id,
+            'store': invoice.store,
+            'location': invoice.location,
+            'date': invoice.invoice_date,
+            'time': invoice.invoice_time,
+            'total': invoice.total,
+            'payment_method': invoice.payment_method,
+            'invoice_number': invoice.invoice_number,
+            'source_file': invoice.source_file,
+            'raw_text_length': invoice.raw_text_length,
+            'created_at': invoice.created_at,
+            'updated_at': invoice.updated_at
+        }
+        
+        if include_items:
+            result['items'] = [self._item_to_dict(item) for item in invoice.items]
+        
+        return result
+    
+    def _item_to_dict(self, item: InvoiceItem) -> Dict:
+        """Convert InvoiceItem ORM object to dictionary."""
+        return {
+            'id': item.id,
+            'name': item.name,
+            'category': item.category,
+            'quantity': item.quantity,
+            'unit_price': item.unit_price,
+            'total_price': item.total_price,
+            'catalog_product_name': item.catalog_product_name,
+            'catalog_category': item.catalog_category,
+            'mapping_confidence': item.mapping_confidence,
+            'created_at': item.created_at,
+            'updated_at': item.updated_at
+        }
