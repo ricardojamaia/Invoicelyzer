@@ -17,3 +17,4 @@ python-dateutil==2.8.2
 
 # Database
 psycopg2-binary==2.9.11
+sqlalchemy==2.0.45

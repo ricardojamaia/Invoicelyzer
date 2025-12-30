@@ -13,8 +13,7 @@ from analyzer import InvoiceAnalyzer
 from processor import InvoiceProcessor
 from mapper import ProductMapper
 from product_catalog import ProductCatalog
-from database_product_catalog import DatabaseProductCatalog
-from database import InvoiceDatabase, SchemaManager
+from database import InvoiceDatabase, SchemaManager, DatabaseProductCatalog
 from email_monitor import EmailMonitor
 from storage import save_invoice_json
 from exceptions import (
