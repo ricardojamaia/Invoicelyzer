@@ -67,6 +67,7 @@ class InvoiceItem(Base):
     catalog_product_name: Mapped[Optional[str]] = mapped_column(String(500), nullable=True)
     catalog_category: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     mapping_confidence: Mapped[Optional[str]] = mapped_column(String(50), nullable=True)
+    days_since_last_purchase: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
@@ -81,6 +82,7 @@ class InvoiceItem(Base):
         Index('idx_items_invoice_name', 'invoice_id', 'name'),
         Index('idx_items_catalog_product', 'catalog_product_name'),
         Index('idx_items_catalog_category', 'catalog_category'),
+        Index('idx_items_catalog_product_invoice', 'catalog_product_name', 'invoice_id'),
     )
     
     def __repr__(self):

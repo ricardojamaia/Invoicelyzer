@@ -5,7 +5,7 @@ import logging
 from typing import Dict, List, Optional
 from datetime import datetime
 
-from sqlalchemy import select, and_
+from sqlalchemy import select, and_, func
 from sqlalchemy.orm import Session, selectinload
 
 from .models import Invoice, InvoiceItem
@@ -233,6 +233,14 @@ class InvoiceDatabase:
     
     def _create_item(self, invoice: Invoice, item_data: Dict) -> InvoiceItem:
         """Create new invoice item."""
+        # Calculate days since last purchase if catalog product is mapped
+        days_since = None
+        if item_data.get('catalog_product_name'):
+            days_since = self._calculate_days_since_last_purchase(
+                item_data['catalog_product_name'],
+                invoice.invoice_date
+            )
+        
         return InvoiceItem(
             invoice=invoice,
             name=item_data.get('name'),
@@ -242,11 +250,22 @@ class InvoiceDatabase:
             total_price=item_data.get('total_price'),
             catalog_product_name=item_data.get('catalog_product_name'),
             catalog_category=item_data.get('catalog_category'),
-            mapping_confidence=item_data.get('mapping_confidence')
+            mapping_confidence=item_data.get('mapping_confidence'),
+            days_since_last_purchase=days_since
         )
     
     def _update_item(self, item: InvoiceItem, item_data: Dict):
         """Update existing invoice item."""
+        # Recalculate days since last purchase if catalog product changed
+        if item_data.get('catalog_product_name') != item.catalog_product_name:
+            days_since = None
+            if item_data.get('catalog_product_name'):
+                days_since = self._calculate_days_since_last_purchase(
+                    item_data['catalog_product_name'],
+                    item.invoice.invoice_date
+                )
+            item.days_since_last_purchase = days_since
+        
         item.category = item_data.get('category')
         item.quantity = item_data.get('quantity')
         item.unit_price = item_data.get('unit_price')
@@ -267,6 +286,49 @@ class InvoiceDatabase:
             item.catalog_category != item_data.get('catalog_category') or
             item.mapping_confidence != item_data.get('mapping_confidence')
         )
+    
+    def _calculate_days_since_last_purchase(
+        self, 
+        catalog_product_name: str, 
+        current_date
+    ) -> Optional[int]:
+        """
+        Calculate days since last purchase of the same catalog product.
+        
+        Args:
+            catalog_product_name: Name of catalog product
+            current_date: Date of current invoice
+            
+        Returns:
+            Number of days since last purchase, or None if first purchase
+        """
+        try:
+            with self.session_manager.session() as session:
+                # Get max invoice date for this product before current date
+                stmt = (
+                    select(func.max(Invoice.invoice_date))
+                    .join(InvoiceItem, InvoiceItem.invoice_id == Invoice.id)
+                    .where(
+                        and_(
+                            InvoiceItem.catalog_product_name == catalog_product_name,
+                            Invoice.invoice_date < current_date
+                        )
+                    )
+                )
+                
+                last_date = session.execute(stmt).scalar_one_or_none()
+                
+                if last_date:
+                    days_since = (current_date - last_date).days
+                    logger.debug(f"Product {catalog_product_name}: {days_since} days since last purchase")
+                    return days_since
+                
+                logger.debug(f"Product {catalog_product_name}: first purchase")
+                return None  # First purchase
+        
+        except Exception as e:
+            logger.error(f"Error calculating days since last purchase: {e}")
+            return None
     
     def _invoice_to_dict(self, invoice: Invoice, include_items: bool = True) -> Dict:
         """Convert Invoice ORM object to dictionary."""
@@ -302,6 +364,7 @@ class InvoiceDatabase:
             'catalog_product_name': item.catalog_product_name,
             'catalog_category': item.catalog_category,
             'mapping_confidence': item.mapping_confidence,
+            'days_since_last_purchase': item.days_since_last_purchase,
             'created_at': item.created_at,
             'updated_at': item.updated_at
         }
