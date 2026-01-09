@@ -3,7 +3,7 @@ Database operations for invoice storage and retrieval using SQLAlchemy ORM.
 """
 import logging
 from typing import Dict, List, Optional
-from datetime import datetime
+from datetime import datetime, date
 
 from sqlalchemy import select, and_, func
 from sqlalchemy.orm import Session, selectinload
@@ -150,6 +150,32 @@ class InvoiceDatabase:
     
     # Private helper methods
     
+    def _parse_date(self, date_value) -> Optional[date]:
+        """
+        Parse date value to date object.
+        
+        Args:
+            date_value: String date (YYYY-MM-DD) or date object
+            
+        Returns:
+            date object or None if invalid
+        """
+        if date_value is None:
+            return None
+        
+        if isinstance(date_value, date):
+            return date_value
+        
+        if isinstance(date_value, str):
+            try:
+                return date.fromisoformat(date_value)
+            except (ValueError, AttributeError):
+                logger.error(f"Invalid date format: {date_value}")
+                return None
+        
+        logger.error(f"Unexpected date type: {type(date_value)}")
+        return None
+    
     def _create_invoice(self, session: Session, invoice_data: Dict) -> Invoice:
         """Create new invoice."""
         metadata = invoice_data.get('_metadata', {})
@@ -157,7 +183,7 @@ class InvoiceDatabase:
         invoice = Invoice(
             store=invoice_data.get('store'),
             location=invoice_data.get('location'),
-            invoice_date=invoice_data.get('date'),
+            invoice_date=self._parse_date(invoice_data.get('date')),
             invoice_time=invoice_data.get('time'),
             total=invoice_data.get('total'),
             payment_method=invoice_data.get('payment_method'),
@@ -257,14 +283,14 @@ class InvoiceDatabase:
     def _update_item(self, item: InvoiceItem, item_data: Dict):
         """Update existing invoice item."""
         # Recalculate days since last purchase if catalog product changed
-        if item_data.get('catalog_product_name') != item.catalog_product_name:
-            days_since = None
-            if item_data.get('catalog_product_name'):
-                days_since = self._calculate_days_since_last_purchase(
-                    item_data['catalog_product_name'],
-                    item.invoice.invoice_date
-                )
-            item.days_since_last_purchase = days_since
+        #if item_data.get('catalog_product_name') != item.catalog_product_name:
+        days_since = None
+        if item_data.get('catalog_product_name'):
+            days_since = self._calculate_days_since_last_purchase(
+                item_data['catalog_product_name'],
+                item.invoice.invoice_date
+            )
+        item.days_since_last_purchase = days_since
         
         item.category = item_data.get('category')
         item.quantity = item_data.get('quantity')
@@ -297,11 +323,16 @@ class InvoiceDatabase:
         
         Args:
             catalog_product_name: Name of catalog product
-            current_date: Date of current invoice
+            current_date: Date of current invoice (str or date object)
             
         Returns:
             Number of days since last purchase, or None if first purchase
         """
+        # Ensure current_date is a date object
+        current_date = self._parse_date(current_date)
+        if not current_date:
+            return None
+        
         try:
             with self.session_manager.session() as session:
                 # Get max invoice date for this product before current date

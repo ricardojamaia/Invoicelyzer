@@ -80,7 +80,8 @@ class DatabaseProductCatalog(ProductCatalog):
                     return {
                         'product_name': mapping.catalog_product,
                         'category': mapping.catalog_category,
-                        'confidence': mapping.confidence
+                        'confidence': mapping.confidence,
+                        'original_category': mapping.original_category
                     }
                 
                 return None
@@ -94,7 +95,7 @@ class DatabaseProductCatalog(ProductCatalog):
         Get all known mappings from database.
         
         Returns:
-            Dict mapping original names to product info
+            Dict mapping original names to product info (with optional confidence)
         """
         try:
             with self.session_manager.session() as session:
@@ -105,7 +106,8 @@ class DatabaseProductCatalog(ProductCatalog):
                     m.original_name: {
                         'product_name': m.catalog_product,
                         'category': m.catalog_category,
-                        'confidence': m.confidence
+                        'confidence': m.confidence,
+                        'original_category': m.original_category
                     }
                     for m in mappings_list
                 }

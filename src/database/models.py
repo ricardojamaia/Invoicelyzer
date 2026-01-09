@@ -115,6 +115,7 @@ class ProductMapping(Base):
     
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     original_name: Mapped[str] = mapped_column(String(500), nullable=False, unique=True)
+    original_category: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     catalog_product: Mapped[str] = mapped_column(String(500), nullable=False)
     catalog_category: Mapped[str] = mapped_column(String(255), nullable=False)
     confidence: Mapped[Optional[str]] = mapped_column(String(50), nullable=True)
@@ -124,6 +125,7 @@ class ProductMapping(Base):
     # Indexes
     __table_args__ = (
         Index('idx_mappings_original', 'original_name'),
+        Index('idx_mappings_original_category', 'original_category'),
     )
     
     def __repr__(self):

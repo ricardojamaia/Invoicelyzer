@@ -10,9 +10,13 @@ CATEGORIAS:
 - Exemplo: "Take Away:", "Frutas e Legumes:", "Mercearia:"
 - Cada produto pertence à categoria do último cabeçalho encontrado
 
-PRODUTOS COM QUANTIDADE = 1:
-Formato: (TAXA) NOME_PRODUTO PREÇO
-Exemplo:
+PRODUTOS APRESENTADOS EM LINHA ÚNICA:
+Formato (linha única): TAXA NOME_PRODUTO PREÇO
+Taxas: IS, (IS), (A), (B), (C)
+Preço total (total_price): O preço total é SEMPRE mostrado e encontra-se no final da linha - NUNCA calcules o preço total.
+Quantidade (quantity): Coloca SEMPRE a quantidade a "1.0" para estes produtos.
+
+Exemplo 1:
   "(B) LEITE MIMOSA 1L 0,89"
   → name: "LEITE MIMOSA 1L"
   → category: categoria atual
@@ -20,10 +24,37 @@ Exemplo:
   → unit_price: 0.89
   → total_price: 0.89
 
-PRODUTOS COM QUANTIDADE ≠ 1:
+Exemplo 2:
+  "(B) VVB MURALHAS DE MONCAO DOC 75CL 3,39"
+  → name: "VVB MURALHAS DE MONCAO DOC 75CL"
+  → category: categoria atual
+  → quantity: 1.0
+  → unit_price: 3.39
+  → total_price: 3.39
+
+Exemplo 3:
+  "(A) QJ FLAMENGO LIMIANO FATIAS 2*20 4,99"
+  → name: "QJ FLAMENGO LIMIANO FATIAS 2*20"
+  → category: categoria atual
+  → quantity: 1.0
+  → unit_price: 4.99
+  → total_price: 4.99
+
+Exemplo 4:
+  "(A) MACA GALA R0 ALCOBACA KG 1,59"
+  → name: "MACA GALA R0 ALCOBACA"
+  → category: categoria atual
+  → quantity: 1.0
+  → unit_price: 1.59
+  → total_price: 1.59
+
+PRODUTOS APRESENTADOS EM DUAS LINHAS:
 Formato linha 1: (TAXA) NOME_PRODUTO
 Formato linha 2: QUANTIDADE X PREÇO_UNITARIO PREÇO_TOTAL
-Exemplo:
+Taxas: IS, (IS), (A), (B), (C)
+Preço total (total_price): O preço total é SEMPRE mostrado e encontra-se no final da linha 2 - NUNCA calcules o preço total.
+
+Exemplo 1:
   "(A) COUVE BROCOLO"
   "0,770 X 2,59 1,99"
   → name: "COUVE BROCOLO"
@@ -32,7 +63,7 @@ Exemplo:
   → unit_price: 2.59
   → total_price: 1.99
 
-Outro exemplo:
+Exemplo 2:
   "(B) CALDO VERDE 800GR CZ CNT"
   "2 X 2,49 4,98"
   → name: "CALDO VERDE 800GR CZ CNT"
@@ -83,6 +114,8 @@ NUNCA incluir como produtos:
       "total_price": 1.50
     }}
   ],
+  "subtotal": 11.0,
+  "desconto cartão": 0.5,
   "total": 10.50,
   "payment_method": "método de pagamento",
   "invoice_number": "número da fatura"
@@ -95,7 +128,7 @@ Para CADA item:
 2. Se a multiplicação não bater, corrige o total_price
 
 Para a fatura completa:
-3. Soma de todos os total_price = total da fatura
+3. Soma de todos os total_price = subtotal da fatura
 
 === EXEMPLOS COMPLETOS ===
 
