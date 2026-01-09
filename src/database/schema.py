@@ -103,6 +103,7 @@ class SchemaManager:
         """
         Load known product mappings from CSV file.
         Expected columns: original_product, catalog_product, category, confidence
+        Optional: original_category
         
         Args:
             csv_path: Path to mappings CSV file
@@ -131,6 +132,7 @@ class SchemaManager:
                         
                         if existing:
                             # Update existing
+                            existing.original_category = row.get('original_category')
                             existing.catalog_product = row['catalog_product']
                             existing.catalog_category = row['category']
                             existing.confidence = row.get('confidence', 'Manual')
@@ -138,8 +140,9 @@ class SchemaManager:
                             # Create new
                             mapping = ProductMapping(
                                 original_name=row['original_product'],
+                                original_category=row.get('original_category'),
                                 catalog_product=row['catalog_product'],
-                                catalog_category=row['category'],
+                                catalog_category=row['catalog_category'],
                                 confidence=row.get('confidence', 'Manual')
                             )
                             session.add(mapping)

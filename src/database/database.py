@@ -3,9 +3,9 @@ Database operations for invoice storage and retrieval using SQLAlchemy ORM.
 """
 import logging
 from typing import Dict, List, Optional
-from datetime import datetime
+from datetime import datetime, date
 
-from sqlalchemy import select, and_
+from sqlalchemy import select, and_, func
 from sqlalchemy.orm import Session, selectinload
 
 from .models import Invoice, InvoiceItem
@@ -150,6 +150,32 @@ class InvoiceDatabase:
     
     # Private helper methods
     
+    def _parse_date(self, date_value) -> Optional[date]:
+        """
+        Parse date value to date object.
+        
+        Args:
+            date_value: String date (YYYY-MM-DD) or date object
+            
+        Returns:
+            date object or None if invalid
+        """
+        if date_value is None:
+            return None
+        
+        if isinstance(date_value, date):
+            return date_value
+        
+        if isinstance(date_value, str):
+            try:
+                return date.fromisoformat(date_value)
+            except (ValueError, AttributeError):
+                logger.error(f"Invalid date format: {date_value}")
+                return None
+        
+        logger.error(f"Unexpected date type: {type(date_value)}")
+        return None
+    
     def _create_invoice(self, session: Session, invoice_data: Dict) -> Invoice:
         """Create new invoice."""
         metadata = invoice_data.get('_metadata', {})
@@ -157,7 +183,7 @@ class InvoiceDatabase:
         invoice = Invoice(
             store=invoice_data.get('store'),
             location=invoice_data.get('location'),
-            invoice_date=invoice_data.get('date'),
+            invoice_date=self._parse_date(invoice_data.get('date')),
             invoice_time=invoice_data.get('time'),
             total=invoice_data.get('total'),
             payment_method=invoice_data.get('payment_method'),
@@ -233,6 +259,14 @@ class InvoiceDatabase:
     
     def _create_item(self, invoice: Invoice, item_data: Dict) -> InvoiceItem:
         """Create new invoice item."""
+        # Calculate days since last purchase if catalog product is mapped
+        days_since = None
+        if item_data.get('catalog_product_name'):
+            days_since = self._calculate_days_since_last_purchase(
+                item_data['catalog_product_name'],
+                invoice.invoice_date
+            )
+        
         return InvoiceItem(
             invoice=invoice,
             name=item_data.get('name'),
@@ -242,11 +276,22 @@ class InvoiceDatabase:
             total_price=item_data.get('total_price'),
             catalog_product_name=item_data.get('catalog_product_name'),
             catalog_category=item_data.get('catalog_category'),
-            mapping_confidence=item_data.get('mapping_confidence')
+            mapping_confidence=item_data.get('mapping_confidence'),
+            days_since_last_purchase=days_since
         )
     
     def _update_item(self, item: InvoiceItem, item_data: Dict):
         """Update existing invoice item."""
+        # Recalculate days since last purchase if catalog product changed
+        #if item_data.get('catalog_product_name') != item.catalog_product_name:
+        days_since = None
+        if item_data.get('catalog_product_name'):
+            days_since = self._calculate_days_since_last_purchase(
+                item_data['catalog_product_name'],
+                item.invoice.invoice_date
+            )
+        item.days_since_last_purchase = days_since
+        
         item.category = item_data.get('category')
         item.quantity = item_data.get('quantity')
         item.unit_price = item_data.get('unit_price')
@@ -267,6 +312,54 @@ class InvoiceDatabase:
             item.catalog_category != item_data.get('catalog_category') or
             item.mapping_confidence != item_data.get('mapping_confidence')
         )
+    
+    def _calculate_days_since_last_purchase(
+        self, 
+        catalog_product_name: str, 
+        current_date
+    ) -> Optional[int]:
+        """
+        Calculate days since last purchase of the same catalog product.
+        
+        Args:
+            catalog_product_name: Name of catalog product
+            current_date: Date of current invoice (str or date object)
+            
+        Returns:
+            Number of days since last purchase, or None if first purchase
+        """
+        # Ensure current_date is a date object
+        current_date = self._parse_date(current_date)
+        if not current_date:
+            return None
+        
+        try:
+            with self.session_manager.session() as session:
+                # Get max invoice date for this product before current date
+                stmt = (
+                    select(func.max(Invoice.invoice_date))
+                    .join(InvoiceItem, InvoiceItem.invoice_id == Invoice.id)
+                    .where(
+                        and_(
+                            InvoiceItem.catalog_product_name == catalog_product_name,
+                            Invoice.invoice_date < current_date
+                        )
+                    )
+                )
+                
+                last_date = session.execute(stmt).scalar_one_or_none()
+                
+                if last_date:
+                    days_since = (current_date - last_date).days
+                    logger.debug(f"Product {catalog_product_name}: {days_since} days since last purchase")
+                    return days_since
+                
+                logger.debug(f"Product {catalog_product_name}: first purchase")
+                return None  # First purchase
+        
+        except Exception as e:
+            logger.error(f"Error calculating days since last purchase: {e}")
+            return None
     
     def _invoice_to_dict(self, invoice: Invoice, include_items: bool = True) -> Dict:
         """Convert Invoice ORM object to dictionary."""
@@ -302,6 +395,7 @@ class InvoiceDatabase:
             'catalog_product_name': item.catalog_product_name,
             'catalog_category': item.catalog_category,
             'mapping_confidence': item.mapping_confidence,
+            'days_since_last_purchase': item.days_since_last_purchase,
             'created_at': item.created_at,
             'updated_at': item.updated_at
         }

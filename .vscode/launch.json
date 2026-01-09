@@ -2,6 +2,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}"
+        },
+        {
+            "name": "Invoicelyzer: Import catalog and mappings",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "import_data.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--catalog",
+                "product_catalog.csv",
+                "--mappings",
+                "product_mapping.csv"
+            ]
+        },
+        {
             "name": "Invoicelyzer: Process Invoice",
             "type": "debugpy",
             "request": "launch",
@@ -14,8 +35,8 @@
             "env": {
                 "INVOICELYZER_EMAIL_ENABLED": "false",
                 "INVOICELYZER_PDF_STORAGE_DIR": "${workspaceFolder}/data/invoices/pdf",
-                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",                
-            },            
+                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",
+            },
             "justMyCode": true
         },
         {
@@ -31,7 +52,7 @@
             "env": {
                 "INVOICELYZER_EMAIL_ENABLED": "false",
                 "INVOICELYZER_PDF_STORAGE_DIR": "${workspaceFolder}/data/invoices/pdf",
-                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",                
+                "INVOICELYZER_OUTPUT_DIR": "${workspaceFolder}/data/invoices/processed",
                 "INVOICELYZER_LOG_LEVEL": "DEBUG"
             },
             "justMyCode": true

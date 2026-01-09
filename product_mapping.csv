@@ -1,788 +1,735 @@
-original_product,catalog_product,category,confidence
-CHOURICO CARNE FUNDAO CNT 220G,Chouriço,Carne & Peixe,Manual
-LARANJA IGP ALGARVE CNT KG,Laranja,Frutas & Legumes,Manual
-BAC POSTAS CNT 800G,Bacalhau,Carne & Peixe,Regra
-(A)PARGO MULATO FRESCO KG,Peixe,Carne & Peixe,Manual
-F. CAMPO PEDACOS CNT SEL LS KG,Frango,Carne & Peixe,Regra
-RESMA PAPEL A4 80GR/M  500F NOT,Papel A4,Casa,Manual
-OVOS SOLO CLASSE M 1DZ,Ovos,Lacticínios,Manual
-VT DUAS QTAS DOC DOU 12 75CL,Vinho tinto,Bebidas,Regra
-BATATA VERMELHA CNT EMB. 3KG,Batatas,Frutas & Legumes,Manual
-ISMANTEIGA S/SAL MIMOSA 250G,Manteiga s/ sal,Lacticínios,Regra
-RAVASQ V.ROMAS ALENTEJANO,Vinho,Bebidas,Regra
-ISMANTEIGA C/SAL MIMOSA 250G,Manteiga,Lacticínios,Regra
-LUVAS VILEDA FOOD S.M/G 40,Luvas,Casa,Manual
-ISQJ FLAM T.NOST LIGHT FAT2*200G,Queijo flamengo fatiado,Lacticínios,Regra
-ISFRANGO CAMPO INT. C/M LS,Frango,Carne & Peixe,Manual
-DET LIQ SKIP CICLOS CURTOS EFIC,Detergente roupa,Casa,Regra
-COND HIDR LEIT COC VEGAN 275ML,Amaciador cabelo,Higiene & Saúde,Regra
-CITRINOS ALGARV IGP CLEMENTINA,Laranja,Frutas & Legumes,Manual
-QJ FRESCO CABRA QUEIJ. LICINIA,Queijo fresco,Lacticínios,Regra
-MACARRAO GRANDE MILANEZA 500G,Massa,Cereais,Manual
-MIRTILO CNT (P) 200 G,Mirtilos,Frutas & Legumes,Manual
-RC RENOVA DESIGN XXL 3R,Rolo papel de cozinha,Casa,Regra
-MASSA QUEBRADA CNT 2*230GR,Massa quebrada,Cereais,Manual
-SEMENTES CHIA 150G-PT-BIO-03,Chia,Cereais,Manual
-AROMA VAHINE BAUNILHA 200ML,Açúcar de baunilha,Ingredientes & Temperos,Regra
-MASSA FOLHADA CNT 230GR,Massa folhada,Padaria & Pastelaria,Manual
-CEREAIS CHOCOLATE CHOCAPIC 625G,Chocapic,Cereais,Manual
-MACA GALA NACIONAL R0 CAL.70/75,Maçã royal gala,Frutas & Legumes,Manual
-RUCULA SELVAGEM CNT EMB.100GR,Rúcula,Frutas & Legumes,Manual
-ICE TEA LIPTON LIMAO 1.5L,Ice tea,Bebidas,Manual
-NATA UHT CREMOSA MIMOSA 200ML,Natas,Lacticínios,Regra
-MELAO VERDE KG,Melão,Frutas & Legumes,Manual
-ISPAO DE BICOS 70G,Pão,Padaria & Pastelaria,Manual
-GRESSINOS AZEITE CONTINENTE,Pão,Padaria & Pastelaria,Manual
-ALCATRA NOV ANGUS AT,Carne vaca,Carne & Peixe,Regra
-ESPARGOS FINOS 250G,Espargos,Frutas & Legumes,Manual
-ISCOUVE BROCOLO CNT KG,Brócolos,Frutas & Legumes,Regra
-QUINOA CONT.EQUILIBRIO 500G,Quinoa,Cereais,Regra
-(C)DET LIQ ULTIMATCONT.POWER+ 86DS,Detergente roupa,Casa,Regra
-MOLHO BECHAMEL PARMALAT 500ML,Natas,Lacticínios,Manual
-FAR TRIGO C/FER SUP FINA CNT1KG,Farinha,Cereais,Regra
-FENO HIPO OLIVA 650ML,Gel de banho,Higiene & Saúde,Regra
-PORCO CACHACO INT. S/OSSO LS,Carne de porco,Carne & Peixe,Manual
-GELATINA CONDI VEGETAL MORANGO,Gelatina,Snacks & Doces,Manual
-MANTEIGA C/SAL MIMOSA 125G,Manteiga,Lacticínios,Regra
-CHAM HERBAL COCO HIDRATA 350ML,Chá,Bebidas,Manual
-BATATA BRANCA EMB.: 5 KG,Batatas,Frutas & Legumes,Manual
-ARROZ AG CIGALA EXTRA LONGO 2KG,Arroz,Cereais,Manual
-CERV C/ALC SB 1927 MUNICH D 33C,Cerveja,Bebidas,Regra
-(A)ALHO SECO CNT 400GR,Alho,Frutas & Legumes,Manual
-PESSEGO CNT CAL,Pêssego,Frutas & Legumes,Manual
-MIOLO CAMARAO 80/100 CNT 250G,Camarões,Carne & Peixe,Manual
-FRANGO PARA CHURRASCO CNT LS,Frango,Carne & Peixe,Manual
-CEREJA DO FUNDAO PREMIUM CAL. 2,Cerejas,Frutas & Legumes,Regra
-ISFRANGO PARA CHURRASCO CNT LS,Frango,Carne & Peixe,Manual
-SAZEITE VE CLASSICO GALLO 0.25L,Azeite,Ingredientes & Temperos,Manual
-QJ FRESCO LD MATINAL 3*72G,Queijo fresco,Lacticínios,Regra
-CAD AGRAF A4 LISO OXFORD OPENFL,Papel A4,Casa,Regra
-CEREAIS CHOCAPIC,Chocapic,Cereais,Manual
-TORT. MILHO CNT EQ. C/SAL 130G,Bolachas de milho,Padaria & Pastelaria,Regra
-CJ.30 MOLAS PARA SACOS,,,
-MOINHO SAL MED.MARGAO 68G,Sal,Ingredientes & Temperos,Manual
-ISMELAO VERDE CNT KG,Melão,Frutas & Legumes,Manual
-MOLHO PIZZA TD GULOSO 44OG,Molho de tomate,Ingredientes & Temperos,Regra
-VITELAO COZER - AT,Carne vaca,Carne & Peixe,Regra
-LIPTON COLD INF LIMAO CAMOMILA,Limão,Frutas & Legumes,Manual
-MEL SERRAMEL ROSMANINHO 500G,Mel,Snacks & Doces,Regra
-CHA TETLEY COLD LIMA LIMA 10SAQ,Chá,Bebidas,Regra
-MACA GALA ALCOBACA,Maçã royal gala,Frutas & Legumes,Manual
-MASCARPONE GRANAROLO 250G,Queijo mascarpone,Lacticínios,Regra
-CHAMPO HERBAL COCO HIDRATA 680M,Champô,Higiene & Saúde,Regra
-FAR.TR.FI.S/F ESPIGA T65 NAT1KG,Farinha trigo T65,Cereais,Regra
-BACON CNT FATIAS 200 GRS,Bacon,Carne & Peixe,Manual
-COGUMELO MARRON CNT EMB.CUV KG,Cogumelos,Frutas & Legumes,Manual
-QUEIJO MOZZARELLA CONTINENTE 12,Queijo mozzarella fresco,Lacticínios,Regra
-BOLACHA OREO 440G,Bolachas,Snacks & Doces,Manual
-QJ MISTURA SERRAS PENELA UN,Queijo ovelha/cabra,Lacticínios,Regra
-VB MURALHAS DE MONCAO DOC 75CL,Vinho verde,Bebidas,Regra
-TORTELLINI RICOTA ESP RANA 250G,Massa,Cereais,Regra
-CAFE DELTA LOTE CHAVE SACO 250G,Café,Bebidas,Manual
-MANTEIGA C/SAL MIMOSA 250G,Manteiga,Lacticínios,Regra
-CAFE ESPRESSO L OR FORZA 10CAP,Café,Bebidas,Manual
-MANGA MATURADA KG,Manga,Frutas & Legumes,Manual
-LAM.DESC.BIC SENSIT.3 LAM 4+OF2,Lâminas de barbear,Higiene & Saúde,Regra
-PORCO ENTREM. C/OSSO,Rolo papel de cozinha,Casa,Regra
-LARANJA EMB. 2KG,Laranja,Frutas & Legumes,Manual
-FIAMBRE PERNA EXTRA FATIADO CNT,Fiambre,Carne & Peixe,Manual
-DEFENCE SHOT CNT.EQ 125ML,,,
-ISPOSTAS BAC RIBER 4 M CURA 750G,Bacalhau,Carne & Peixe,Regra
-LIMAO CAL. 60/75 KG,Limão,Frutas & Legumes,Manual
-BOLA DE MISTURA 80G,Pão,Padaria & Pastelaria,Regra
-QJ MASCARPONE BRESCIALAT 250G,Queijo mascarpone,Lacticínios,Regra
-GRAO BICO COMPAL 234G,Grão-de-bico,Cereais,Regra
-NOVILHO BIFE DA VAZIA - AT,Carne vaca,Carne & Peixe,Regra
-NOVILHO CACHACO AT,Carne vaca,Carne & Peixe,Regra
-PAST COLGAT TOT ADVA SENS 75 ML,Pasta de dentes,Higiene & Saúde,Regra
-MIOLO CAMARAO 20/40 CNT 400G,Camarões,Carne & Peixe,Manual
-UVA BRANCA S/GRAINHA CNT 1 KG,Uvas,Frutas & Legumes,Manual
-PASTA D. COLGATE TRI. ACAO100ML,Pasta de dentes,Higiene & Saúde,Regra
-TAMBORIL CUBOS CONGELADOS 500G,Peixe,Carne & Peixe,Regra
-CHOURICO CURA 100%NAT F.S.ESTRELA,Chouriço,Carne & Peixe,Manual
-VITELAO ESTUFAR AT,Carne vaca,Carne & Peixe,Regra
-COGUMELO BRANCO INTEIRO CNT EMB,Cogumelos,Frutas & Legumes,Regra
-MAIONESE VIANEZA 450ML,Maionese,Ingredientes & Temperos,Regra
-GB PALMOLIVE NATURALS L&M 1L,Gel de banho,Higiene & Saúde,Regra
-EXTENSAO SCHUKO,,,
-IOG PROTEICO SOLIDO MORANGO LIM,Morangos,Frutas & Legumes,Manual
-COG BRANCO INTEIRO CNT 300G ILH,Cogumelos,Frutas & Legumes,Regra
-ERVA DOCE EM GRAO CNT FR 35G,Funcho,Frutas & Legumes,Regra
-BOMBONS AFTER EIGHT MENTA 200G,Chocolate,Snacks & Doces,Regra
-ISMACA GALA R0 NACIONAL 65/70 1 K,Maçã royal gala,Frutas & Legumes,Manual
-CREME DIA PNM NIVEA 50ML,Creme rosto Nivea man,Higiene & Saúde,Regra
-CITRINOS ALGARVE IGP LARANJA,Laranja,Frutas & Legumes,Manual
-SALSICHA CRIOULA PRISCA 400G,Salsicha,Carne & Peixe,Manual
-PAST TRIDEN BOTTLE WHITE SPEARM,Pastilha elástica,Snacks & Doces,Regra
-GEL LIMPEZA NIVEA EXFOLIANT PRO,Gel de banho,Higiene & Saúde,Regra
-(A)FAR.TR.FINA C/F BRANCA NEVE 1KG,Farinha bolos,Cereais,Regra
-CONDI HERBAL ORANGE VOL 250ML,Amaciador cabelo,Higiene & Saúde,Regra
-BACON CNT FATIAS CNT 200 GRS,Bacon,Carne & Peixe,Manual
-CEREAIS CORN FLAKES CNT EQUILIB,Cereais,Cereais,Manual
-PAO RIO MAIOR 450G,Pão,Padaria & Pastelaria,Manual
-ISNOVILHO CACHACO AT,Carne vaca,Carne & Peixe,Regra
-LARANJA IGP KG,Laranja,Frutas & Legumes,Manual
-MOSTARDA TOP DOWN CALVE 257G,Mostarda,Ingredientes & Temperos,Regra
-FRANGO CAMPO INT. C/M LS,Frango,Carne & Peixe,Manual
-ABACAXI FRACIONADO,Ananás,Frutas & Legumes,Regra
-MIRTILO BEIRABAGA 400 G,Mirtilos,Frutas & Legumes,Manual
-IOG MYTHOS NATURAL COT 1KG,Iogurte,Lacticínios,Regra
-PERA ROCHA,Peras,Frutas & Legumes,Regra
-LEITE C/CHOC MIMOSA AJUST 4*200,Leite,Lacticínios,Manual
-CHOC CADBURY LEIT DAIRY MILK45G,Leite c/ chocolate,Bebidas,Regra
-BOLINHAS ALHEIRA E CHOURICO CNT,Chouriço,Carne & Peixe,Manual
-(MENU) GALAO / MEIA DE LEITE,Leite,Lacticínios,Manual
-CURGETE VERDE CNT KG,Courgette,Frutas & Legumes,Regra
-PIZZA ROMANA CNT 415G,Pizza,Congelados,Regra
-GENGIBRE CNT KG,Gengibre,Frutas & Legumes,Manual
-COGUMELO MARRON CNT 300G,Cogumelos,Frutas & Legumes,Manual
-COL EXCCOOL CASTANHO GEL 4.11,,,
-CONJ 4 PILHAS A,Pilhas,Casa,Manual
-FLOCOS DE AVEIA FINO CNT EQ 1KG,Aveia,Cereais,Manual
-(C)BOLACHA OREO TUBO 154G,Bolachas,Snacks & Doces,Manual
-FICHA DUPLA FRONTAL BRANCA LEGR,Chá,Bebidas,Manual
-MINI TORT MILHO SAQUETA CNT EQU,Bolachas de milho,Padaria & Pastelaria,Regra
-GUARDANAPOS 2F CONTINENTE 100UN,Guardanapos,Casa,Manual
-LARANJA IMPORTADA,Laranja,Frutas & Legumes,Manual
-BOL. DIGESTIVE AVEIA GULLON ZER,Aveia,Cereais,Manual
-(C)CHOC.CULINARIA NESTLE 70% CACAU,Chocolate culinária,Snacks & Doces,Regra
-(A)LIMAO CAL. 60/75 KG,Limão,Frutas & Legumes,Manual
-LUVA COZINHA SILICONE CHEFE,Uvas,Frutas & Legumes,Manual
-PORCO ENTRECOSTO PARA GRELHAR,Rolo papel de cozinha,Casa,Regra
-FACA DESCASCAR PLASTICO 9CM ESS,,,
-VELA ANIVERSARIO N.  8,,,
-ESP.MARQ.MARIALVA BR BC BAGA 75,,,
-FILETES PESCADA CONGELADOS 1KG,Filetes de pescada,Carne & Peixe,Regra
-VAZIA NOV ANGUS AT,Carne vaca,Carne & Peixe,Regra
-BAC DESFIADO SALGA SECO CONT KG,Sal,Ingredientes & Temperos,Manual
-PIMENTAO DOCE CNT FRS 45G,Pimentão doce,Snacks & Doces,Regra
-TROLLEY PACK IT MILAO 4R PR CAB,,,
-PURE MACA ANDROS S/ACUCAR 730G,Açúcar,Ingredientes & Temperos,Manual
-SOPA DE NABICAS 800G CZ CNT,Sopa,Congelados,Manual
-MOPA DUPLA ACAO,,,
-RUCULA RESIDUO ZERO 100GR,Rúcula,Frutas & Legumes,Manual
-CURGETE VERDE,Courgette,Frutas & Legumes,Regra
-GUARDANAPOS 2F 200UN CONT.POUPA,Guardanapos,Casa,Manual
-CHOURICO CARNE LAMEGO CNT QS,Chouriço,Carne & Peixe,Manual
-DET ULTRA PODER ORIG 1250 ML,Detergente roupa,Casa,Regra
-PAO MAFRA COMPRIDO 500G,Pão,Padaria & Pastelaria,Manual
-VB EA REG ALENT 75CL,Vinho branco,Bebidas,Regra
-MACA GALA ALCOBACA CAL.70/7,Maçã royal gala,Frutas & Legumes,Manual
-TOSTAS MINI GRILL DIATOSTA 350G,Tostas,Padaria & Pastelaria,Regra
-SACO LIXO VILEDA 100% RECI 30L,Sacos do lixo,Casa,Manual
-ABACAXI DE AVIAO PREMIUM,Ananás,Frutas & Legumes,Regra
-CREME VINAGRE PONTI BALSAMICO,Vinagre,Ingredientes & Temperos,Manual
-TREMOCO EXTRA CNT 800G,Tremoços,Snacks & Doces,Regra
-PIZZA BARBECUE CNT 400G,Pizza,Congelados,Regra
-SACO LIXO SILVEX100%RECICL130L,Sacos do lixo,Casa,Manual
-NABO SEM RAMA CNT KG,Nabo,Frutas & Legumes,Regra
-MISTURA CAJU CRU E ARANDOS 200G,Fruta seca,Snacks & Doces,Regra
-SARDINHA AZEITE RAMIREZ 88G,Sardinha enlatada,Carne & Peixe,Manual
-LARANJA ZER0%D CAL.2,Laranja,Frutas & Legumes,Manual
-NOV. BIFE ACEM,Bife,Carne & Peixe,Manual
-CAFE,Café,Bebidas,Manual
-ESCOVA C/ PEGA,Escova,Casa,ML(0.554)
-AZEITONA GALEGA CNT 210G,Azeitonas,Frutas & Legumes,Manual
-AZ.GAL.C/AZEITE ALHO 150GR,Alho,Frutas & Legumes,Manual
-FACA PAO PLASTICO 20CM ESSENCIA,Pão,Padaria & Pastelaria,Manual
-MENU SANDES MISTA + GALAO,,,
-QJ CHEDDAR FATIADO MR CHEESE 15,Queijo cheddar,Lacticínios,Regra
-ABACAXI SUPER SWEET,Ananás,Frutas & Legumes,Regra
-SAL LOLLO/TANGO CNT 150 GR,Sal,Ingredientes & Temperos,Manual
-CAVALA FRESCA KG,Peixe,Carne & Peixe,Regra
-IOG PROTEICO SOLIDO PESSEGO MAR,Pêssego,Frutas & Legumes,Manual
-LIQ MAQ ROU SKIP SABAO NATU,Detergente roupa,Casa,Regra
-MEL FL. DE LARAN. SERRAMEL 300G,Mel,Snacks & Doces,Regra
-REF.C/GAS COCA COLA 1,Refrigerante,Bebidas,Regra
-TRIDENT SENSES WATERMELON 23G,Pastilha elástica,Snacks & Doces,Regra
-ALMOFADA MEMORY FOAM COM APOIO,,,
-QJ RALADO PIZZA CNT 200G,Queijo mozzarella ralado,Lacticínios,Regra
-CAFE LOR COLOMBIA 10CAP,Café,Bebidas,Manual
-DESINFECTANTE ROUPA SANYTOL,Desinfetante roupa,Casa,Regra
-MINI SALSICHAS PORCO KIDS CONT,Rolo papel de cozinha,Casa,Regra
-(C)CAMARAO COZ. 25/35 KG,Camarões,Carne & Peixe,Manual
-NATA UHT P/BAT CONTINENTE,Natas,Lacticínios,Regra
-PORCO BIFANAS,Rolo papel de cozinha,Casa,Regra
-SOL ANANAS COCO 1X160G,Água de coco,Bebidas,ML(0.397)
-AGUA S/GAS MONCHIQUE 6*1.5L,Água,Bebidas,Manual
-ATUM AZEITE BOM PETISCO 130G,Atum,Carne & Peixe,Manual
-MACA GALA ALCOBACA EMB,Maçã royal gala,Frutas & Legumes,Manual
-RECARGA ESFREGONA SUPER DUPLA,Esfregona,Casa,Regra
-OVOS DE SOLO CLASSE L CNT,Ovos,Lacticínios,Manual
-LEVEDURA FRESCA CUBINHOS 50G,Levedura,Ingredientes & Temperos,Regra
-QUEIJO RICOTTA FINETTA GALBANI,Queijo,Lacticínios,Regra
-COND ULTRA SUAVE AGUA DE COCO,Água,Bebidas,Manual
-LEITE CONDENSADO NESTLE 370G,Leite,Lacticínios,Manual
-M MARIALVA C.SELEC BAIRO,,,
-CH CARNE FUNDAO CNT 220G,Chouriço,Carne & Peixe,Regra
-QJ AMANTEIGADO OVELHA SEIA,Queijo ovelha/cabra,Lacticínios,Regra
-VITELAO BIFE DO REDONDO - AT,Carne vaca,Carne & Peixe,Regra
-COUSCOUS CNT BIO 500G,,,
-SACO LIXO E CNT 100L 15UN,Sacos do lixo,Casa,Manual
-MORANGO EMB. 500 GR,Morangos,Frutas & Legumes,Manual
-REQUEIJAO OVELHA SEIA TAVARES,Requeijão,Lacticínios,Regra
-CANJINHA DE GALINHA CNT LS,,,
-OLEO ALIMENTAR FULA 1L,Óleo,Ingredientes & Temperos,Manual
-PAO DE AGUA KG,Pão,Padaria & Pastelaria,Manual
-BATATA FRITA,Batatas,Frutas & Legumes,Manual
-ISPORCO ENTRECOSTO,Rolo papel de cozinha,Casa,Regra
-SALADA IBERIA CNT EMB.100GR,Sal,Ingredientes & Temperos,Manual
-VB CABRIZ C.SELEC DOC DAO 75CL,Vinho branco,Bebidas,Regra
-CERV.C/ALC.SUPER BOCK TP P.6*33,Cerveja,Bebidas,Regra
-ESPONJA BANHO CONTINENTE PUFF,,,
-INF N30 ERVA PRIN R NATURZA 15G,,,
-FRANGO INTEIRO CONTINENTE,Frango,Carne & Peixe,Manual
-ISLEITE UHT M/G MIMOSA 6*1L,Leite,Lacticínios,Manual
-ICE TEA LIPTON MANGA 2L,Ice tea,Bebidas,Manual
-MASSA LETRAS MILANEZA 250G,Massa,Cereais,Manual
-NECTAR COMPAL MANGA 1L,Manga,Frutas & Legumes,Manual
-PAST BOT TRIDENT 60MIN SPE,Pastilha elástica,Snacks & Doces,Regra
-ARROZ BASMATI CACAROLA 2.5KG,Arroz basmati,Cereais,Regra
-TETLEY COLD BREW ARANDO&LIMA,Chá,Bebidas,Regra
-PARGO MULATO FRESCO KG,Peixe,Carne & Peixe,Manual
-BANHA CONTINENTE 230G,Banha,Ingredientes & Temperos,Regra
-(A)CASTANHA CNT CAL. 50/70 KG,Castanhas,Frutas & Legumes,Regra
-(A)MANGA MATURADA CNT KG,Manga,Frutas & Legumes,Manual
-PEPINO CNT KG,Pepino,Frutas & Legumes,Manual
-OVOS DE SOLO CLASSE L CNT 1DZ,Ovos,Lacticínios,Manual
-FL DE AVEI GROSSOS CNTEQ 400G,Aveia,Cereais,Regra
-TOSTA SUECA CONTINENTE EMB.225G,Tostas,Padaria & Pastelaria,Regra
-NECTARINA CNT KG,Nectarina,Frutas & Legumes,Regra
-ISCENOURA KG,Cenouras,Frutas & Legumes,Manual
-PAPAIA,Papaia,Frutas & Legumes,Regra
-BOLA DE LENHA 100G,Pão,Padaria & Pastelaria,Regra
-BATATA DOCE,Batatas,Frutas & Legumes,Manual
-(A)LEITE C/CHOC MIMOSA 4*200ML,Leite,Lacticínios,Manual
-ISMASCARPONE GRANAROLO 250G,Queijo mascarpone,Lacticínios,Regra
-ISBANANA DA MADEIRA CNT KG,Bananas,Frutas & Legumes,Regra
-CEREAIS FITNESS 640G+50% OFERTA,Cereais,Cereais,Manual
-MOZZARELLA DE BUFALA DOP SELECC,Queijo mozzarella fresco,Lacticínios,Regra
-ESTUFAR (PEITO) NOV ANGUS,Carne vaca,Carne & Peixe,Regra
-FRANGO CAMPESTRE KG AT,Frango,Carne & Peixe,Manual
-VT TAPADA LEBRES PREM REG.AL 75,Vinho tinto,Bebidas,Regra
-CARVAO CHURRASQUEIRA 3KG CONTIN,Carvão,Bricolage & Jardim,Regra
-MINI TOMATE CACHO CNT 500G,Tomates,Frutas & Legumes,Manual
-BOL DIGESTIVE AVEIA CNT 425GR,Aveia,Cereais,Manual
-RECARGA ESFREGONA PREMIUM 2EM1,Esfregona,Casa,Regra
-FOLHAS P/ LASANHA RANA 250G,Massa lasanha,Cereais,Regra
-YOFU SOJA ALPRO FR VERMELHOS S/,Mel,Snacks & Doces,Manual
-FILETE CAVALA EM AZ VE GALLO 12,Peixe,Carne & Peixe,Regra
-AZEITONA MISTA NEGRINHA CNT 210,Azeitonas,Frutas & Legumes,Manual
-CAFE DELTA Q QHARACTER 10CAP,Café,Bebidas,Manual
-CALDO VERDE CNT 250GR,Sopa,Congelados,Regra
-CAF TIMO DELTACAFE DELTA TIMOR,Café,Bebidas,Manual
-DOCE CNT SELECAO ABOB NOZ 250G,Doce de abóbora,Snacks & Doces,Regra
-FRANGUITO CAMPO INT.S/M,,,
-GB FLOR DE LARANJEIRA NALLY 1L,Couve-flor,Frutas & Legumes,ML(0.300)
-MIOLO AMENDOA PALITADA CNT 200G,,,
-PAIO YORK FAT CNT 200G,Paio,Carne & Peixe,Regra
-CALDO VERDE 800GR CZ CNT,Sopa,Congelados,Regra
-(C)CREME VINAGRE PONTI BALSAMICO,Vinagre,Ingredientes & Temperos,Manual
-CR BARRAR NUTELLA AV/CACAU 350G,Nutella,Snacks & Doces,Regra
-HAMB. NOV. ANGUS SEL 100% CARNE,Carne vaca,Carne & Peixe,Regra
-TAB LINDT EXCELLENCE FRAMB&AVEL,Chocolate,Snacks & Doces,Regra
-CROISSANT / PAO MISTO,Pão,Padaria & Pastelaria,Manual
-LEITE UHT MG NOVA ACORES 6X1 LT,Leite,Lacticínios,Manual
-LIMA CNT KG,Lima,Frutas & Legumes,Manual
-QJ CABRA QUINTA DO OLIVAL K,Queijo,Lacticínios,Regra
-FEIJAO BRANCO CONTINENTE 500G,Feijão branco,Cereais,Regra
-VT CANCELLUS PREM DOC DOURO 75,Vinho tinto,Bebidas,Regra
-PAO MASSA MAE ALENTEJANO KG,Massa,Cereais,Manual
-ROLOS COZINHA 4=12 CONT.POUP,Rolo papel de cozinha,Casa,Regra
-ESFREGAO ACO INOX CNT 4UN,Esfregão aço inox,Casa,Regra
-VB MONTE RAVASQUEIRA SUP REG.AL,Vinho branco,Bebidas,Regra
-CAD ESP A4 CDURA Q 100F 80G 5BA,Papel A4,Casa,ML(0.315)
-BANANA DA MADEIRA,Bananas,Frutas & Legumes,Regra
-ATUM OLEO BOM PETISCO 251G,Atum,Carne & Peixe,Manual
-COGUMELO BRANCO CONTINENTE KG,Cogumelos,Frutas & Legumes,Regra
-MELAO VERDE,Melão,Frutas & Legumes,Manual
-CAPSULAS DESCAFEINADO L OR,Café,Bebidas,Manual
-CONDIC HERBAL COCO HIDRA 350ML,Amaciador cabelo,Higiene & Saúde,Regra
-MELANCIA PRETA P/ SEM FRAC KG,Melancia,Frutas & Legumes,Regra
-LOMBO BACALHA 4 MESES CURA 240G,Bacalhau,Carne & Peixe,Regra
-CHOC.CULINARIA NESTLE 70% CACAU,Chocolate culinária,Snacks & Doces,Regra
-PAPEL VEGETAL CONTINENTE 30UN,Papel vegetal,Casa,Regra
-ARR CAROL EXT LONGO CIGALA 1KG,Arroz carolino,Cereais,Regra
-DET LIQ SKIP CICLOS CURTOS ANTI,Detergente roupa,Casa,Regra
-INF N18 SAO ROBERTO R NATUR 15G,Chá,Bebidas,Regra
-SALMAO INTEIRO KG,Salmão,Carne & Peixe,Manual
-MACA FUJI EMB,Maçãs,Frutas & Legumes,Regra
-GALETES FINI MILHO SALUTEM 130G,Sal,Ingredientes & Temperos,Manual
-ISNABO SEM RAMA CNT KG,Nabo,Frutas & Legumes,Regra
-QUINOA CONTINENTE BIO 500G,Quinoa,Cereais,Regra
-CEREAIS CHOCAPIC 740G + OF 35%,Chocapic,Cereais,Manual
-VB VINHA MARIA RES DAO 75CL,Vinho branco,Bebidas,Regra
-SAB.COCO 90G,Água de coco,Bebidas,ML(0.456)
-QJ MOZZARELLA ST LUCIA GALBANI,Queijo mozzarella fresco,Lacticínios,Regra
-MORANGO PREMIUM NACIONAL,Morangos,Frutas & Legumes,Manual
-PAPEL DE ALUMINIO CNT 30M,Papel de alumínio,Casa,ML(0.570)
-BOL DOS MARINHEIROS MILHO CUETA,Bolachas marinheiras,Padaria & Pastelaria,Regra
-ESPARGUETE MILANEZA 2KG,Esparguete,Cereais,Manual
-QUINOA TRICOLOR CNT EQ. 500G,Quinoa,Cereais,Regra
-DIOSPIRO,Diospíros,Frutas & Legumes,Regra
-QJ FLAMENGO LIMIANO FATIAS,Queijo fatiado,Lacticínios,Regra
-DEO ROLL ON NIVEA 50ML,Desodorizante roll-on Nivea man,Higiene & Saúde,Regra
-PIP MIC DOCE CONTINENTE 3*100G,Doce,Snacks & Doces,ML(0.491)
-MORANGO PREMIUM NACIONAL 1 KG,Morangos,Frutas & Legumes,Manual
-COND. ELVIVE FULL RESIST 300M,Amaciador cabelo,Higiene & Saúde,Regra
-TRIDENT SENSES WATERMELON 3*23G,Pastilha elástica,Snacks & Doces,Regra
-SARD S/P E S/E EM AZEITE CNT SE,Azeite,Ingredientes & Temperos,Manual
-ARROZ BASMATI CACAROLA 1KG,Arroz basmati,Cereais,Regra
-SARD BOMPET S/PELE E S/ESPINHA,,,
-FERMENTO PO ROYAL 113G,Fermento em pó,Ingredientes & Temperos,Regra
-CUECA HUGGIES DRYNITES MO 8-15A,,,
-LT A SOLAIRE ADV FP50 400ML,,,
-CH FRUCTIS HIDRA CARACOIS 400,Champô,Higiene & Saúde,Regra
-VELA REPEL CNT CITR EXT A-MOSQ,,,
-ISQUEIJO MOZZARELLA GALBANI ST LU,Queijo mozzarella fresco,Lacticínios,Regra
-ISLEITE UHT M/G MIMOSA B ESSEN 1L,Leite,Lacticínios,Manual
-PORCO PA C/OSSO,Rolo papel de cozinha,Casa,Regra
-LARANJA ZERO DESPERDICIO CAL.2/,Laranja,Frutas & Legumes,Manual
-PORCO CACHACO 1/2 ASSAR S/OSSO,Rolo papel de cozinha,Casa,Regra
-AVELA C/PELE CNT 200G,Fruta seca,Snacks & Doces,Regra
-QJ AMANT S/CASC VACA/OVELHA LIM,Queijo,Lacticínios,Regra
-SFRANGO CAMPO INT. C/M LS,Frango,Carne & Peixe,Manual
-MANTEIGA C/SAL MILHAFRE 250G,Manteiga,Lacticínios,Regra
-QJ MISTURA CONTINENTE UN,Queijo ovelha/cabra,Lacticínios,Regra
-FARINHA ESPIGA T55 1KG,Farinha,Cereais,Manual
-FRANGO INT. CONTINENTE 2 UN KG,Frango,Carne & Peixe,Manual
-(C)AMAC COMFORT AZUL LEVEZA 4L,Amaciador,Casa,Regra
-YOFU MANGA ALPRO S/ ACUCAR 400G,Manga,Frutas & Legumes,Manual
-MACA VERMELHA ZERO DESPERDICIO,Mel,Snacks & Doces,Manual
-ALFACE ROXA SACO CNT EMB 200 G,Alface,Frutas & Legumes,Manual
-CHA SENE FOLICUL HAPPYFLORA 50G,Chá,Bebidas,Manual
-Creme NIVEA HIDRATANTE PROTECT&CA,Creme rosto Nivea man,Higiene & Saúde,Regra
-QUEIJO PARMIGIANO REGGIANO 150G,Queijo,Lacticínios,Regra
-QJ CHEDDAR FATIAS CNT 150G,Queijo cheddar,Lacticínios,Regra
-CR. NIVEA HIDRATANTE PROTECT&CA,Creme rosto Nivea man,Higiene & Saúde,Regra
-LEITE CORP MYLAB AMEND&SAN 400M,Leite,Lacticínios,Manual
-ARROZ CIGALA RISOTTO 1 KG,Arroz,Cereais,Manual
-FRANGO INTEIRO SACO 1 UN CNT KG,Frango,Carne & Peixe,Manual
-ESPARGOS BIO EMB PT-BIO-03,Espargos,Frutas & Legumes,Manual
-PORCO COSTELETAS LOMBO,Rolo papel de cozinha,Casa,Regra
-RC CONTINENTE RECICLADO 4R,Rolo papel de cozinha,Casa,Regra
-PAST TRIDEN ORAL B SPEARMINT BO,Pastilha elástica,Snacks & Doces,Regra
-PORCO LOMBO ASSAR S/OSSO VACUO,Rolo papel de cozinha,Casa,Regra
-MACA GALA R0 NACIONAL 65/70 1 K,Maçã royal gala,Frutas & Legumes,Manual
-QJ RALADO PIZZA CNT 2X200G,Queijo mozzarella ralado,Lacticínios,Regra
-AIPO CNT EMB. 500GR,Aipo,Frutas & Legumes,Manual
-ISQJ FLAMENGO LIMIANO FATIAS 2*20,Queijo fatiado,Lacticínios,Regra
-CH PORCO PRETO ALENTEJO CNT SEL,Rolo papel de cozinha,Casa,Regra
-PERNA DE FRANGO COMPRA/AT,Frango,Carne & Peixe,Manual
-CITRINOS ALGARVE IGP LARANJA KG,Laranja,Frutas & Legumes,Manual
-VB VINHA DA COUTADA VELHA RG.AL,Vinho branco,Bebidas,Regra
-LEITE UHT M/G MIMOSA B ESSEN 1L,Leite,Lacticínios,Manual
-MASSA MACAR RISC MILANEZA 500G,Massa,Cereais,Manual
-QJ CREME PHILADELPHIA 150G,Queijo,Lacticínios,Regra
-NECTARINA KG,Nectarina,Frutas & Legumes,Regra
-ESPARGUETE QUAD.MILANEZA 500G,Esparguete,Cereais,Manual
-SALS PICANTE CHURRASCO CNT 200G,Sal,Ingredientes & Temperos,Manual
-QJ FRESCO LIGHT PHILADELPHI,Queijo fresco,Lacticínios,Regra
-ARROZ CAROLINO CACAROLA 1KG,Arroz carolino,Cereais,Regra
-PASTA COLGATE TOTAL ORIGINAL 75,Pasta de dentes,Higiene & Saúde,Regra
-BANHA CONTINENTE 450G,Banha,Ingredientes & Temperos,Regra
-MORANGO PREMIUM 1 KG,Morangos,Frutas & Legumes,Manual
-CONDIC HERBAL ALOE MOIST 250ML,Amaciador cabelo,Higiene & Saúde,Regra
-MEIA LEITE DESCAFEINADO,Leite,Lacticínios,Manual
-PAST MAQ LOIC FINISH PWR LI,Detergente maquina loiça,Casa,Regra
-ESPINAFRE RESIDUO ZERO 125GR,Espinafres,Frutas & Legumes,Manual
-SACOS LIXO FF CNT 50L 15UN,Sacos do lixo,Casa,ML(0.511)
-BOLA DE LENHA,Pão,Padaria & Pastelaria,Regra
-BANANA DA MADEIRA CNT KG,Bananas,Frutas & Legumes,Regra
-GRANULADO SWEET CAKE CHOC 100G,,,
-COUTADA VELHA SIGNATURE ALENTEJANO,Vinho,Bebidas,Regra
-POLVILHO DOCE FERBAR SQT 500G,Doce,Snacks & Doces,ML(0.566)
-(B)VT TAPADA DAS LEBRES SIGN REG A,Vinho tinto,Bebidas,Regra
-ISQJ RALADO PIZZA CNT 200G,Queijo mozzarella ralado,Lacticínios,Regra
-REQUEIJAO OVELHA SEIA TAVARES U,Requeijão,Lacticínios,Regra
-COLGATE TOTAL ADVANCED ESMALTE,Pasta de dentes,Higiene & Saúde,Regra
-FEIJAO PRETO SEARA BIO 500G,Feijao,Cereais,ML(0.473)
-FIAMBRE PERNA EXT FAT CNT 200G,Fiambre,Carne & Peixe,Manual
-FILTROS CAFE CNT N 4 100UN,Café,Bebidas,Manual
-PROT COLCHAO ACOLCH IMPERM PU 9,Chá,Bebidas,Manual
-AMAC CONC COMFOR ESSENCIA LILY,Amaciador,Casa,Regra
-RENOVA DESIGN XXL 3R,Rolo papel de cozinha,Casa,Regra
-CEBOLINHO MARGAO FRASCO 2,Cebolinho,Frutas & Legumes,Regra
-BAT FRIT MENOS GORD CNT 170G,,,
-BIFE DE FRANGO CONTINENTE LS,Frango,Carne & Peixe,Manual
-TAB LINDT EXCELL CARA SALG 100G,Chocolate,Snacks & Doces,Regra
-MERENDEIRA OVELHA AMANT SEIA CN,Queijo ovelha/cabra,Lacticínios,Regra
-GRANOLA CEMPORC CLASSICA BIO 35,Rolo papel de cozinha,Casa,Regra
-LINDAHLS SOL ANANAS COCO 1X160G,Água de coco,Bebidas,ML(0.381)
-REQUEIJAO DE VACA CONT EQUILIBR,Requeijão,Lacticínios,Regra
-LEITE T.NOST PASTAG UHT M/G 1L,Leite,Lacticínios,Manual
-NABO SEM RAMA,Nabo,Frutas & Legumes,Regra
-REFRIGERANTE,Refrigerante,Bebidas,Manual
-FERMENTO PO FERMIPAN PADEIRO,Levedura,Ingredientes & Temperos,Regra
-VB COUTADA VELHA SIG REG ALENT,Vinho branco,Bebidas,Regra
-VB GUARDA RIOS REG.ALENT 75CL,Vinho branco,Bebidas,Regra
-RORIZ BASMATI CACAROLA 2.5KG,Arroz basmati,Cereais,Regra
-ISOVOS SOLO M CNTINENTE 1/2DZ,Ovos,Lacticínios,Manual
-SAB.GLIC.VEGETAL,Vegetal,Frutas & Legumes,ML(0.470)
-ESFR ESP VILEDA ULTRAFRESH NAO,,,
-NOVILHO VAZIA/LOMBO AT CONTINEN,Carne vaca,Carne & Peixe,Regra
-SURF LIQ SANDALO E PETALAS DE R,,,
-TORTITA ARROZ S/SAL CNT EQ 130G,Arroz,Cereais,Manual
-COGUMELO PORTOBELLO CNT 250G,Cogumelos,Frutas & Legumes,Manual
-AMACIAD CONC CNT SPA 80D,Amaciador,Casa,Regra
-BEBIDA DE AMENDOA 0% CNT EQ 1L,,,
-AZEITO PRETA DESCAROCAD OXIDADA,Azeitonas,Ingredientes & Temperos,Regra
-QJ MEIO GORDO D. PEDRO KG,Queijo,Lacticínios,Regra
-(C)PH COLHOGAR ULT SUAVE XXL 12=24,Papel higiénico,Casa,Regra
-EXFOLIANTE NIVEA DERMA SKIN 150,,,
-PERA ROCHA DO OESTE 65/70 KG,Peras,Frutas & Legumes,Regra
-LENTILHAS S/CASCA SEARA BIO 500,,,
-COND FRUCTIS HIDRA CARAC 250ML,Amaciador cabelo,Higiene & Saúde,Regra
-DOCE QUINTA JUGAIS ABOBORA 280G,Doce de abóbora,Snacks & Doces,Regra
-PORCO T ENTRECO,Rolo papel de cozinha,Casa,Regra
-VB FLOR PENALVA DOC DAO 75CL,Vinho branco,Bebidas,Regra
-VT MONTE RAVASQUEIRA SUP.REG.AL,Vinho tinto,Bebidas,Regra
-CAFE DELTA Q QALIDUS 10CAP,Café,Bebidas,Manual
-SANDES,,,
-BOLA LENHA 100G,Pão,Padaria & Pastelaria,Regra
-VT PACHECA PREMIUM DOC DOURO 75,Vinho tinto,Bebidas,Regra
-MASS COTOV GD RISC MILANEZA 500,Massa,Cereais,Regra
-CAFE L OR COLOMBIA DECAF 10CAP,Café,Bebidas,Manual
-TAB EXCELL AMEND AVELAS ARANDOS 100G,,,
-SAL MARNOTO 1KG,Sal,Ingredientes & Temperos,Manual
-PORCO CACHACO,Rolo papel de cozinha,Casa,Regra
-PELICULA ADERENTE CNT 60M,Película aderente,Casa,Regra
-SAL PURIF.CRIST.IODA.VATEL 1KG,Sal,Ingredientes & Temperos,Manual
-CALDO VERDE CNT F&B 400G,Sopa,Congelados,Regra
-ARR CAROL EXT LONG SALUDAES 1KG,Arroz carolino,Cereais,Regra
-PO DE TALCO CONTINENTE 200 GR,,,
-ACUCAR BRANCO CONTINENTE 1KG,Açúcar,Ingredientes & Temperos,Manual
-QJ RALADO GRATINAR MIX 2QJ CNT,Queijo,Lacticínios,Regra
-PATO INT.C/M GRANEL AT,Pato,Carne & Peixe,Regra
-COG BRANCO 200 G-PT-BIO-03,Cogumelos,Frutas & Legumes,Regra
-STICK PERF CONTINENTE B. PRIMAV,,,
-CREME DE CHOCOLATE NUTELLA 600G,Nutella,Snacks & Doces,Regra
-LIPTON COLD INF MENTA LIMA 15PY,Lima,Frutas & Legumes,Manual
-ESPARREGADO IGLO 750G,Esparregado,Congelados,Regra
-ISMACA GALA NACIONAL R0 CAL.70/75,Maçã royal gala,Frutas & Legumes,Manual
-(C)COLGATE TOTAL ADVANCED ESMALTE,Pasta de dentes,Higiene & Saúde,Regra
-MELANCIA RISCADA P/ SEM FRAC KG,Melancia,Frutas & Legumes,Regra
-DOCE FRUTOS VERM. 0% ACUCAR AD,Açúcar,Ingredientes & Temperos,Manual
-LIMA PROF GROSSA MYLABEL,Lima,Frutas & Legumes,Manual
-MOELAS FRANGO EMB.FAM. LS,Frango,Carne & Peixe,Manual
-MACA GALA NACIONAL KG,Maçã royal gala,Frutas & Legumes,Manual
-BANANA DA MADEIRA KG,Bananas,Frutas & Legumes,Regra
-ISESPARGUETE MILANEZA 1KG,Esparguete,Cereais,Manual
-MACA GOLDEN CNT KG,Maçãs,Frutas & Legumes,Regra
-QJ S/CASCA M/G VACA/OVELHA LIMI,Queijo,Lacticínios,Regra
-COUVE BROCOLO CNT KG,Brócolos,Frutas & Legumes,Regra
-ALHO MOIDO CONTINENTE FRS 55G,Alho,Frutas & Legumes,Manual
-BANANA CAT I CNT KG,Bananas,Frutas & Legumes,Regra
-VB MULA VELHA PREMI.RG LIS 75CL,Vinho branco,Bebidas,Regra
-LIMAO ZER0%D 1KG,Limão,Frutas & Legumes,Manual
-GB PALMOLIVE NATURALS SENS. 1L,Gel de banho,Higiene & Saúde,Regra
-PAO MISTURA 400G,Pão,Padaria & Pastelaria,Manual
-SACOS LIXO CNT 120L 10UN,Sacos do lixo,Casa,ML(0.685)
-VB TAPADA DAS LEBRES PREM REG.A,Vinho branco,Bebidas,Regra
-CR MAOS NIVEA INTENSIVO 100ML,Creme de mãos,Higiene & Saúde,Regra
-CONJ.2 RAMEKINS VA FUSION,,,
-(C)PAST TRIDENT BOTTLE SPEAR 82.5G,Pastilha elástica,Snacks & Doces,Regra
-ESC COLGATE 360 EXPERT WHITE ME,Pasta de dentes,Higiene & Saúde,Regra
-LEITE CONDENSADO CONTINENTE 397,Leite,Lacticínios,Manual
-BATATA ASSAR EMB.,Batatas,Frutas & Legumes,Manual
-LEITE UHT M/G GRESSO 6*1L (ROSC,Leite,Lacticínios,Manual
-CAMARAO VANNAMEI 20/30 KG,Camarões,Carne & Peixe,Manual
-FARINHA CENTEIO ESPIGA 500G,Farinha,Cereais,Manual
-OLEO PRONTO A.VERA 5EM1 500ML,Óleo,Ingredientes & Temperos,Manual
-PORCO ENTREMEADA .,Rolo papel de cozinha,Casa,Regra
-CH. HERBAL HID. LEIT COC 680ML,Champô,Higiene & Saúde,Regra
-CACETINHO RUSTICO 140G,,,
-CHAMPO HERBAL CANHAMO 380ML,Champô,Higiene & Saúde,Regra
-ABACAXI SWEET CNT KG,Ananás,Frutas & Legumes,Regra
-QJ. RALADO MOZZARELLA CAMPAINHA,Queijo mozzarella ralado,Lacticínios,Regra
-ISARROZ BASMATI CACAROLA 1KG,Arroz basmati,Cereais,Regra
-ESCOBAS COLGATE TRIPLE ACTION 4UN,Pasta de dentes,Higiene & Saúde,Regra
-ALHO SECO KG,Alho,Frutas & Legumes,Manual
-SKYR SOL CNT EQ NATURAL 150G,,,
-CHOCO CULINARIA PANTAG 70%CACAU,Chocolate culinária,Snacks & Doces,Regra
-CHAMPO ELVIVE FULL RESIST 400ML,Champô,Higiene & Saúde,Manual
-LEITE UHT M/G MIMOSA 6*1L,Leite,Lacticínios,Manual
-CJ.12 BALOES MIX METALIC,,,
-MAIONESE HELLMANN S 416G,Maionese,Ingredientes & Temperos,Regra
-REF.C/GAS S/ ACU COCACOLA 1,Refrigerante,Bebidas,Regra
-ESF METALICO SCOTCH -BRITE 3+1,,,
-SARROZ AGULHA CIGALA 1KG,Arroz,Cereais,Manual
-ISBEB DE AVEIA S/GLUT CONT BIO 1L,Aveia,Cereais,Manual
-GRAO BICO COMPAL 468G,Grão-de-bico,Cereais,Regra
-(C)CR DUCHE NIVEA CR CARE 750ML,,,
-LIMPA VIDROS CONCENTRADO 500ML,Limpa vidros,Casa,ML(0.675)
-VB TAPADA DAS LEBRES SIG REG AL,Vinho branco,Bebidas,Regra
-COGUMELO MARRON CNT KG,Cogumelos,Frutas & Legumes,Manual
-CAPA CAT 30B,,,
-NOZ PECAN CNT 200G,,,
-FAIRY MAO LIMAO 1250ML,Limão,Frutas & Legumes,Manual
-VVB MURALHAS DE MONCAO DOC 75CL,Vinho verde,Bebidas,Regra
-PORCO ENTRECOSTO,Rolo papel de cozinha,Casa,Regra
-LEITE C/CHOC.AJUSTADO MIMOSA 8*,Leite,Lacticínios,Manual
-PASTA DENTAL TRIDENT 60MIN SPE,Pastilha elástica,Snacks & Doces,Regra
-(C)CEREAIS CHOCAPIC 740G + OF 35% ,Chocapic,Cereais,Manual
-QJ MISTURA SERRAS PENELA,Queijo ovelha/cabra,Lacticínios,Regra
-TAB CNT CHOC NEGRO C/AVELAS 200,,,
-AGUA MONCHIQUE 51CL,Água,Bebidas,Manual
-MIOLO DE BERBIGAO CNT CONG 250G,,,
-ESCO ORAL B COMPL 5 BEN MED 2UN,,,
-BANANA,Bananas,Frutas & Legumes,Regra
-ISLEITE UHT M/G PASTAGEM T NOSTRA,Leite,Lacticínios,Manual
-MASSA COTOVELINHOS MILANE 500G,Massa,Cereais,Regra
-RAID ESS ARMADILHA LED APA,,,
-ISOVOS SOLO M CONTINENTE 1/2DZ,Ovos,Lacticínios,Manual
-PASTA DENTAL FRESCURA AT,Pasta de dentes,Higiene & Saúde,ML(0.365)
-SAPATEIRA COZID GRAND CNT SELEC,Sapateira,Carne & Peixe,Regra
-VITELAO PA/ACEM AT,Carne vaca,Carne & Peixe,Regra
-PAO RALADO ALHO SALSA 240G CNT,Alho,Frutas & Legumes,Manual
-PORCO CHISPE,Rolo papel de cozinha,Casa,Regra
-COL.NUTRISSE UC 4.15 CAST.TIRAM,,,
-CALVE MAIONESE TD 240G,Maionese,Ingredientes & Temperos,Regra
-IOGURTE PROT MORANGO YOPRO 160G,Morangos,Frutas & Legumes,Manual
-PASTA DENTAL TOT CARV 75ML,Pasta de dentes,Higiene & Saúde,ML(0.397)
-ESCOVA MANUAL ORAL-B PRO-CLEAN,,,
-PAST TRIDEN BOTTLE WHITE SPEARMINT,Pastilha elástica,Snacks & Doces,Regra
-ESPINAFRE BABY LEAF CNT EMB.170,Espinafres,Frutas & Legumes,Manual
-SACOS LIXO CONTINENTE 100L 10UN,Sacos lixo 100l,Casa,ML(0.699)
-AMAC COMFORT AZUL LEVEZA 4L,Amaciador,Casa,Regra
-VB COUTADA VELHA PREMIUM REG.AL,Vinho branco,Bebidas,Regra
-NATA UHT P/BAT CONTINENTE 200,Natas,Lacticínios,Regra
-MIOLO CAMARAO 100/200 CNT 400G,Camarões,Carne & Peixe,Manual
-STICKS PERFUM CNT MACA CANELA,,,
-TOSTAS SUECAS INT. CONTINENTE E,Tostas,Padaria & Pastelaria,ML(0.551)
-QJ RALADO MASSAS MIX 3 QJ CNT 2,Queijo,Lacticínios,Regra
-ABACAXI KG,Ananás,Frutas & Legumes,Regra
-NECTARINA,Nectarina,Frutas & Legumes,Regra
-YO PRO PUD AVELA 150G,,,
-NABICA BABY CNT 150G,,,
-BATATA ESPECIAL ASSAR SC 1KG,Batatas,Frutas & Legumes,Manual
-BODY NIVEA MILK 625ML,Creme/gel Nivea para cabelo,Higiene & Saúde,ML(0.390)
-CLEMENTINA,Tangerina,Frutas & Legumes,Manual
-VB MONTE DA RAVASQUEIRA 75,Vinho branco,Bebidas,Regra
-DOURADA MEDIA (200-600G),,,
-ROLOS COZINHA CNT 2=4R,Rolo papel de cozinha,Casa,Regra
-GAO BICO CONTINENTE 400G,Grão-de-bico,Cereais,ML(0.510)
-MACA FUJI NACIONAL KG,Maçãs,Frutas & Legumes,Regra
-ISVITELAO ESTUFAR AT,Carne vaca,Carne & Peixe,Regra
-TOALHITAS PROTECCAO CORES WOOLI,Toalhitas,Higiene & Saúde,ML(0.350)
-FEIJAO BRANCO COMPAL 470G,Feijão branco,Cereais,Regra
-MACA GALA ALCOBACA 65/70,Maçã royal gala,Frutas & Legumes,Manual
-VT VINHA DA COUTADA VELHA RG.A,Vinho tinto,Bebidas,Regra
-CEBOLINHO CNT EMB.20GR,Cebolinho,Frutas & Legumes,Regra
-VB PORCA DE MURCA DOC DOU 75CL,Vinho branco,Bebidas,Regra
-COG BRANCO INTEIRO CNT (CBD),Cogumelos,Frutas & Legumes,Regra
-ARROZ AGULHA CIGALA 1KG,Arroz,Cereais,Manual
-CJ 24 BALOES 9 POLEGADAS,,,
-SALADA AROMATICA CNT 150GR,Sal,Ingredientes & Temperos,Manual
-ISOVOS SOLO CLASSE M 1DZ,Ovos,Lacticínios,Manual
-PAPEL HIGIENICO CNT 12=36R,Papel higiénico,Higiene & Saúde,Manual
-LOMBOS BACALHAU MSC CONT 800G,Bacalhau,Carne & Peixe,Manual
-OVOS SOLO L CONTINENTE 1/2DZ,Ovos,Lacticínios,Manual
-AGUA C/GAS PEDRAS LIMAO PET 1L,Limão,Frutas & Legumes,Manual
-FRANGO CAMPO INT C/M GRANEL,Frango,Carne & Peixe,Manual
-GUARDANAPOS 2F CNT BRANCO 100UN,Guardanapos,Casa,Manual
-AGUA OXIGENADA HIDRO 500ML,Água,Bebidas,Manual
-DET PAST LOIC FINISH PWR LIM 85,Detergente maquina loiça,Casa,Regra
-ALHO SECO CNT 400GR,Alho,Frutas & Legumes,Manual
-DET MAN LOICA MAX P ORIGINAL,Detergente maquina loiça,Casa,Regra
-ESPARGUETE MILANEZA 500G,Esparguete,Cereais,Manual
-PESCADA MEDIA FRESCA KG,,,
-FRANGO INTEIRO C/M CNT KG LS,Frango,Carne & Peixe,Manual
-ESPG MILANE 500G + 10% GRATIS,,,
-FIAMBRE ITALIANO CORTE GUSTO 10,Fiambre,Carne & Peixe,Manual
-SKYR SOL CNT EQ COCO 150G,Água de coco,Bebidas,ML(0.314)
-MASSA QUEBRADA CNT 230GR,Massa quebrada,Cereais,Manual
-BOL.DO MARINHEIROS CLASSICA CUE,,,
-ATUM AZEITE BOM PETISCO 251G,Atum,Carne & Peixe,Manual
-KETCHUP HEINZ TOP DOWN 460G,,,
-MORTADELA C/ AZEITONAS CNT,Azeitonas,Frutas & Legumes,Manual
-QJ FLAMENGO -50% LIMIANO FATIA,,,
-AZ VE OLIVE SERRA SEL PET750ML,,,
-CEBOLA ROXA CNT KG,Cebolas,Frutas & Legumes,Manual
-ETIQUETAS NOTE! 25*40MM 120UN,,,
-GRANOLA 0% ACUCAR WHY FOODS 300,Açúcar,Ingredientes & Temperos,Manual
-LEITE C/CHOC MIMOSA 4*200ML,Leite,Lacticínios,Manual
-ISOVOS SOLO M CNTINENTE,Ovos,Lacticínios,Manual
-GEL LUB CONTROL WARM TOUCH 75ML,,,
-DEO NIVEA MEN 50ML,,,
-VELA N  0 AZUL/VERDE,Feijão verde,Frutas & Legumes,ML(0.409)
-PAO DE FORMA DE RIO MAIOR 500G,Pão,Padaria & Pastelaria,Manual
-GB VASELINE CAMOM E MEL 1L,Mel,Snacks & Doces,Manual
-GB CREMOSO MYLABEL DOYPACK 1,,,
-PIZZA FIAMBRE E QJ 410G CNT,Queijo,Lacticínios,Regra
-MASSA PIMENTAO CONTINENTE 200G,Massa,Cereais,Manual
-CH PRT PORCO PRT ALENT CNT SELE,Rolo papel de cozinha,Casa,Regra
-FIO DENTARIO FLOSSERS CNT 64UN,Flossers,Higiene & Saúde,ML(0.350)
-AZEITE BOM PETISCO 78G,Azeite,Ingredientes & Temperos,Manual
-OVOS AR LIVRE CNT 1DZ,Ovos,Lacticínios,Manual
-BOL.ARG CHOC.NEGR.CNT 128G,,,
-DET CAPS MAQ LOIC FINISH QUANTU,Detergente maquina loiça,Casa,Regra
-ISATUM AZEITE BOM PETISCO 251G,Atum,Carne & Peixe,Manual
-PAST TRIDENT BOTTLE MOR 82.5G,Pastilha elástica,Snacks & Doces,Regra
-SALMAO INT PEQUENO FRESCO KG,Salmão,Carne & Peixe,Manual
-SAB.CARVAO 90G,Carvão,Bricolage & Jardim,Regra
-(C)CAFE LOR RISTRETTO DESCAF 10CAP,Café,Bebidas,Manual
-SKYR SOL CNT EQ MORANGO 150G,Morangos,Frutas & Legumes,Manual
-ALFACE ICEBERG 300G CNT,Alface,Frutas & Legumes,Manual
-NOZ METADES CONT.POUPANCA 400G,,,
-CHAMPO HERBAL ORANGE VOLUME 350,Champô,Higiene & Saúde,Regra
-AZEITONA PRETA C/CAROCO OXIDADA,Azeitonas,Ingredientes & Temperos,Regra
-ESPARGUETE MILANEZA 1KG,Esparguete,Cereais,Manual
-REF.C/GAS COCA COLA S/ACUCAR 1L,Refrigerante,Bebidas,Regra
-CEREAIS CHOCOLATE CHOCAPIC,Chocapic,Cereais,Manual
-ISQJ CREME PHILADELPHIA 150G,Queijo,Lacticínios,Regra
-MANJERICAO CNT EMB.20GR,,,
-OVOS SOLO M CONTINENTE 1/2DZ,Ovos,Lacticínios,Manual
-ESCO COLGATE EXTRA CLEAN MD 2UN,Pasta de dentes,Higiene & Saúde,Regra
-BOVINO PICANHA UE LS,Picanha,Carne & Peixe,ML(0.422)
-CANONIGOS CNT EMB.125GR,,,
-BOL DOS MARINHEIROS ARROZ CUETA,Bolachas marinheiras,Padaria & Pastelaria,Regra
-DET LIQ PERSIL SABA&B 100D,Detergente roupa,Casa,Regra
-MANTEIGA S/SAL MIMOSA 250G,Manteiga s/ sal,Lacticínios,Regra
-MASS PEVIDE MILANEZA 250G,,,
-CEREAIS FITNESS 625G,Cereais,Cereais,Manual
-AZEITONA GALEGA DA BEIRA-BAIXA,Azeitonas,Frutas & Legumes,Manual
-O NOSSO CROISSANT UN (AB),Croissant,Padaria & Pastelaria,Manual
-PAO BICOS 50G,Pão,Padaria & Pastelaria,Manual
-FEIJAO MANTEIGA CONTINENTE 500G,Manteiga,Lacticínios,Manual
-PASTEIS BACALHAU CNT 300G,Bacalhau,Carne & Peixe,Manual
-IOGURTE PROTEICO YO PRO MIRTILO,Mirtilos,Frutas & Legumes,Manual
-(A)SALMAO INTEIRO KG,Salmão,Carne & Peixe,Manual
-(C)PAST MAQ LOICA AIO CNT 70UN,Detergente maquina loiça,Casa,Regra
-UVA BRANCA S/ GRAINHA,Uvas,Frutas & Legumes,Manual
-BATATA ASSAR EMB. 2 KG,Batatas,Frutas & Legumes,Manual
-ALFACE FRISADA,Alface,Frutas & Legumes,Manual
-SNACK BAT OND C/SAL FORNO LAY S,Sal,Ingredientes & Temperos,Manual
-CHAMPO HERBAL ALOE MOIST 350ML,Champô,Higiene & Saúde,Regra
-IOGURTE LIMAO/LIMAO 4*155G,Limão,Frutas & Legumes,Manual
-SALSA CNT 50 G,Sal,Ingredientes & Temperos,Manual
-COND HERBAL CANHAMO 275ML,,,
-CJ. 10 VELAS ESTRELINHAS R.970,,,
-FITA EMBALAR STANDARD 66MX50MM,,,
-(C)ROLOS COZINHA CNT 2=4R,Rolo papel de cozinha,Casa,Regra
-LARANJA,Laranja,Frutas & Legumes,Manual
-LIXIVIA TRADICIONAL CNT 5L,,,
-COG BRANCO INTEIRO CNT 300G,Cogumelos,Frutas & Legumes,Regra
-L TUDO AJAX MADEIRAS 1L,,,
-CAPSULAS DESCAFEINADO L OR 2OCA,Café,Bebidas,Manual
-BATATA ESPECIAL COZER SC 3KG,Batatas,Frutas & Legumes,Manual
-MASSA FETTUCCINE MILANEZA 500G,Massa,Cereais,Manual
-CAPSULAS CAFE L OR COLOMBIA 40U,Café,Bebidas,Manual
-FEIJAO FRADE COMPAL 234G,Feijao,Cereais,ML(0.491)
-ISMASSA MACARRAO GD MILANEZA 500G,Massa,Cereais,Manual
-ROLLER NOTE! SORT 3UN,,,
-ROLO COZ CNT 4=8,,,
-SACOS VILEDA MULTI XL 5L,,,
-REQUEIJAO DE OVELHA AZEITAO KG,Requeijão,Lacticínios,Manual
-FRANGO INTEIRO SACO,Frango,Carne & Peixe,Manual
-LIMAO IGP ALGARVE 1KG,Limão,Frutas & Legumes,Manual
-MIST. PIMENTAS CNT MOINHO 40G,,,
-CENOURA KG,Cenouras,Frutas & Legumes,Manual
-CAIXA FRIGORIFICO 2,,,
-CAFE LOR RISTRETTO DESCAF 10CAP,Café,Bebidas,Manual
-VELA N  1 AZUL/VERDE,Feijão verde,Frutas & Legumes,ML(0.409)
-COUVE LOMBARDA CNT KG,Couve lombarda,Frutas & Legumes,ML(0.900)
-IOGURTE NATURAL COTTON CANDY,Iogurte,Lacticínios,Manual
-(C)BOL.DO MARINHEIROS CLASSICA CUE,,,
-POWDER LIQUIDO FINISH PWR LI,,,
-PAP HIG 3F 12=24R,,,
-FEIJAO CATARINO CONTINENTE 500G,Feijao,Cereais,ML(0.543)
-MINI TOSTAS CONTINENTE 350GR,Tostas,Padaria & Pastelaria,Regra
-LEITE UHT M/G PASTAGEM T NOSTRA,Leite,Lacticínios,Manual
-MANJERICAO VASO UN-PT-BIO-03,,,
-(A)DIOSPIRO,Diospíros,Frutas & Legumes,Regra
-ALHO SECO CNT 250GR,Alho,Frutas & Legumes,Manual
-BALAO FOIL 83CM N  8 PRATEADO,,,
-FIAMBRE PERNA EXTRA FINISSIMAS,Fiambre,Carne & Peixe,Manual
-SACO COMPRAS REUTILIZAVEL COGUM,,,
-CJ 6 CALICES 29CL TRADICAO,,,
-LIMAO,Limão,Frutas & Legumes,Manual
-PENSO TENA ULTRA NORMAL,,,
-ISBANANA CAT I CNT KG,Bananas,Frutas & Legumes,Regra
-CEBOLA CNT EMB. 1,Cebolas,Frutas & Legumes,Manual
-O NOSSO CROISSANT,Croissant,Padaria & Pastelaria,Manual
-FENO HIPOALERG MEL 650ML,Mel,Snacks & Doces,Manual
-MELANCIA RISCADA ALONGADA FR KG,Melancia,Frutas & Legumes,Regra
-FIAMBRE PERNA EXTRA FAT CNT 2X2,Fiambre,Carne & Peixe,Manual
-SACO COMPRAS REUTILIZAVEL,,,
-VB CONTINENTE 1L,Vinho branco cozinhar,Bebidas,Regra
-MANGA PALMER AVIAO,Manga,Frutas & Legumes,Manual
-MASSA MACARRAO GD MILANEZA 500G,Massa,Cereais,Manual
-PORCO BIFANAS - LS,Rolo papel de cozinha,Casa,Regra
-(ISQJ MISTURA CONTINENTE UN,Queijo ovelha/cabra,Lacticínios,Regra
-PAO PASSAS 300G,Pão,Padaria & Pastelaria,Manual
-CHOURICO DE CARNE PORCO PRETO M,Rolo papel de cozinha,Casa,Regra
-ROMA,,,
-AMENDOA C/PELE CNT 200G,,,
-CEREAIS CHOCAPIC 900GR,Chocapic,Cereais,Manual
-VELA ANIVERSARIO N.,,,
-LARANJA IGP ALGARVE,Laranja,Frutas & Legumes,Manual
-FILTROS CAFE CONTINENTE 100UN,Café,Bebidas,Manual
-VELA ANIVERSARIO N.  4,,,
-GB NIVEA MEN ORIGINAL CARE 500,,,
-FP PELUCHE DE ATIVIDADE TUCANO,,,
-(A)ROBALO GRANDE FRESCO KG,,,
-CHAM HERBAL HIDRA COC 400ML,Chá,Bebidas,Manual
-MIRTILO 500 G,Mirtilos,Frutas & Legumes,Manual
-TARTE GELADA BAUNILHA VIENNETTA,Açúcar de baunilha,Ingredientes & Temperos,ML(0.550)
-CARCACA PORTUGUESA 70G,Rolo papel de cozinha,Casa,Regra
-SKYR SOL CNT EQ MIRTILO 150G,Mirtilos,Frutas & Legumes,Manual
-BALAO FOIL 83CM N  4 ROSE,,,
-CR NIVEA HIDRATANTE PROTECT&CA,Creme rosto Nivea man,Higiene & Saúde,Regra
-MANGA,Manga,Frutas & Legumes,Manual
-COGUMELO MARRON CNT (CBD) 300G,Cogumelos,Frutas & Legumes,Manual
-IOG MYTHOS CNT EQ NAT LIG 1KG,Iogurte,Lacticínios,Regra
-SOPA DE NABICAS CNT F&B 800G,Sopa,Congelados,Manual
-FRANGO INTEIRO C/M GRANEL,Frango,Carne & Peixe,Manual
-ATUM AZEITE BOM PETISCO 78G,Atum,Carne & Peixe,Manual
-TOSTAS CRISPBREAD ORIGINAL WASA,Tostas,Padaria & Pastelaria,ML(0.434)
-ALHO PICADO MARGAO FRASCO 60G,Alho,Frutas & Legumes,Regra
-(C)FIO DENTARIO FLOSSERS CNT 64UN,Flossers,Higiene & Saúde,ML(0.350)
-MARINHEIRAS TRADICIONAIS CNT,Bolachas marinheiras,Padaria & Pastelaria,ML(0.383)
-QJ FLAMENGO LIMIANO FATIAS 2*20,Queijo fatiado,Lacticínios,Regra
-PILHA 9V ENERGY VARTA VARTA,,,
-MANGA MATURADA CNT KG,Manga,Frutas & Legumes,Manual
-PIZZA VEGETARIANA CNT 400G,Pizza,Congelados,Manual
-SOPA OU SOBREMESA,Sopa,Congelados,Manual
-CEREJA 2 KG,Cerejas,Frutas & Legumes,Regra
-FRANGO CAMPO INT. S/MIUDOS LS,Frango,Carne & Peixe,Manual
-LOMBINHOS BAC DEM MSC CONG 600G,,,
-FIAMBRE PERNA EXTRA NOBRE FATIA,Fiambre,Carne & Peixe,Manual
-PAST TRIDENT BOTTLE SPEAR 82.5G,Pastilha elástica,Snacks & Doces,Regra
-MACA GALA R0 ALCOBACA KG,Maçã royal gala,Frutas & Legumes,Manual
-NECTAR UM BONGO 8 FRUTOS 1L,Frutos silvestres,Frutas & Legumes,ML(0.376)
-FIAMBRE PERNA EXT FAT FINAS CNT,Fiambre,Carne & Peixe,Manual
-ISBATATA BRANCA 0 DESP 4 KG,Batatas,Frutas & Legumes,Manual
-COGUMELO PLEUROTUS CNT 200G,Cogumelos,Frutas & Legumes,Manual
-CAFE DELTA Q BIO 10CAP,Café,Bebidas,Manual
-QJ GRANA PADANO CNT 200G,Queijo parmesão,Lacticínios,Regra
-UVA RED GLOBE,Uvas,Frutas & Legumes,Manual
-PALITOS LA REINE M&MARTINS 190G,,,
-CR DUCHE NIVEA CR CARE 750ML,,,
-PAIO FUNDAO CNT 250G PM,Paio,Carne & Peixe,Regra
-COGUMELO MARRON CNT 300G ILHAS,Cogumelos,Frutas & Legumes,Manual
-FEIJAO PRETO COMPAL 468G,Feijao,Cereais,ML(0.420)
-VT COUTADA VELHA SIGNAT REG.ALE,Vinho tinto,Bebidas,Regra
-MISTURA FRUTOS BOSQUE CNT 200G,Frutos silvestres,Frutas & Legumes,ML(0.480)
-CHA TETLEY COLD MORANGO E MACA,Chá,Bebidas,Regra
-ALHO MOIDO MARGAO SAQ 40G,Alho,Frutas & Legumes,Manual
-(C)CHOURICO CARNE FUNDAO CNT 220G,Chouriço,Carne & Peixe,Manual
-IOG PROTEICO SOLIDO STRACCIATEL,,,
-ISMASS COTOV GROSSOS MILANEZA 500,Massa,Cereais,Regra
-DELTA Q PURE 10CAP,,,
-TAMBORIL FRESCO KG,Peixe,Carne & Peixe,Regra
-VT TAPADA DAS LEBRES SIGN REG A,Vinho tinto,Bebidas,Regra
-IOG AR MIMOSA COCO/MANGA/BANANA,Bananas,Frutas & Legumes,Regra
-CH TRAD QUIAIOS 220G,,,
-QJ FRESC BARRAR ALHO/ERVAS SANT,Queijo,Lacticínios,Regra
-FEIJAO FRADE COMPAL 468G,Feijao,Cereais,ML(0.491)
-COUVE BROCOLO,Brócolos,Frutas & Legumes,Regra
-OVOS AR LIVRE M/L CNT 12UN,Ovos,Lacticínios,Manual
-100 ESPETOS ESPETADAS,,,
-PORCO COSTELETAS CACHACO,Rolo papel de cozinha,Casa,Regra
-VB CANCELLUS PREMIUM DOC DOURO,Vinho branco,Bebidas,Regra
-PAO AGUA KG,Pão,Padaria & Pastelaria,Manual
-ESPARGOS VERDES 250G,Espargos,Frutas e Legumes,Manual
-CR DUCHE NIVEA CR CARE 750ML,Gel duche,Higiene & Saúde,Manual
-ROMA, Roma,Frutas & Legumes,Manual
-RUCULA SELVAGEM VITACRESS 50GR,Rúcula,Frutas & Legumes,Manual
+original_product,original_category,catalog_product,catalog_category,confidence
+CHOURICO CARNE FUNDAO CNT 220G,Charcutaria&Queijos,Chouriço,Carne & Peixe,Manual
+LARANJA IGP ALGARVE CNT KG,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+BAC POSTAS CNT 800G,Peixaria,Bacalhau,Carne & Peixe,Manual
+F. CAMPO PEDACOS CNT SEL LS KG,Talho,Frango,Carne & Peixe,Manual
+RESMA PAPEL A4 80GR/M  500F NOT,Cultura,Papel A4,Casa,Manual
+OVOS SOLO CLASSE M 1DZ,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+BATATA VERMELHA CNT EMB. 3KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+SEMENTES CHIA 150G-PT-BIO-03,Frutas e Legumes,Chia,Frutas & Legumes,Manual
+LUVAS VILEDA FOOD S.M/G 40,Limpeza do Lar,Luvas,Casa,Manual
+DET LIQ SKIP CICLOS CURTOS EFIC,Limpeza do Lar,Detergente roupa,Casa,Manual
+COND HIDR LEIT COC VEGAN 275ML,Beleza,Amaciador cabelo,Higiene & Saúde,Manual
+CITRINOS ALGARV IGP CLEMENTINA,Frutas e Legumes,Clementina,Frutas & Legumes,Manual
+MACARRAO GRANDE MILANEZA 500G,Bens Essenciais,Massa,Cereais,Manual
+MIRTILO CNT (P) 200 G,Frutas e Legumes,Mirtilos,Frutas & Legumes,Manual
+MASSA QUEBRADA CNT 2*230GR,Take Away,Massa quebrada,Cereais,Manual
+MASSA FOLHADA CNT 230GR,Take Away,Massa folhada,Padaria & Pastelaria,Manual
+CEREAIS CHOCOLATE CHOCAPIC 625G,Pequeno Almoco,Chocapic,Cereais,Manual
+MACA GALA NACIONAL R0 CAL.70/75,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+RUCULA SELVAGEM CNT EMB.100GR,Frutas e Legumes,Rúcula,Frutas & Legumes,Manual
+ICE TEA LIPTON LIMAO 1.5L,Soft Drinks,Ice tea,Bebidas,Manual
+PESSEGO CNT CAL,Frutas e Legumes,Pêssego,Frutas & Legumes,Manual
+MELAO VERDE KG,Frutas e Legumes,Melão,Frutas & Legumes,Manual
+GRESSINOS AZEITE CONTINENTE,Padaria,Pão,Padaria & Pastelaria,Manual
+ESPARGOS FINOS 250G,Frutas e Legumes,Espargos,Frutas & Legumes,Manual
+MOLHO BECHAMEL PARMALAT 500ML,Laticinios/Beb. Veg.,Molho bechamel,Lacticínios,Manual
+PORCO CACHACO INT. S/OSSO LS,Talho,Carne de porco,Carne & Peixe,Manual
+GELATINA CONDI VEGETAL MORANGO,Mercearia Doce,Gelatina,Snacks & Doces,Manual
+MOINHO SAL MED.MARGAO 68G,Mercearia Salgada,Sal,Ingredientes & Temperos,Manual
+CHAM HERBAL COCO HIDRATA 350ML,Beleza,Champô,Higiene & Saúde,Manual
+BACON CNT FATIAS 200 GRS,Charcutaria&Queijos,Bacon,Carne & Peixe,Manual
+PAO DE BICOS 70G,Padaria,Pão,Padaria & Pastelaria,Manual
+AZEITE VE CLASSICO GALLO 0.25L,Bens Essenciais,Azeite,Ingredientes & Temperos,Manual
+MELAO VERDE CNT KG,Frutas e Legumes,Melão,Frutas & Legumes,Manual
+VT DUAS QTAS DOC DOU 12 75CL,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+RAVASQ V.ROMAS ALENTEJANO,Vinho e Espirituosas,Vinho,Bebidas,Manual
+BATATA BRANCA EMB.: 5 KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+LARANJA EMB. 2KG,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+ARROZ AG CIGALA EXTRA LONGO 2KG,Bens Essenciais,Arroz,Cereais,Manual
+LIMAO CAL. 60/75 KG,Frutas e Legumes,Limão,Frutas & Legumes,Manual
+MIOLO CAMARAO 80/100 CNT 250G,Peixaria,Camarões,Carne & Peixe,Manual
+FRANGO PARA CHURRASCO CNT LS,Talho,Frango,Carne & Peixe,Manual
+CEREAIS CHOCAPIC,Pequeno Almoco,Chocapic,Cereais,Manual
+LIPTON COLD INF LIMAO CAMOMILA,Pequeno Almoco,Ice-Tea,Bebidas,Manual
+MACA GALA ALCOBACA,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+COGUMELO MARRON CNT EMB.CUV KG,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+BOLACHA OREO 440G,Mercearia Doce,Bolachas,Snacks & Doces,Manual
+QJ MISTURA SERRAS PENELA UN,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
+CHOURICO CURA 100%NAT F.S.ESTRELA,Charcutaria&Queijos,Chouriço,Carne & Peixe,Manual
+TORTELLINI RICOTA ESP RANA 250G,Take Away,Massa,Cereais,Manual
+CAFE DELTA LOTE CHAVE SACO 250G,Pequeno Almoco,Café,Bebidas,Manual
+MANTEIGA C/SAL MIMOSA 250G,Laticinios/Beb. Veg.,Manteiga,Lacticínios,Manual
+CAFE ESPRESSO L OR FORZA 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+MANGA MATURADA KG,Frutas e Legumes,Manga,Frutas & Legumes,Manual
+LAM.DESC.BIC SENSIT.3 LAM 4+OF2,Beleza,Lâminas de barbear,Higiene & Saúde,Manual
+FIAMBRE PERNA EXTRA FATIADO CNT,Charcutaria&Queijos,Fiambre,Charcutaria,Manual
+MIOLO CAMARAO 20/40 CNT 400G,Peixaria,Camarões,Carne & Peixe,Manual
+UVA BRANCA S/GRAINHA CNT 1 KG,Frutas e Legumes,Uvas,Frutas & Legumes,Manual
+IOG PROTEICO SOLIDO MORANGO LIM,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+CITRINOS ALGARVE IGP LARANJA,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+SALSICHA CRIOULA PRISCA 400G,Talho,Salsicha,Carne & Peixe,Manual
+BACON CNT FATIAS CNT 200 GRS,Charcutaria&Queijos,Bacon,Carne & Peixe,Manual
+CEREAIS CORN FLAKES CNT EQUILIB,Pequeno Almoco,Cereais,Cereais,Manual
+PAO RIO MAIOR 450G,Padaria,Pão,Padaria & Pastelaria,Manual
+LARANJA IGP KG,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+FRANGO CAMPO INT. C/M LS,Talho,Frango,Carne & Peixe,Manual
+MIRTILO BEIRABAGA 400 G,Frutas e Legumes,Mirtilos,Frutas & Legumes,Manual
+LEITE C/CHOC MIMOSA AJUST 4*200,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+BOLINHAS ALHEIRA E CHOURICO CNT,Congelados,Chouriço,Carne & Peixe,Manual
+(MENU) GALAO / MEIA DE LEITE,Cafetaria,Cafetaria,Lacticínios,Manual
+GENGIBRE CNT KG,Frutas e Legumes,Gengibre,Frutas & Legumes,Manual
+COGUMELO MARRON CNT 300G,Casa-Cozinha/Lavand,Cogumelos,Frutas & Legumes,Manual
+VB MURALHAS DE MONCAO DOC 75CL,Vinho e Espirituosas,Vinho verde,Bebidas,Manual
+IOG PROTEICO SOLIDO PESSEGO MAR,Laticinios/Beb. Veg.,Pêssego,Frutas & Legumes,Manual
+PIMENTAO DOCE CNT FRS 45G,Mercearia Salgada,Pimentão doce,Snacks & Doces,Manual
+CONJ 4 PILHAS A,DIY,Pilhas,Casa,Manual
+FLOCOS DE AVEIA FINO CNT EQ 1KG,Pequeno Almoco,Aveia,Cereais,Manual
+BOLACHA OREO TUBO 154G,Mercearia Doce,Bolachas,Snacks & Doces,Manual
+FICHA DUPLA FRONTAL BRANCA LEGR,DIY,Extensão corrente,Casa,Manual
+GUARDANAPOS 2F CONTINENTE 100UN,Limpeza do Lar,Guardanapos,Casa,Manual
+SACO LIXO SILVEX100%RECICL130L,Limpeza do Lar,Sacos do lixo,Casa,Manual
+LARANJA IMPORTADA,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+BOL. DIGESTIVE AVEIA GULLON ZER,Mercearia Doce,Bolachas,Cereais,Manual
+LUVA COZINHA SILICONE CHEFE,Casa-Cozinha/Lavand,Luvas,Casa,Manual
+RUCULA RESIDUO ZERO 100GR,Frutas e Legumes,Rúcula,Frutas & Legumes,Manual
+GUARDANAPOS 2F 200UN CONT.POUPA,Limpeza do Lar,Guardanapos,Casa,Manual
+CHOURICO CARNE LAMEGO CNT QS,Charcutaria&Queijos,Chouriço,Carne & Peixe,Manual
+PAO MAFRA COMPRIDO 500G,Padaria,Pão,Padaria & Pastelaria,Manual
+MACA GALA ALCOBACA CAL.70/7,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+SACO LIXO VILEDA 100% RECI 30L,Limpeza do Lar,Sacos do lixo,Casa,Manual
+CREME VINAGRE PONTI BALSAMICO,Mercearia Salgada,Vinagre,Ingredientes & Temperos,Manual
+SARDINHA AZEITE RAMIREZ 88G,Mercearia Salgada,Sardinha enlatada,Carne & Peixe,Manual
+LARANJA ZER0%D CAL.2,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+NOV. BIFE ACEM,Talho,Bife,Carne & Peixe,Manual
+CAFE,Cafetaria,Café,Bebidas,Manual
+ESCOVA C/ PEGA,Casa-Cozinha/Lavand,Escova,Casa,Manual
+AZEITONA GALEGA CNT 210G,Frutas e Legumes,Azeitonas,Frutas & Legumes,Manual
+AZ.GAL.C/AZEITE ALHO 150GR,Frutas e Legumes,Alho,Frutas & Legumes,Manual
+SAL LOLLO/TANGO CNT 150 GR,Frutas e Legumes,Sal,Ingredientes & Temperos,Manual
+CAFE LOR COLOMBIA 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+AGUA S/GAS MONCHIQUE 6*1.5L,Soft Drinks,Água,Bebidas,Manual
+ATUM AZEITE BOM PETISCO 130G,Mercearia Salgada,Atum,Carne & Peixe,Manual
+SACO LIXO E CNT 100L 15UN,Limpeza do Lar,Sacos do lixo,Casa,Manual
+SOPA DE NABICAS 800G CZ CNT,Take Away,Sopa,Take away,Manual
+CURGETE VERDE,Frutas e Legumes,Courgette,Frutas & Legumes,Manual
+DET ULTRA PODER ORIG 1250 ML,Limpeza do Lar,Detergente roupa,Casa,Manual
+FACA PAO PLASTICO 20CM ESSENCIA,Casa-Cozinha/Lavand,Faca,Casa,Manual
+SOL ANANAS COCO 1X160G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+MACA GALA ALCOBACA EMB,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+OVOS DE SOLO CLASSE L CNT,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+LEITE CONDENSADO NESTLE 370G,Mercearia Doce,Leite condensado,Lacticínios,Manual
+MORANGO EMB. 500 GR,Frutas e Legumes,Morangos,Frutas & Legumes,Manual
+CAMARAO COZ. 25/35 KG,Peixaria,Camarões,Carne & Peixe,Manual
+OLEO ALIMENTAR FULA 1L,Bens Essenciais,Óleo,Ingredientes & Temperos,Manual
+COND ULTRA SUAVE AGUA DE COCO,Higiene,Acondicionador,Higiene & Saúde,Manual
+PAO DE AGUA KG,Padaria,Pão,Padaria & Pastelaria,Manual
+BATATA FRITA,Rest. e Cafetaria,Batatas fritas,Snacks & Doces,Manual
+SALADA IBERIA CNT EMB.100GR,Frutas e Legumes,Salada,Frutas & Legumes,Manual
+FRANGO INTEIRO CONTINENTE,Talho,Frango,Carne & Peixe,Manual
+ICE TEA LIPTON MANGA 2L,Soft Drinks,Ice tea,Bebidas,Manual
+MASSA LETRAS MILANEZA 250G,Bens Essenciais,Massa,Cereais,Manual
+NECTAR COMPAL MANGA 1L,Soft Drinks,Sumo,Bebidas,Manual
+PAO DE FORMA DE RIO MAIOR 500G,Padaria,Pão,Padaria & Pastelaria,Manual
+MORANGO PREMIUM NACIONAL,Frutas e Legumes,Morangos,Frutas & Legumes,Manual
+PAPEL DE ALUMINIO CNT 30M,Limpeza do Lar,Papel de alumínio,Casa,Manual
+PEPINO CNT KG,Frutas e Legumes,Pepino,Frutas & Legumes,Manual
+GB VASELINE CAMOM E MEL 1L,Higiene,Gel duche,Higiene & Saúde,Manual
+MASSA PIMENTAO CONTINENTE 200G,Mercearia Salgada,Massa,Cereais,Manual
+CAD ESP A4 CDURA Q 100F 80G 5BA,Cultura,Papel A4,Casa,Manual
+PARGO MULATO FRESCO KG,Peixaria,Peixe,Carne & Peixe,Manual
+OVOS DE SOLO CLASSE L CNT 1DZ,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+TOSTA SUECA CONTINENTE EMB.225G,Padaria,Tostas,Padaria & Pastelaria,Manual
+PAPAIA,Frutas e Legumes,Papaia,Frutas & Legumes,Manual
+BOLA DE LENHA 100G,Padaria,Pão,Padaria & Pastelaria,Manual
+AZEITONA MISTA NEGRINHA CNT 210,Frutas e Legumes,Azeitonas,Frutas & Legumes,Manual
+BATATA DOCE,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+CEREAIS FITNESS 640G+50% OFERTA,Pequeno Almoco,Cereais,Cereais,Manual
+FRANGO CAMPESTRE KG AT,Talho,Frango,Carne & Peixe,Manual
+MINI TOMATE CACHO CNT 500G,Frutas e Legumes,Tomates,Frutas & Legumes,Manual
+BOL DIGESTIVE AVEIA CNT 425GR,Mercearia Doce,Bolachas,Cereais,Manual
+YOFU SOJA ALPRO FR VERMELHOS S/,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+CAFE DELTA Q QHARACTER 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAF TIMO DELTACAFE DELTA TIMOR,Pequeno Almoco,Café,Bebidas,Manual
+GB FLOR DE LARANJEIRA NALLY 1L,Higiene,Gel duche,Higiene & Saúde,Manual
+CROISSANT / PAO MISTO,Cafetaria,Croissant,Padaria & Pastelaria,Manual
+LEITE UHT MG NOVA ACORES 6X1 LT,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+LIMA CNT KG,Frutas e Legumes,Lima,Frutas & Legumes,Manual
+PAO MASSA MAE ALENTEJANO KG,Padaria,Pão,Padaria & Pastelaria,Manual
+ATUM OLEO BOM PETISCO 251G,Mercearia Salgada,Atum,Carne & Peixe,Manual
+MELAO VERDE,Frutas e Legumes,Melão,Frutas & Legumes,Manual
+CAPSULAS DESCAFEINADO L OR,Pequeno Almoco,Café,Bebidas,Manual
+SALMAO INTEIRO KG,Peixaria,Salmão,Carne & Peixe,Manual
+CEREAIS CHOCAPIC 740G + OF 35%,Pequeno Almoco,Chocapic,Cereais,Manual
+SAB.COCO 90G,Higiene,Sabonete,Higiene & Saúde,Manual
+FIO DENTARIO FLOSSERS CNT 64UN,Higiene,Flossers,Higiene & Saúde,Manual
+OVOS AR LIVRE CNT 1DZ,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+SALMAO INT PEQUENO FRESCO KG,Peixaria,Salmão,Carne & Peixe,Manual
+SKYR SOL CNT EQ MORANGO 150G,Laticinios/Beb. Veg.,Morangos,Frutas & Legumes,Manual
+ALFACE ICEBERG 300G CNT,Frutas e Legumes,Alface,Frutas & Legumes,Manual
+ESPARGUETE MILANEZA 1KG,Bens Essenciais,Esparguete,Cereais,Manual
+OVOS SOLO M CONTINENTE 1/2DZ,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+BOVINO PICANHA UE LS,Talho,Picanha,Carne & Peixe,Manual
+CEREAIS FITNESS 625G,Pequeno Almoco,Cereais,Cereais,Manual
+GALETES FINI MILHO SALUTEM 130G,Mercearia Doce,Bolachas de milho,Snacks & Doces,Manual
+BANHA CONTINENTE 230G,Laticinios/Beb. Veg.,Banha,Ingredientes & Temperos,Manual
+FL DE AVEI GROSSOS CNTEQ 400G,Pequeno Almoco,Aveia,Cereais,Manual
+NECTARINA CNT KG,Frutas e Legumes,Nectarina,Frutas & Legumes,Manual
+LEITE UHT M/G MIMOSA B ESSEN 1L,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+MASSA MACAR RISC MILANEZA 500G,Bens Essenciais,Massa,Cereais,Manual
+ESPARGUETE QUAD.MILANEZA 500G,Bens Essenciais,Esparguete,Cereais,Manual
+BOL DOS MARINHEIROS MILHO CUETA,Mercearia Doce,Bolachas marinheiras,Padaria & Pastelaria,Manual
+ESPARGUETE MILANEZA 2KG,Bens Essenciais,Esparguete,Cereais,Manual
+DIOSPIRO,Frutas e Legumes,Diospíros,Frutas & Legumes,Manual
+QJ FLAMENGO LIMIANO FATIAS,Charcutaria&Queijos,Queijo fatiado,Lacticínios,Manual
+DEO ROLL ON NIVEA 50ML,Higiene,Desodorizante roll-on Nivea man,Higiene & Saúde,Manual
+PIP MIC DOCE CONTINENTE 3*100G,Mercearia Salgada,Doce,Snacks & Doces,Manual
+MORANGO PREMIUM NACIONAL 1 KG,Frutas e Legumes,Morangos,Frutas & Legumes,Manual
+COND. ELVIVE FULL RESIST 300M,Beleza,Amaciador cabelo,Higiene & Saúde,Manual
+CHA SENE FOLICUL HAPPYFLORA 50G,Pequeno Almoco,Chá,Bebidas,Manual
+SARD S/P E S/E EM AZEITE CNT SE,Mercearia Salgada,Azeite,Ingredientes & Temperos,Manual
+LARANJA ZERO DESPERDICIO CAL.2/,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+FARINHA ESPIGA T55 1KG,Bens Essenciais,Farinha,Cereais,Manual
+FRANGO INT. CONTINENTE 2 UN KG,Talho,Frango,Carne & Peixe,Manual
+YOFU MANGA ALPRO S/ ACUCAR 400G,Laticinios/Beb. Veg.,Manga,Frutas & Legumes,Manual
+MACA VERMELHA ZERO DESPERDICIO,Frutas e Legumes,Maça,Frutas & Legumes,Manual
+ALFACE ROXA SACO CNT EMB 200 G,Frutas e Legumes,Alface,Frutas & Legumes,Manual
+LEITE CORP MYLAB AMEND&SAN 400M,Beleza,Gel duche,Higiene & Saúde,Manual
+MACA GALA R0 NACIONAL 65/70 1 K,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+ARROZ CIGALA RISOTTO 1 KG,Bens Essenciais,Arroz,Cereais,Manual
+FRANGO INTEIRO SACO 1 UN CNT KG,Talho,Frango,Carne & Peixe,Manual
+ESPARGOS BIO EMB PT-BIO-03,Frutas e Legumes,Espargos,Frutas & Legumes,Manual
+AIPO CNT EMB. 500GR,Frutas e Legumes,Aipo,Frutas & Legumes,Manual
+PERNA DE FRANGO COMPRA/AT,Talho,Frango,Carne & Peixe,Manual
+CITRINOS ALGARVE IGP LARANJA KG,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+SALS PICANTE CHURRASCO CNT 200G,Charcutaria&Queijos,Sal,Ingredientes & Temperos,Manual
+MORANGO PREMIUM 1 KG,Frutas e Legumes,Morangos,Frutas & Legumes,Manual
+MEIA LEITE DESCAFEINADO,Cafetaria,Leite,Lacticínios,Manual
+ESPINAFRE RESIDUO ZERO 125GR,Frutas e Legumes,Espinafres,Frutas & Legumes,Manual
+SACOS LIXO FF CNT 50L 15UN,Limpeza do Lar,Sacos do lixo,Casa,Manual
+POLVILHO DOCE FERBAR SQT 500G,Bens Essenciais,Doce,Snacks & Doces,Manual
+AZEITONA GALEGA DA BEIRA-BAIXA,Frutas e Legumes,Azeitonas,Frutas & Legumes,Manual
+O NOSSO CROISSANT UN (AB),Padaria,Croissant,Padaria & Pastelaria,Manual
+QUINOA TRICOLOR CNT EQ. 500G,Bens Essenciais,Quinoa,Cereais,Manual
+FEIJAO PRETO SEARA BIO 500G,Bens Essenciais,Feijao,Cereais,Manual
+BIFE DE FRANGO CONTINENTE LS,Talho,Frango,Carne & Peixe,Manual
+LINDAHLS SOL ANANAS COCO 1X160G,Laticinios/Beb. Veg.,Iogurte,Lacticínios,Manual
+LEITE T.NOST PASTAG UHT M/G 1L,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+REFRIGERANTE,Rest. e Cafetaria,Refrigerante,Bebidas,Manual
+SAB.GLIC.VEGETAL,Higiene,Sabonete,Higiene & Saúde,Manual
+COGUMELO PORTOBELLO CNT 250G,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+CAFE DELTA Q QALIDUS 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE L OR COLOMBIA DECAF 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+SAL MARNOTO 1KG,Mercearia Salgada,Sal,Ingredientes & Temperos,Manual
+SAL PURIF.CRIST.IODA.VATEL 1KG,Mercearia Salgada,Sal,Ingredientes & Temperos,Manual
+ACUCAR BRANCO CONTINENTE 1KG,Bens Essenciais,Açúcar,Ingredientes & Temperos,Manual
+REQUEIJAO OVELHA SEIA TAVARES U,Charcutaria&Queijos,Requeijão,Lacticínios,Manual
+FIAMBRE PERNA EXT FAT CNT 200G,Charcutaria&Queijos,Fiambre,Carne & Peixe,Manual
+FILTROS CAFE CNT N 4 100UN,Limpeza do Lar,Filtros café,Bebidas,Manual
+PROT COLCHAO ACOLCH IMPERM PU 9,Casa-Texteis/Decor,Proteção colchão,Casa,Manual
+AMAC CONC COMFOR ESSENCIA LILY,Limpeza do Lar,Amaciador,Casa,Manual
+OVOS SOLO M CNTINENTE 1/2DZ,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+TORTITA ARROZ S/SAL CNT EQ 130G,Mercearia Doce,Bolachas,Snacks & Doces,Manual
+LIPTON COLD INF MENTA LIMA 15PY,Pequeno Almoco,Chá,Bebidas,Manual
+DOCE FRUTOS VERM. 0% ACUCAR AD,Charcutaria&Queijos,Doce,Snacks & Doces,Manual
+MOELAS FRANGO EMB.FAM. LS,Talho,Frango,Carne & Peixe,Manual
+MACA GALA NACIONAL KG,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+ISESPARGUETE MILANEZA 1KG,Bens Essenciais,Esparguete,Cereais,Manual
+ALHO MOIDO CONTINENTE FRS 55G,Mercearia Salgada,Alho,Frutas & Legumes,Manual
+LIMAO ZER0%D 1KG,Frutas e Legumes,Limão,Frutas & Legumes,Manual
+PAO MISTURA 400G,Padaria,Pão,Padaria & Pastelaria,Manual
+PAO BICOS 50G,Padaria,Pão,Padaria & Pastelaria,Manual
+FEIJAO MANTEIGA CONTINENTE 500G,Bens Essenciais,Manteiga,Lacticínios,Manual
+PASTEIS BACALHAU CNT 300G,Congelados,Pasteis de bacalhau,Carne & Peixe,Manual
+IOGURTE PROTEICO YO PRO MIRTILO,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+UVA BRANCA S/ GRAINHA,Frutas e Legumes,Uvas,Frutas & Legumes,Manual
+BATATA ASSAR EMB. 2 KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+LIMA PROF GROSSA MYLABEL,Beleza,Lima,Higiene & Saúde,Manual
+ALFACE FRISADA,Frutas e Legumes,Alface,Frutas & Legumes,Manual
+COLGATE TOTAL ADVANCED ESMALTE,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+ALHO SECO KG,Frutas e Legumes,Alho,Frutas & Legumes,Manual
+CHAMPO ELVIVE FULL RESIST 400ML,Beleza,Champô,Higiene & Saúde,Manual
+LEITE UHT M/G MIMOSA 6*1L,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+ISBEB DE AVEIA S/GLUT CONT BIO 1L,Laticinios/Beb. Veg.,Aveia,Cereais,Manual
+LIMPA VIDROS CONCENTRADO 500ML,DIY,Limpa vidros,Casa,Manual
+COGUMELO MARRON CNT KG,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+FAIRY MAO LIMAO 1250ML,Limpeza do Lar,Detergente da loiça,Casa,Manual
+AGUA MONCHIQUE 51CL,Soft Drinks,Água,Bebidas,Manual
+PAO RALADO ALHO SALSA 240G CNT,Padaria,Pão ralado,Padaria & Pastelaria,Manual
+PASTA DENTAL FRESCURA AT,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+PASTA DENTAL TOT CARV 75ML,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+LEITE C/CHOC.AJUSTADO MIMOSA 8*,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+SACOS LIXO CNT 120L 10UN,Limpeza do Lar,Sacos do lixo,Casa,Manual
+VB TAPADA DAS LEBRES PREM REG.A,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+CR MAOS NIVEA INTENSIVO 100ML,Beleza,Creme de mãos,Higiene & Saúde,Manual
+LEITE CONDENSADO CONTINENTE 397,Mercearia Doce,Leite,Lacticínios,Manual
+BATATA ASSAR EMB.,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+LEITE UHT M/G GRESSO 6*1L (ROSC,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+CAMARAO VANNAMEI 20/30 KG,Peixaria,Camarões,Carne & Peixe,Manual
+FARINHA CENTEIO ESPIGA 500G,Bens Essenciais,Farinha,Cereais,Manual
+OLEO PRONTO A.VERA 5EM1 500ML,Limpeza do Lar,Óleo,Ingredientes & Temperos,Manual
+CH. HERBAL HID. LEIT COC 680ML,Beleza,Champô,Higiene & Saúde,Manual
+IOGURTE PROT MORANGO YOPRO 160G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+ESPINAFRE BABY LEAF CNT EMB.170,Frutas e Legumes,Espinafres,Frutas & Legumes,Manual
+SACOS LIXO CONTINENTE 100L 10UN,Limpeza do Lar,Sacos lixo 100l,Casa,Manual
+MIOLO CAMARAO 100/200 CNT 400G,Peixaria,Camarões,Carne & Peixe,Manual
+TOSTAS SUECAS INT. CONTINENTE E,Padaria,Tostas,Padaria & Pastelaria,Manual
+BATATA ESPECIAL ASSAR SC 1KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+BODY NIVEA MILK 625ML,Beleza,Gel cabelo,Higiene & Saúde,Manual
+CLEMENTINA,Frutas e Legumes,Tangerina,Frutas & Legumes,Manual
+GAO BICO CONTINENTE 400G,Mercearia Salgada,Grão-de-bico,Cereais,Manual
+TOALHITAS PROTECCAO CORES WOOLI,Limpeza do Lar,Toalhitas,Higiene & Saúde,Manual
+MACA GALA ALCOBACA 65/70,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+SNACK BAT OND C/SAL FORNO LAY S,Mercearia Salgada,Batatas fritas,Ingredientes & Temperos,Manual
+SALSA CNT 50 G,Frutas e Legumes,Salsa,Ingredientes & Temperos,Manual
+CEREAIS CHOCAPIC 740G + OF 35% ,Pequeno Almoco,Chocapic,Cereais,Manual
+ESC COLGATE 360 EXPERT WHITE ME,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+CHAMPO HERBAL CANHAMO 380ML,Higiene,Champô,Higiene & Saúde,Manual
+GUARDANAPOS 2F CNT BRANCO 100UN,Limpeza do Lar,Guardanapos,Casa,Manual
+AGUA OXIGENADA HIDRO 500ML,Higiene,Água oxigenada,Higiene & Saúde,Manual
+ALHO SECO CNT 400GR,Frutas e Legumes,Alho,Frutas & Legumes,Manual
+VB PORCA DE MURCA DOC DOU 75CL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+DET MAN LOICA MAX P ORIGINAL,Limpeza do Lar,Detergente maquina loiça,Casa,Manual
+VELA N  0 AZUL/VERDE,Casa-Mesa/Mobiliario,Velas,Casa,Manual
+ARROZ AGULHA CIGALA 1KG,Bens Essenciais,Arroz,Cereais,Manual
+SALADA AROMATICA CNT 150GR,Frutas e Legumes,Sal,Ingredientes & Temperos,Manual
+PAPEL HIGIENICO CNT 12=36R,Limpeza do Lar,Papel higiénico,Higiene & Saúde,Manual
+LOMBOS BACALHAU MSC CONT 800G,Peixaria,Bacalhau,Carne & Peixe,Manual
+OVOS SOLO L CONTINENTE 1/2DZ,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+AGUA C/GAS PEDRAS LIMAO PET 1L,Soft Drinks,Àgua c/ gás,Frutas & Legumes,Manual
+CEREAIS CHOCOLATE CHOCAPIC,Pequeno Almoco,Chocapic,Cereais,Manual
+FRANGO CAMPO INT C/M GRANEL,Talho,Frango,Carne & Peixe,Manual
+ESPARGUETE MILANEZA 500G,Bens Essenciais,Esparguete,Cereais,Manual
+FRANGO INTEIRO C/M CNT KG LS,Talho,Frango,Carne & Peixe,Manual
+MASSA QUEBRADA CNT 230GR,Take Away,Massa quebrada,Cereais,Manual
+ATUM AZEITE BOM PETISCO 251G,Mercearia Salgada,Atum,Carne & Peixe,Manual
+MORTADELA C/ AZEITONAS CNT,Charcutaria&Queijos,Mortadela,Charcutaria,Manual
+CEBOLA ROXA CNT KG,Frutas e Legumes,Cebolas,Frutas & Legumes,Manual
+GRANOLA 0% ACUCAR WHY FOODS 300,Pequeno Almoco,Granola,Snacks e Doces,Manual
+LEITE C/CHOC MIMOSA 4*200ML,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+PIZZA FIAMBRE E QJ 410G CNT,Take Away,Queijo,Lacticínios,Manual
+OVOS SOLO M CNTINENTE,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+AZEITE BOM PETISCO 78G,Bens Essenciais,Atum,Carne & Peixe,Manual
+IOGURTE LIMAO/LIMAO 4*155G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+FIAMBRE ITALIANO CORTE GUSTO 10,Charcutaria&Queijos,Fiambre,Carne & Peixe,Manual
+COG BRANCO INTEIRO CNT (CBD),Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+DET PAST LOIC FINISH PWR LIM 85,Higiene,Detergente maquina loiça,Casa,Manual
+LIMAO IGP ALGARVE 1KG,Frutas e Legumes,Limão,Frutas & Legumes,Manual
+VELA N  1 AZUL/VERDE,Casa-Mesa/Mobiliario,Velas,Casa,Manual
+CEBOLA CNT EMB. 1,Frutas e Legumes,Cebolas,Frutas & Legumes,Manual
+NECTAR UM BONGO 8 FRUTOS 1L,Soft Drinks,Frutos silvestres,Frutas & Legumes,Manual
+LARANJA,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+TORT. MILHO CNT EQ. C/SAL 130G,Mercearia Doce,Bolachas de milho,Padaria & Pastelaria,Manual
+MOLHO PIZZA TD GULOSO 44OG,Mercearia Salgada,Molho de tomate,Ingredientes & Temperos,Manual
+VITELAO COZER - AT,Talho,Carne vaca,Carne & Peixe,Manual
+MEL SERRAMEL ROSMANINHO 500G,Pequeno Almoco,Mel,Snacks & Doces,Manual
+CHA TETLEY COLD LIMA LIMA 10SAQ,Pequeno Almoco,Chá,Bebidas,Manual
+COGUMELO MARRON CNT 300G ILHAS,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+CHAMPO HERBAL COCO HIDRATA 680M,Beleza,Champô,Higiene & Saúde,Manual
+FAR.TR.FI.S/F ESPIGA T65 NAT1KG,Bens Essenciais,Farinha trigo T65,Cereais,Manual
+IOGURTE NATURAL COTTON CANDY,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+QUEIJO MOZZARELLA CONTINENTE 12,Charcutaria&Queijos,Queijo mozzarella fresco,Lacticínios,Manual
+BAC DESFIADO SALGA SECO CONT KG,Peixaria,Bacalhau,Carne & Peixe,Manual
+PURE MACA ANDROS S/ACUCAR 730G,Mercearia Doce,Puré de maça,Snacks & Doces,Manual
+SKYR SOL CNT EQ COCO 150G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+CAPSULAS DESCAFEINADO L OR 2OCA,Pequeno Almoco,Café,Bebidas,Manual
+BATATA ESPECIAL COZER SC 3KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+BATATA BRANCA 0 DESP 4 KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
+RC RENOVA DESIGN XXL 3R,Limpeza do Lar,Rolo papel de cozinha,Casa,Manual
+NATA UHT CREMOSA MIMOSA 200ML,Laticinios/Beb. Veg.,Natas,Lacticínios,Manual
+FEIJAO FRADE COMPAL 468G,Mercearia Salgada,Feijao,Cereais,Manual
+PORCO ENTREM. C/OSSO,Talho,Carne porco,Carne & Peixe,Manual
+BOLA DE MISTURA 80G,Padaria,Pão,Padaria & Pastelaria,Manual
+QJ FRESCO CABRA QUEIJ. LICINIA,Charcutaria&Queijos,Queijo fresco,Lacticínios,Manual
+ALCATRA NOV ANGUS AT,Talho,Carne vaca,Carne & Peixe,Manual
+QUINOA CONT.EQUILIBRIO 500G,Bens Essenciais,Quinoa,Cereais,Manual
+FAR TRIGO C/FER SUP FINA CNT1KG,Bens Essenciais,Farinha,Cereais,Manual
+MANTEIGA C/SAL MIMOSA 125G,Laticinios/Beb. Veg.,Manteiga,Lacticínios,Manual
+CERV C/ALC SB 1927 MUNICH D 33C,Soft Drinks,Cerveja,Bebidas,Manual
+QJ MASCARPONE BRESCIALAT 250G,Charcutaria&Queijos,Queijo mascarpone,Lacticínios,Manual
+FENO HIPO OLIVA 650ML,Higiene,Gel de banho,Higiene & Saúde,Manual
+CAD AGRAF A4 LISO OXFORD OPENFL,Cultura,Papel A4,Casa,Manual
+MASCARPONE GRANAROLO 250G,Laticinios/Beb. Veg.,Queijo mascarpone,Lacticínios,Manual
+QJ FLAM T.NOST LIGHT FAT2*200G,Laticinios/Beb. Veg.,Queijo flamengo fatiado,Lacticínios,Manual
+AROMA VAHINE BAUNILHA 200ML,Mercearia Doce,Aroma de baunilha,Ingredientes & Temperos,Manual
+DET LIQ ULTIMATCONT.POWER+ 86DS,Limpeza do Lar,Detergente roupa,Casa,Manual
+QUEIJO MOZZARELLA GALBANI ST LU,Laticinios/Beb. Veg.,Queijo mozzarella fresco,Lacticínios,Manual
+CEREJA DO FUNDAO PREMIUM CAL. 2,Frutas e Legumes,Cerejas,Frutas & Legumes,Manual
+QJ FRESCO LD MATINAL 3*72G,Charcutaria&Queijos,Queijo fresco,Lacticínios,Manual
+GRAO BICO COMPAL 234G,Mercearia Salgada,Grão-de-bico,Cereais,Manual
+NOVILHO BIFE DA VAZIA - AT,Talho,Carne vaca,Carne & Peixe,Manual
+NOVILHO CACHACO AT,Talho,Carne vaca,Carne & Peixe,Manual
+PAST COLGAT TOT ADVA SENS 75 ML,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+PASTA D. COLGATE TRI. ACAO100ML,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+TAMBORIL CUBOS CONGELADOS 500G,Peixaria,Peixe,Carne & Peixe,Manual
+VITELAO ESTUFAR AT,Talho,Carne vaca,Carne & Peixe,Manual
+COGUMELO BRANCO INTEIRO CNT EMB,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+MAIONESE VIANEZA 450ML,Mercearia Salgada,Maionese,Ingredientes & Temperos,Manual
+GB PALMOLIVE NATURALS L&M 1L,Higiene,Gel de banho,Higiene & Saúde,Manual
+COG BRANCO INTEIRO CNT 300G ILH,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+ERVA DOCE EM GRAO CNT FR 35G,Mercearia Salgada,Funcho,Frutas & Legumes,Manual
+BOMBONS AFTER EIGHT MENTA 200G,Mercearia Doce,Chocolate,Snacks & Doces,Manual
+ISMASS COTOV GROSSOS MILANEZA 500,Bens Essenciais,Massa,Cereais,Manual
+TAMBORIL FRESCO KG,Peixaria,Peixe,Carne & Peixe,Manual
+VT TAPADA DAS LEBRES SIGN REG A,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+IOG AR MIMOSA COCO/MANGA/BANANA,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+QJ FRESC BARRAR ALHO/ERVAS SANT,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+COUVE BROCOLO,Frutas e Legumes,Brócolos,Frutas & Legumes,Manual
+PORCO COSTELETAS CACHACO,Talho,Carne porco,Carne & Peixe,Manual
+POSTAS BAC RIBER 4 M CURA 750G,Peixaria,Bacalhau,Carne & Peixe,Manual
+FAR.TR.FINA C/F BRANCA NEVE 1KG,Bens Essenciais,Farinha bolos,Cereais,Manual
+REF.C/GAS COCA COLA 1,Soft Drinks,Refrigerante,Bebidas,Manual
+MINI SALSICHAS PORCO KIDS CONT,Talho,Salsichas,Carne & Peixe,Manual
+FILETE CAVALA EM AZ VE GALLO 12,Mercearia Salgada,Peixe,Carne & Peixe,Manual
+RC CONTINENTE RECICLADO 4R,Limpeza do Lar,Rolo papel de cozinha,Casa,Manual
+QJ CREME PHILADELPHIA 150G,Laticinios/Beb. Veg.,Queijo,Lacticínios,Manual
+BOLA DE LENHA,Padaria,Pão,Padaria & Pastelaria,Manual
+COUTADA VELHA SIGNATURE ALENTEJANO,Vinho e Espirituosas,Vinho,Bebidas,Manual
+CEBOLINHO MARGAO FRASCO 2,Mercearia Salgada,Cebolinho,Frutas & Legumes,Manual
+AZEITO PRETA DESCAROCAD OXIDADA,Frutas e Legumes,Azeitonas,Ingredientes & Temperos,Manual
+VT MONTE RAVASQUEIRA SUP.REG.AL,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+COG BRANCO 200 G-PT-BIO-03,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+CASTANHA CNT CAL. 50/70 KG,Frutas e Legumes,Castanhas,Frutas & Legumes,Manual
+CALDO VERDE CNT 250GR,Frutas e Legumes,Sopa,Take away,Manual
+VB MULA VELHA PREMI.RG LIS 75CL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+PH COLHOGAR ULT SUAVE XXL 12=24,Limpeza do Lar,Papel higiénico,Casa,Manual
+ESC COLGATE TRIPLE ACTION 4UN,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+REF.C/GAS S/ ACU COCACOLA 1,Soft Drinks,Refrigerante,Bebidas,Manual
+SAPATEIRA COZID GRAND CNT SELEC,Peixaria,Sapateira,Carne & Peixe,Manual
+AMAC COMFORT AZUL LEVEZA 4L,Limpeza do Lar,Amaciador,Casa,Manual
+DET LIQ PERSIL SABA&B 100D,Limpeza do Lar,Detergente roupa,Casa,Manual
+PAST MAQ LOICA AIO CNT 70UN,Limpeza do Lar,Detergente maquina loiça,Casa,Manual
+ALHO PICADO MARGAO FRASCO 60G,Mercearia Salgada,Alho,Frutas & Legumes,Manual
+MASSA FETTUCCINE MILANEZA 500G,Bens Essenciais,Massa,Cereais,Manual
+CAPSULAS CAFE L OR COLOMBIA 40U,Pequeno Almoco,Café,Bebidas,Manual
+FEIJAO FRADE COMPAL 234G,Mercearia Salgada,Feijao,Cereais,Manual
+PORCO ENTREMEADA .,Talho,Carne porco,Carne & Peixe,Manual
+PORCO ENTRECOSTO,Talho,Carne porco,Carne & Peixe,Manual
+VB COUTADA VELHA PREMIUM REG.AL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+NATA UHT P/BAT CONTINENTE 200,Laticinios/Beb. Veg.,Natas,Lacticínios,Manual
+QJ RALADO MASSAS MIX 3 QJ CNT 2,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+ABACAXI KG,Frutas e Legumes,Ananás,Frutas & Legumes,Manual
+NECTARINA,Frutas e Legumes,Nectarina,Frutas & Legumes,Manual
+VB MONTE DA RAVASQUEIRA 75,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+ROLOS COZINHA CNT 2=4R,Limpeza do Lar,Rolo papel de cozinha,Casa,Manual
+MACA FUJI NACIONAL KG,Frutas e Legumes,Maçãs,Frutas & Legumes,Manual
+FEIJAO BRANCO COMPAL 470G,Mercearia Salgada,Feijão branco,Cereais,Manual
+VT VINHA DA COUTADA VELHA RG.A,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+CEBOLINHO CNT EMB.20GR,Frutas e Legumes,Cebolinho,Frutas & Legumes,Manual
+CH PRT PORCO PRT ALENT CNT SELE,Charcutaria&Queijos,Carne porco,Carne & Peixe,Manual
+DET CAPS MAQ LOIC FINISH QUANTU,Limpeza do Lar,Detergente maquina loiça,Casa,Manual
+PAST TRIDENT BOTTLE MOR 82.5G,Mercearia Doce,Pastilha elástica,Snacks & Doces,Manual
+SAB.CARVAO 90G,Higiene,Sabonete,Higiene & Saúde,Manual
+CHAMPO HERBAL ORANGE VOLUME 350,Beleza,Champô,Higiene & Saúde,Manual
+REQUEIJAO DE OVELHA AZEITAO KG,Charcutaria&Queijos,Requeijão,Lacticínios,Manual
+FRANGO INTEIRO SACO,Talho,Frango,Carne & Peixe,Manual
+CENOURA KG,Frutas e Legumes,Cenouras,Frutas & Legumes,Manual
+CAFE LOR RISTRETTO DESCAF 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+COUVE LOMBARDA CNT KG,Frutas e Legumes,Couve lombarda,Frutas & Legumes,Manual
+FEIJAO CATARINO CONTINENTE 500G,Bens Essenciais,Feijao,Cereais,Manual
+MINI TOSTAS CONTINENTE 350GR,Padaria,Tostas,Padaria & Pastelaria,Manual
+LEITE UHT M/G PASTAGEM T NOSTRA,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
+ALHO SECO CNT 250GR,Frutas e Legumes,Alho,Frutas & Legumes,Manual
+FIAMBRE PERNA EXTRA FINISSIMAS,Charcutaria&Queijos,Fiambre,Carne & Peixe,Manual
+LIMAO,Frutas e Legumes,Limão,Frutas & Legumes,Manual
+O NOSSO CROISSANT,Cafetaria,Croissant,Padaria & Pastelaria,Manual
+FENO HIPOALERG MEL 650ML,Higiene,Gel duche,Snacks & Doces,Manual
+MELANCIA RISCADA ALONGADA FR KG,Frutas e Legumes,Melancia,Frutas & Legumes,Manual
+FIAMBRE PERNA EXTRA FAT CNT 2X2,Charcutaria&Queijos,Fiambre,Charcutaria,Manual
+VB CONTINENTE 1L,Vinho e Espirituosas,Vinho branco cozinhar,Bebidas,Manual
+MANGA PALMER AVIAO,Frutas e Legumes,Manga,Frutas & Legumes,Manual
+MASSA MACARRAO GD MILANEZA 500G,Bens Essenciais,Massa,Cereais,Manual
+PAO PASSAS 300G,Padaria,Pão,Padaria & Pastelaria,Manual
+CEREAIS CHOCAPIC 900GR,Pequeno Almoco,Chocapic,Cereais,Manual
+LARANJA IGP ALGARVE,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
+FILTROS CAFE CONTINENTE 100UN,Limpeza do Lar,Café,Bebidas,Manual
+CHAM HERBAL HIDRA COC 400ML,Beleza,Chá,Bebidas,Manual
+MIRTILO 500 G,Frutas e Legumes,Mirtilos,Frutas & Legumes,Manual
+TARTE GELADA BAUNILHA VIENNETTA,Congelados,Açúcar de baunilha,Ingredientes & Temperos,Manual
+SKYR SOL CNT EQ MIRTILO 150G,Laticinios/Beb. Veg.,Mirtilos,Frutas & Legumes,Manual
+CR NIVEA HIDRATANTE PROTECT&CA,Beleza,Creme rosto Nivea man,Higiene & Saúde,Manual
+MANGA,Frutas e Legumes,Manga,Frutas & Legumes,Manual
+COGUMELO MARRON CNT (CBD) 300G,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+SOPA DE NABICAS CNT F&B 800G,Take Away,Sopa,Take away,Manual
+FRANGO INTEIRO C/M GRANEL,Talho,Frango,Carne & Peixe,Manual
+ATUM AZEITE BOM PETISCO 78G,Mercearia Salgada,Atum,Carne & Peixe,Manual
+TOSTAS CRISPBREAD ORIGINAL WASA,Mercearia Doce,Tostas,Padaria & Pastelaria,Manual
+MARINHEIRAS TRADICIONAIS CNT,Mercearia Doce,Bolachas marinheiras,Padaria & Pastelaria,Manual
+MANGA MATURADA CNT KG,Frutas e Legumes,Manga,Frutas & Legumes,Manual
+PIZZA VEGETARIANA CNT 400G,Take Away,Pizza,Take away,Manual
+SOPA OU SOBREMESA,Rest. e Cafetaria,Sopa,Take away,Manual
+FRANGO CAMPO INT. S/MIUDOS LS,Talho,Frango,Carne & Peixe,Manual
+FIAMBRE PERNA EXTRA NOBRE FATIA,Charcutaria&Queijos,Fiambre,Charcutaria,Manual
+MACA GALA R0 ALCOBACA KG,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
+FIAMBRE PERNA EXT FAT FINAS CNT,Charcutaria&Queijos,Fiambre,Charcutaria,Manual
+COGUMELO PLEUROTUS CNT 200G,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+CAFE DELTA Q BIO 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+UVA RED GLOBE,Frutas e Legumes,Uvas,Frutas & Legumes,Manual
+FEIJAO PRETO COMPAL 468G,Mercearia Salgada,Feijao,Cereais,Manual
+MISTURA FRUTOS BOSQUE CNT 200G,Frutas e Legumes,Frutos silvestres,Frutas & Legumes,Manual
+ALHO MOIDO MARGAO SAQ 40G,Mercearia Salgada,Alho,Frutas & Legumes,Manual
+OVOS AR LIVRE M/L CNT 12UN,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
+PAO AGUA KG,Padaria,Pão,Padaria & Pastelaria,Manual
+ESPARGOS VERDES 250G,Frutas e Legumes,Espargos,Frutas e Legumes,Manual
+CR DUCHE NIVEA CR CARE 750ML,Higiene,Gel duche,Higiene & Saúde,Manual
+ROMA,Frutas e Legumes, Roma,Frutas & Legumes,Manual
+RUCULA SELVAGEM VITACRESS 50GR,Frutas e Legumes,Rúcula,Frutas & Legumes,Manual
+CREME DIA PNM NIVEA 50ML,Beleza,Creme rosto Nivea man,Higiene & Saúde,Manual
+PAST TRIDEN BOTTLE WHITE SPEARM,Mercearia Doce,Pastilha elástica,Snacks & Doces,Manual
+GEL LIMPEZA NIVEA EXFOLIANT PRO,Beleza,Gel de banho,Higiene & Saúde,Manual
+CONDI HERBAL ORANGE VOL 250ML,Beleza,Amaciador cabelo,Higiene & Saúde,Manual
+MOSTARDA TOP DOWN CALVE 257G,Mercearia Salgada,Mostarda,Ingredientes & Temperos,Manual
+ABACAXI FRACIONADO,Frutas e Legumes,Ananás,Frutas & Legumes,Manual
+IOG MYTHOS NATURAL COT 1KG,Laticinios/Beb. Veg.,Iogurte,Lacticínios,Manual
+PERA ROCHA,Frutas e Legumes,Peras,Frutas & Legumes,Manual
+CHOC CADBURY LEIT DAIRY MILK45G,Mercearia Doce,Leite c/ chocolate,Bebidas,Manual
+CURGETE VERDE CNT KG,Frutas e Legumes,Courgette,Frutas & Legumes,Manual
+PIZZA ROMANA CNT 415G,Take Away,Pizza,Congelados,Manual
+MINI TORT MILHO SAQUETA CNT EQU,Mercearia Doce,Bolachas de milho,Padaria & Pastelaria,Manual
+PORCO ENTRECOSTO PARA GRELHAR,Talho,Carne porco,Casa,Manual
+FILETES PESCADA CONGELADOS 1KG,Peixaria,Filetes de pescada,Carne & Peixe,Manual
+VAZIA NOV ANGUS AT,Talho,Carne vaca,Carne & Peixe,Manual
+VB EA REG ALENT 75CL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+TOSTAS MINI GRILL DIATOSTA 350G,Padaria,Tostas,Padaria & Pastelaria,Manual
+ABACAXI DE AVIAO PREMIUM,Frutas e Legumes,Ananás,Frutas & Legumes,Manual
+TREMOCO EXTRA CNT 800G,Frutas e Legumes,Tremoços,Snacks & Doces,Manual
+PIZZA BARBECUE CNT 400G,Take Away,Pizza,Congelados,Manual
+NABO SEM RAMA CNT KG,Frutas e Legumes,Nabo,Frutas & Legumes,Manual
+MISTURA CAJU CRU E ARANDOS 200G,Frutas e Legumes,Fruta seca,Snacks & Doces,Manual
+QJ CHEDDAR FATIADO MR CHEESE 15,Charcutaria&Queijos,Queijo cheddar,Lacticínios,Manual
+ABACAXI SUPER SWEET,Frutas e Legumes,Ananás,Frutas & Legumes,Manual
+CAVALA FRESCA KG,Peixaria,Peixe,Carne & Peixe,Manual
+LIQ MAQ ROU SKIP SABAO NATU,Limpeza do Lar,Detergente roupa,Casa,Manual
+MEL FL. DE LARAN. SERRAMEL 300G,Pequeno Almoco,Mel,Snacks & Doces,Manual
+TRIDENT SENSES WATERMELON 23G,Mercearia Doce,Pastilha elástica,Snacks & Doces,Manual
+QJ RALADO PIZZA CNT 200G,Charcutaria&Queijos,Queijo mozzarella ralado,Lacticínios,Manual
+DESINFECTANTE ROUPA SANYTOL,Limpeza do Lar,Desinfetante roupa,Casa,Manual
+NATA UHT P/BAT CONTINENTE,Laticinios/Beb. Veg.,Natas,Lacticínios,Manual
+PORCO BIFANAS,Talho,Carne porco,Casa,Manual
+RECARGA ESFREGONA SUPER DUPLA,Casa-Cozinha/Lavand,Esfregona,Casa,Manual
+LEVEDURA FRESCA CUBINHOS 50G,Padaria,Levedura,Ingredientes & Temperos,Manual
+QUEIJO RICOTTA FINETTA GALBANI,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+CH CARNE FUNDAO CNT 220G,Charcutaria&Queijos,Chouriço,Carne & Peixe,Manual
+QJ AMANTEIGADO OVELHA SEIA,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
+VITELAO BIFE DO REDONDO - AT,Talho,Carne vaca,Carne & Peixe,Manual
+REQUEIJAO OVELHA SEIA TAVARES,Charcutaria&Queijos,Requeijão,Lacticínios,Manual
+VB CABRIZ C.SELEC DOC DAO 75CL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+CERV.C/ALC.SUPER BOCK TP P.6*33,Soft Drinks,Cerveja,Bebidas,Manual
+PAST BOT TRIDENT 60MIN SPE,Mercearia Doce,Pastilha elástica,Snacks & Doces,Manual
+ARROZ BASMATI CACAROLA 2.5KG,Bens Essenciais,Arroz basmati,Cereais,Manual
+TETLEY COLD BREW ARANDO&LIMA,Pequeno Almoco,Chá,Bebidas,Manual
+MOZZARELLA DE BUFALA DOP SELECC,Charcutaria&Queijos,Queijo mozzarella fresco,Lacticínios,Manual
+ESTUFAR (PEITO) NOV ANGUS,Talho,Carne vaca,Carne & Peixe,Manual
+VT TAPADA LEBRES PREM REG.AL 75,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+CARVAO CHURRASQUEIRA 3KG CONTIN,DIY,Carvão,Bricolage & Jardim,Manual
+RECARGA ESFREGONA PREMIUM 2EM1,Casa-Cozinha/Lavand,Esfregona,Casa,Manual
+FOLHAS P/ LASANHA RANA 250G,Take Away,Massa lasanha,Cereais,Manual
+DOCE CNT SELECAO ABOB NOZ 250G,Pequeno Almoco,Doce de abóbora,Snacks & Doces,Manual
+PAIO YORK FAT CNT 200G,Charcutaria&Queijos,Paio,Carne & Peixe,Manual
+CR BARRAR NUTELLA AV/CACAU 350G,Pequeno Almoco,Nutella,Snacks & Doces,Manual
+HAMB. NOV. ANGUS SEL 100% CARNE,Talho,Carne vaca,Carne & Peixe,Manual
+TAB LINDT EXCELLENCE FRAMB&AVEL,Mercearia Doce,Chocolate,Snacks & Doces,Manual
+QJ CABRA QUINTA DO OLIVAL K,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+FEIJAO BRANCO CONTINENTE 500G,Bens Essenciais,Feijão branco,Cereais,Manual
+VT CANCELLUS PREM DOC DOURO 75,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+ROLOS COZINHA 4=12 CONT.POUP,Limpeza do Lar,Rolo papel de cozinha,Casa,Manual
+ESFREGAO ACO INOX CNT 4UN,Limpeza do Lar,Esfregão aço inox,Casa,Manual
+VB MONTE RAVASQUEIRA SUP REG.AL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+BANANA DA MADEIRA,Frutas e Legumes,Bananas,Frutas & Legumes,Manual
+COGUMELO BRANCO CONTINENTE KG,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+MELANCIA PRETA P/ SEM FRAC KG,Frutas e Legumes,Melancia,Frutas & Legumes,Manual
+LOMBO BACALHA 4 MESES CURA 240G,Peixaria,Bacalhau,Carne & Peixe,Manual
+CHOC.CULINARIA NESTLE 70% CACAU,Mercearia Doce,Chocolate culinária,Snacks & Doces,Manual
+PAPEL VEGETAL CONTINENTE 30UN,Limpeza do Lar,Papel vegetal,Casa,Manual
+ARR CAROL EXT LONGO CIGALA 1KG,Bens Essenciais,Arroz carolino,Cereais,Manual
+DET LIQ SKIP CICLOS CURTOS ANTI,Limpeza do Lar,Detergente roupa,Casa,Manual
+VB CANCELLUS PREMIUM DOC DOURO,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+CALDO VERDE 800GR CZ CNT,Take Away,Sopa,Take away,Manual
+CONDIC HERBAL COCO HIDRA 350ML,Beleza,Acondicionador,Higiene & Saúde,Manual
+INF N18 SAO ROBERTO R NATUR 15G,Pequeno Almoco,Chá,Bebidas,Manual
+MACA FUJI EMB,Frutas e Legumes,Maçãs,Frutas & Legumes,Manual
+QUINOA CONTINENTE BIO 500G,Bens Essenciais,Quinoa,Cereais,Manual
+VB VINHA MARIA RES DAO 75CL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+QJ MOZZARELLA ST LUCIA GALBANI,Charcutaria&Queijos,Queijo mozzarella fresco,Lacticínios,Manual
+TRIDENT SENSES WATERMELON 3*23G,Mercearia Doce,Pastilha elástica,Snacks & Doces,Manual
+ARROZ BASMATI CACAROLA 1KG,Bens Essenciais,Arroz basmati,Cereais,Manual
+FERMENTO PO ROYAL 113G,Mercearia Doce,Fermento em pó,Ingredientes & Temperos,Manual
+CH FRUCTIS HIDRA CARACOIS 400,Beleza,Champô,Higiene & Saúde,Manual
+PORCO PA C/OSSO,Talho,Carne porco,Casa,Manual
+PORCO CACHACO 1/2 ASSAR S/OSSO,Talho,Carne porco,Casa,Manual
+AVELA C/PELE CNT 200G,Frutas e Legumes,Fruta seca,Snacks & Doces,Manual
+QJ AMANT S/CASC VACA/OVELHA LIM,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+MANTEIGA C/SAL MILHAFRE 250G,Laticinios/Beb. Veg.,Manteiga,Lacticínios,Manual
+QJ MISTURA CONTINENTE UN,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
+QUEIJO PARMIGIANO REGGIANO 150G,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+QJ CHEDDAR FATIAS CNT 150G,Charcutaria&Queijos,Queijo cheddar,Lacticínios,Manual
+CR. NIVEA HIDRATANTE PROTECT&CA,Beleza,Creme rosto Nivea man,Higiene & Saúde,Manual
+PORCO COSTELETAS LOMBO,Talho,Carne porco,Carne & Peixe,Manual
+PAST TRIDEN ORAL B SPEARMINT BO,Mercearia Doce,Pastilha elástica,Snacks & Doces,Manual
+PORCO LOMBO ASSAR S/OSSO VACUO,Talho,Carne porco,Carne & Peixe,Manual
+QJ RALADO PIZZA CNT 2X200G,Charcutaria&Queijos,Queijo mozzarella ralado,Lacticínios,Manual
+CH PORCO PRETO ALENTEJO CNT SEL,Charcutaria&Queijos,Rolo papel de cozinha,Casa,Manual
+VB VINHA DA COUTADA VELHA RG.AL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+NECTARINA KG,Frutas e Legumes,Nectarina,Frutas & Legumes,Manual
+QJ FRESCO LIGHT PHILADELPHI,Charcutaria&Queijos,Queijo fresco,Lacticínios,Manual
+ARROZ CAROLINO CACAROLA 1KG,Bens Essenciais,Arroz carolino,Cereais,Manual
+PASTA COLGATE TOTAL ORIGINAL 75,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+BANHA CONTINENTE 450G,Laticinios/Beb. Veg.,Banha,Ingredientes & Temperos,Manual
+CONDIC HERBAL ALOE MOIST 250ML,Beleza,Acondicionador,Higiene & Saúde,Manual
+PAST MAQ LOIC FINISH PWR LI,Limpeza do Lar,Detergente maquina loiça,Casa,Manual
+BANANA DA MADEIRA CNT KG,Frutas e Legumes,Bananas,Frutas & Legumes,Manual
+RENOVA DESIGN XXL 3R,Limpeza do Lar,Rolo papel de cozinha,Casa,Manual
+TAB LINDT EXCELL CARA SALG 100G,Mercearia Doce,Chocolate,Snacks & Doces,Manual
+MERENDEIRA OVELHA AMANT SEIA CN,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
+GRANOLA CEMPORC CLASSICA BIO 35,Pequeno Almoco,Granola,Casa,Manual
+REQUEIJAO DE VACA CONT EQUILIBR,Charcutaria&Queijos,Requeijão,Lacticínios,Manual
+NABO SEM RAMA,Frutas e Legumes,Nabo,Frutas & Legumes,Manual
+FERMENTO PO FERMIPAN PADEIRO,Mercearia Doce,Levedura,Ingredientes & Temperos,Manual
+VB COUTADA VELHA SIG REG ALENT,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+VB GUARDA RIOS REG.ALENT 75CL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+NOVILHO VAZIA/LOMBO AT CONTINEN,Talho,Carne vaca,Carne & Peixe,Manual
+AMACIAD CONC CNT SPA 80D,Limpeza do Lar,Amaciador,Casa,Manual
+QJ MEIO GORDO D. PEDRO KG,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+PERA ROCHA DO OESTE 65/70 KG,Frutas e Legumes,Peras,Frutas & Legumes,Manual
+COND FRUCTIS HIDRA CARAC 250ML,Beleza,Acondicionador,Higiene & Saúde,Manual
+DOCE QUINTA JUGAIS ABOBORA 280G,Pequeno Almoco,Doce,Snacks & Doces,Manual
+PORCO T ENTRECO,Talho,Carne porco,Casa,Manual
+VB FLOR PENALVA DOC DAO 75CL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+BOLA LENHA 100G,Padaria,Pão,Padaria & Pastelaria,Manual
+VT PACHECA PREMIUM DOC DOURO 75,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+MASS COTOV GD RISC MILANEZA 500,Bens Essenciais,Massa,Cereais,Manual
+PORCO CACHACO,Talho,Carne porco,Carne & Peixe,Manual
+PELICULA ADERENTE CNT 60M,Limpeza do Lar,Película aderente,Casa,Manual
+CALDO VERDE CNT F&B 400G,Take Away,Sopa,Take away,Manual
+ARR CAROL EXT LONG SALUDAES 1KG,Bens Essenciais,Arroz carolino,Cereais,Manual
+QJ RALADO GRATINAR MIX 2QJ CNT,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+PATO INT.C/M GRANEL AT,Talho,Pato,Carne & Peixe,Manual
+CREME DE CHOCOLATE NUTELLA 600G,Pequeno Almoco,Nutella,Snacks & Doces,Manual
+ESPARREGADO IGLO 750G,Congelados,Esparregado,Congelados,Manual
+MELANCIA RISCADA P/ SEM FRAC KG,Frutas e Legumes,Melancia,Frutas & Legumes,Manual
+BANANA DA MADEIRA KG,Frutas e Legumes,Bananas,Frutas & Legumes,Manual
+MACA GOLDEN CNT KG,Frutas e Legumes,Maçãs,Frutas & Legumes,Manual
+QJ S/CASCA M/G VACA/OVELHA LIMI,Charcutaria&Queijos,Queijo,Lacticínios,Manual
+COUVE BROCOLO CNT KG,Frutas e Legumes,Brócolos,Frutas & Legumes,Manual
+BANANA CAT I CNT KG,Frutas e Legumes,Bananas,Frutas & Legumes,Manual
+GB PALMOLIVE NATURALS SENS. 1L,Higiene,Gel de banho,Higiene & Saúde,Manual
+ABACAXI SWEET CNT KG,Frutas e Legumes,Ananás,Frutas & Legumes,Manual
+QJ. RALADO MOZZARELLA CAMPAINHA,Charcutaria&Queijos,Queijo mozzarella ralado,Lacticínios,Manual
+CHOCO CULINARIA PANTAG 70%CACAU,Mercearia Doce,Chocolate culinária,Snacks & Doces,Manual
+MAIONESE HELLMANN S 416G,Mercearia Salgada,Maionese,Ingredientes & Temperos,Manual
+GRAO BICO COMPAL 468G,Mercearia Salgada,Grão-de-bico,Cereais,Manual
+VB TAPADA DAS LEBRES SIG REG AL,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+VVB MURALHAS DE MONCAO DOC 75CL,Vinho e Espirituosas,Vinho verde,Bebidas,Manual
+QJ MISTURA SERRAS PENELA,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
+BANANA,Frutas e Legumes,Bananas,Frutas & Legumes,Manual
+MASSA COTOVELINHOS MILANE 500G,Bens Essenciais,Massa,Cereais,Manual
+VITELAO PA/ACEM AT,Talho,Carne vaca,Carne & Peixe,Manual
+PORCO CHISPE,Talho,Rolo papel de cozinha,Casa,Manual
+CALVE MAIONESE TD 240G,Mercearia Salgada,Maionese,Ingredientes & Temperos,Manual
+AZEITONA PRETA C/CAROCO OXIDADA,Frutas e Legumes,Azeitonas,Ingredientes & Temperos,Manual
+REF.C/GAS COCA COLA S/ACUCAR 1L,Soft Drinks,Refrigerante,Bebidas,Manual
+ESCO COLGATE EXTRA CLEAN MD 2UN,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+BOL DOS MARINHEIROS ARROZ CUETA,Mercearia Doce,Bolachas marinheiras,Padaria & Pastelaria,Manual
+MANTEIGA S/SAL MIMOSA 250G,Laticinios/Beb. Veg.,Manteiga s/ sal,Lacticínios,Manual
+CHAMPO HERBAL ALOE MOIST 350ML,Beleza,Champô,Higiene & Saúde,Manual
+COG BRANCO INTEIRO CNT 300G,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
+PORCO BIFANAS - LS,Talho,Carne porco,Carne & Peixe,Manual
+CHOURICO DE CARNE PORCO PRETO M,Charcutaria&Queijos,Chouriço,Charcutaria,Manual
+CARCACA PORTUGUESA 70G,Padaria,Pão,Padaria & Pastelaria,Manual
+IOG MYTHOS CNT EQ NAT LIG 1KG,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+QJ FLAMENGO LIMIANO FATIAS 2*20,Charcutaria&Queijos,Queijo fatiado,Lacticínios,Manual
+CEREJA 2 KG,Frutas e Legumes,Cerejas,Frutas & Legumes,Manual
+PAST TRIDENT BOTTLE SPEAR 82.5G,Mercearia Doce,Pastilha elástica,Snacks & Doces,Manual
+QJ GRANA PADANO CNT 200G,Charcutaria&Queijos,Queijo parmesão,Lacticínios,Manual
+PAIO FUNDAO CNT 250G PM,Charcutaria&Queijos,Paio,Charcutaria,Manual
+VT COUTADA VELHA SIGNAT REG.ALE,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+CHA TETLEY COLD MORANGO E MACA,Pequeno Almoco,Chá,Bebidas,Manual
+VB LAGAR DE BURMESTER RES DOC D,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+IOG AR MIMOSA 8*120G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+MORANGOS CONTINENTE 750G,Congelados,Morangos,Frutas & Legumes,Manual
+PAP HIG CONT.POUPANCA,Limpeza do Lar,Papel higiénico,Higiene & Saúde,Manual
+GB DOVE REVIVE 750ML,Higiene,Gel duche,Higiene & Saúde,Manual
+G BANHO DOVE COCONUT MILK 750ML,Higiene,Gel duche,Higiene & Saúde,Manual
+AGUA S/GAS MONCHIQUE 5L,Soft Drinks,Água,Bebidas,Manual
+NECTAR COMPAL CL MANG.MAGD.1L,Soft Drinks,Sumo,Bebidas,Manual
+SUMO 100% COMPAL CL MACA 1L,Soft Drinks,Sumo,Bebidas,Manual
+MANJERICAO MARGAO FR 11G,Mercearia Salgada,Manjericão,Ingredientes & Temperos,Manual
+PIMENTAO DOCE MARGAO SAQ 35G,Mercearia Salgada,Pimentão doce,Snacks & Doces,Manual
+PAO TRIGO ALENTEJANO MM 500G,Padaria,Pão,Padaria & Pastelaria,Manual
+CREME DE LEGUMES 800 GR CZ CNT,Take Away,Sopa,Take away,Manual
+SOPA DE FEIJAO VERDE 800 GR CZ,Take Away,Sopa,Take away,Manual
+CACETINHO RUSTICO 140G,Padaria,Pão,Padaria & Pastelaria,Manual
+MANJERICAO BIO VASO,Frutas e Legumes,Manjericão,Frutas & Legumes,Manual
+ARROZ DOCE ESP SALUDAES 500G,Bens Essenciais,Arroz,Cereais,Manual
+TOMILHO FOLHAS CNT FRS 20G,Mercearia Salgada,Tomilho,Ingredientes & Temperos,Manual
+PIMENTAO DOCE COLORAU MARGAO SA,Mercearia Salgada,Pimentão doce,Snacks & Doces,Manual
+MACA GALA SR ALCOBACA KG,Frutas e Legumes,Maças,Frutas & Legumes,Manual
+RUCULA SR 100G,Frutas e Legumes,Rúcula,Frutas & Legumes,Manual
+PEITO DE FRANGO COMPRA/AT,Talho,Frango,Carne & Peixe,Manual
+ROLO COZINHA CONTINENTE 4R 2F,Limpeza do Lar,Rolo de cozinha,Casa,Manual
+VT ESPORAO RES,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+CABRITO QUARTOS - AT,Talho,Cabrito,Carne & Peixe,Manual
+OLEO CORP COCO AGRADO 250ML,Beleza,Óleo corpo,Higiene & Saúde,Manual
+AMAC COMFOR PEONIA E ROS 110D,Limpeza do Lar,Amaciador,Casa,Manual
+DET LIQ MAQ ROUPA SKIP ACT CLEA,Limpeza do Lar,Detergente roupa,Casa,Manual
+CUE HUGGIE DRYNITES 13+ MO 11U,Higiene,Fraldas,Higiene & Saúde,Manual
+REC MOPA DUPLA ACAO,Casa-Cozinha/Lavand,Mopa,Casa,Manual
+PLANTA NAT PICEA CONICA V19CM C,DIY,Plantas,Bricolage & Jardim,Manual
+VB VINHA COUTAD,Vinho e Espirituosas,Vinho branco,Bebidas,Manual
+AMENDOA C/PELE CNT 200G,Frutas e Legumes,Amêndoa,Frutas & Legumes,Manual
+DOURADA NACIONAL (200-600G) KG,Peixaria,Peixe,Carne & Peixe,Manual
+CUE HUG DRY NITE MO 8-15A 13UN,Higiene,Fraldas,Higiene & Saúde,Manual
+DEO RO NIVEA DRY FAMILIAR 50ML,Higiene,Desodorizante Roll-on,Higiene & Saúde,Manual
+MANJERICAO CNT EMB.20GR,Frutas e Legumes,Manjericão,Frutas & Legumes,Manual
+NOZ PECAN CNT 200G,Frutas e Legumes,Noz,Frutas & Legumes,Manual
+BLOCO 3 TOM C/I,DIY,Bloco de tomadas,Bricolage & Jardim,Manual
+PAO ABOBORA NOZES 100G,Padaria,Pão,Padaria & Pastelaria,Manual
+CAFE DELTA LOTE CHAVE MAQ 250G,Pequeno Almoco,Café,Bebidas,Manual
+TIRAS SALMAO FUMAD FUMADO CNT.S,Charcutaria&Queijos,Salmão fumado,Charcutaria,Manual
+BOL.DO MARINHEIROS CLASSICA CUE,Mercearia Doce,Bolachas marinheiras,Padaria & Pastelaria,Manual
+BOVINO VAZIA AMERICA DO SUL AT,Talho,Carne vaca,Carne & Peixe,Manual
+VT FLOR DE PENALVA DAO 75,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+VT VINHA MARIA RES DAO 75CL,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
+CAFE DELTA Q BRASIL 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA Q COLOMBIA 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA COLOMBIA UNIVER 220G,Pequeno Almoco,Café,Bebidas,Manual
+QJ DE OVELHA AMANTEIGADO SEIA C,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
+PORCO PERNIL INTEIRO KG,Talho,Carne porco,Carne & Peixe,Manual
+SPLIT LINDAHLS GRAN MOR 2*127G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+AMAC CONC COMFORT CRE MADRES SA,Limpeza do Lar,Amaciador,Casa,Manual
+L TUDO AJAX MADEIRAS 1L,Limpeza do Lar,Detergente madeiras,Casa,Manual
+PENSO AQUASTOP CNT 30UN,Higiene,Pensos,Casa,Manual
+NOZ METADES CNT 200G,Frutas e Legumes,Nozes,Frutas & Legumes,Manual
+AVELA TORRADA CNT 200G,Frutas e Legumes,Avelas,Frutas & Legumes,Manual
+UVA BRANCA S/GRAINHA 500 G,Frutas e Legumes,Uvas,Frutas & Legumes,Manual
+CASTANHA,Frutas e Legumes,Castanhas,Frutas & Legumes,Manual
+AZ VE OLIVE SERRA SEL PET750ML,Bens Essenciais,Azeite,Ingredientes & Temperos,Manual
+CUE NOI BONS SONHOS CNT 8-15,Higiene,Fraldas,Higiene & Saúde,Manual
+QJ FLAMENGO -50% LIMIANO FATIA,Charcutaria&Queijos,Queijo fatiado,Lacticínios,Manual
+IOG SOL +PROT CNT FRUTAS 8X125G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+IOG PROTEICO SOLIDO STRACCIATEL,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+COMFORT ESSENCIA AZUL 100D,Limpeza do Lar,Amaciador roupa,Casa,Manual
+ROLO COZ CNT COMPACTO 2=4 2F,Limpeza do Lar,Rolo de cozinha,Casa,Manual
+PH RENOVA EXTRA XXL 24=60R,Limpeza do Lar,Papel higiénico,Higiene & Saúde,Manual
+SABONETE MYLABEL 100GR,Higiene,Sabonete,Higiene & Saúde,Manual
+CHAPATA CRISTAL 300G,Padaria,Pão,Padaria & Pastelaria,Manual
+CH CARNE PRC PRT ALENT CNT SELE,Charcutaria&Queijos,Carne porco,Carne & Peixe,Manual
+PALOCO PACIFICO DESF CONT 400G,Peixaria,Peixe,Carne & Peixe,Manual
+ROBALO GRANDE FRESCO KG,Peixaria,Peixe,Carne & Peixe,Manual
+SALMAO POSTA FRESCO KG,Peixaria,Salmão,Carne & Peixe,Manual
+PORCO TIRAS VAO INT. CNT. KG LS,Talho,Carne porco,Carne & Peixe,Manual
+ESFREGAO VILEDA ULTRA FRESH 2+1,Limpeza do Lar,Esfregão,Casa,Manual
+CAFE DELTA PORTUGAL MU 220G,Pequeno Almoco,Café,Bebidas,Manual
+LENCOS BOLSO CNT MINI 3F 15UN,Limpeza do Lar,Lenços,Casa,Manual
+PASTA COLGATE TOT ORIG 2X75ML,Higiene,Pasta de dentes,Higiene & Saúde,Manual
+MIOLO MEXILHAO CNT CONG 250G,Peixaria,Mexilhão,Carne & Peixe,Manual
+CONDICIO HERBAL COCO HIDRA 250M,Beleza,Acondicionador,Higiene & Saúde,Manual
+BROCOLOS CONTINENTE 1KG,Congelados,Bróculos,Frutas & Legumes,Manual
+TAB LINDT EXCEL NEGRO 100G,Mercearia Doce,Chocolate,Snacks & Doces,Manual
+REB HALS VITA C CITRICO 32G,Mercearia Doce,Rebuçados,Snacks & Doces,Manual
+NABICA BABY CNT 150G,Frutas e Legumes,Nabiças,Frutas & Legumes,Manual
+MAMAO,Frutas e Legumes,Mamão,Frutas & Legumes,Manual
+REB DR BAYARD PEITORAIS 100G,Mercearia Doce,Rebuçados,Snacks & Doces,Manual
+MANT DE AMEND PED WAYUP 500G,Mercearia Salgada,Manteiga de amendoim,Snacks e Doces,Manual
+PERA ROCHA DOP OESTE CAL 55/65,Frutas e Legumes,Pêras,Frutas & Legumes,Manual
+CH SIGNATURE CNT SELECAO 250G,Charcutaria&Queijos,Chouriço,Carne & Peixe,Manual
+MOLHO NATA MIMOSA BECHAMEL,Laticinios/Beb. Veg.,Molho béchamel,Lacticínios,Manual
+SKYR SOL CNT EQ NATURAL 150G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+ESCOVA MANUAL ORAL-B PRO-CLEAN,Higiene,Escova dos dentes,Higiene & Saúde,Manual
+GB CREMOSO MYLABEL DOYPACK 1,5L,Higiene,Gel banho,Higiene & Saúde,Manual
+TAB CNT CHOC NEGRO C/AVELAS 200,Mercearia Doce,Chocolate,Snacks & Doces,Manual
+LIPTON MANGA ZERO ACUCAR PET 2L,Soft Drinks,Refrigerante,Bebidas,Manual
+BAT FRIT MENOS GORD CNT 170G,Mercearia Salgada,Batatas fritas,Snacks & Doces,Manual
+PRESUNTO FAT 7M CNT,Charcutaria&Queijos,Presunto,Charcutaria,Manual
+QJ FETA DOP CONTINENTE,Charcutaria&Queijos,Queijo feta,Lacticínios,Manual
+VAQUEIRO LIQUIDA 500ML,Laticinios/Beb. Veg.,Manteiga líquida,Lacticínios,Manual
