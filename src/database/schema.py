@@ -134,7 +134,7 @@ class SchemaManager:
                             # Update existing
                             existing.original_category = row.get('original_category')
                             existing.catalog_product = row['catalog_product']
-                            existing.catalog_category = row['category']
+                            existing.catalog_category = row['catalog_category']
                             existing.confidence = row.get('confidence', 'Manual')
                         else:
                             # Create new

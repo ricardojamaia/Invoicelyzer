@@ -48,9 +48,9 @@ BOLACHA OREO 440G,Mercearia Doce,Bolachas,Snacks & Doces,Manual
 QJ MISTURA SERRAS PENELA UN,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
 CHOURICO CURA 100%NAT F.S.ESTRELA,Charcutaria&Queijos,Chouriço,Carne & Peixe,Manual
 TORTELLINI RICOTA ESP RANA 250G,Take Away,Massa,Cereais,Manual
-CAFE DELTA LOTE CHAVE SACO 250G,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA LOTE CHAVE SACO 250G,Pequeno Almoco,Café p/ maq. de filtro,Bebidas,Manual
 MANTEIGA C/SAL MIMOSA 250G,Laticinios/Beb. Veg.,Manteiga,Lacticínios,Manual
-CAFE ESPRESSO L OR FORZA 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE ESPRESSO L OR FORZA 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 MANGA MATURADA KG,Frutas e Legumes,Manga,Frutas & Legumes,Manual
 LAM.DESC.BIC SENSIT.3 LAM 4+OF2,Beleza,Lâminas de barbear,Higiene & Saúde,Manual
 FIAMBRE PERNA EXTRA FATIADO CNT,Charcutaria&Queijos,Fiambre,Charcutaria,Manual
@@ -97,7 +97,7 @@ ESCOVA C/ PEGA,Casa-Cozinha/Lavand,Escova,Casa,Manual
 AZEITONA GALEGA CNT 210G,Frutas e Legumes,Azeitonas,Frutas & Legumes,Manual
 AZ.GAL.C/AZEITE ALHO 150GR,Frutas e Legumes,Alho,Frutas & Legumes,Manual
 SAL LOLLO/TANGO CNT 150 GR,Frutas e Legumes,Sal,Ingredientes & Temperos,Manual
-CAFE LOR COLOMBIA 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE LOR COLOMBIA 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 AGUA S/GAS MONCHIQUE 6*1.5L,Soft Drinks,Água,Bebidas,Manual
 ATUM AZEITE BOM PETISCO 130G,Mercearia Salgada,Atum,Carne & Peixe,Manual
 SACO LIXO E CNT 100L 15UN,Limpeza do Lar,Sacos do lixo,Casa,Manual
@@ -139,8 +139,8 @@ FRANGO CAMPESTRE KG AT,Talho,Frango,Carne & Peixe,Manual
 MINI TOMATE CACHO CNT 500G,Frutas e Legumes,Tomates,Frutas & Legumes,Manual
 BOL DIGESTIVE AVEIA CNT 425GR,Mercearia Doce,Bolachas,Cereais,Manual
 YOFU SOJA ALPRO FR VERMELHOS S/,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
-CAFE DELTA Q QHARACTER 10CAP,Pequeno Almoco,Café,Bebidas,Manual
-CAF TIMO DELTACAFE DELTA TIMOR,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA Q QHARACTER 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
+CAF TIMO DELTACAFE DELTA TIMOR,Pequeno Almoco,Café p/ maq. de filtro,Bebidas,Manual
 GB FLOR DE LARANJEIRA NALLY 1L,Higiene,Gel duche,Higiene & Saúde,Manual
 CROISSANT / PAO MISTO,Cafetaria,Croissant,Padaria & Pastelaria,Manual
 LEITE UHT MG NOVA ACORES 6X1 LT,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
@@ -148,7 +148,7 @@ LIMA CNT KG,Frutas e Legumes,Lima,Frutas & Legumes,Manual
 PAO MASSA MAE ALENTEJANO KG,Padaria,Pão,Padaria & Pastelaria,Manual
 ATUM OLEO BOM PETISCO 251G,Mercearia Salgada,Atum,Carne & Peixe,Manual
 MELAO VERDE,Frutas e Legumes,Melão,Frutas & Legumes,Manual
-CAPSULAS DESCAFEINADO L OR,Pequeno Almoco,Café,Bebidas,Manual
+CAPSULAS DESCAFEINADO L OR,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 SALMAO INTEIRO KG,Peixaria,Salmão,Carne & Peixe,Manual
 CEREAIS CHOCAPIC 740G + OF 35%,Pequeno Almoco,Chocapic,Cereais,Manual
 SAB.COCO 90G,Higiene,Sabonete,Higiene & Saúde,Manual
@@ -208,14 +208,14 @@ LEITE T.NOST PASTAG UHT M/G 1L,Laticinios/Beb. Veg.,Leite,Lacticínios,Manual
 REFRIGERANTE,Rest. e Cafetaria,Refrigerante,Bebidas,Manual
 SAB.GLIC.VEGETAL,Higiene,Sabonete,Higiene & Saúde,Manual
 COGUMELO PORTOBELLO CNT 250G,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
-CAFE DELTA Q QALIDUS 10CAP,Pequeno Almoco,Café,Bebidas,Manual
-CAFE L OR COLOMBIA DECAF 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA Q QALIDUS 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
+CAFE L OR COLOMBIA DECAF 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 SAL MARNOTO 1KG,Mercearia Salgada,Sal,Ingredientes & Temperos,Manual
 SAL PURIF.CRIST.IODA.VATEL 1KG,Mercearia Salgada,Sal,Ingredientes & Temperos,Manual
 ACUCAR BRANCO CONTINENTE 1KG,Bens Essenciais,Açúcar,Ingredientes & Temperos,Manual
 REQUEIJAO OVELHA SEIA TAVARES U,Charcutaria&Queijos,Requeijão,Lacticínios,Manual
 FIAMBRE PERNA EXT FAT CNT 200G,Charcutaria&Queijos,Fiambre,Carne & Peixe,Manual
-FILTROS CAFE CNT N 4 100UN,Limpeza do Lar,Filtros café,Bebidas,Manual
+FILTROS CAFE CNT N 4 100UN,Limpeza do Lar,Filtros de café,Bebidas,Manual
 PROT COLCHAO ACOLCH IMPERM PU 9,Casa-Texteis/Decor,Proteção colchão,Casa,Manual
 AMAC CONC COMFOR ESSENCIA LILY,Limpeza do Lar,Amaciador,Casa,Manual
 OVOS SOLO M CNTINENTE 1/2DZ,Laticinios/Beb. Veg.,Ovos,Lacticínios,Manual
@@ -322,7 +322,7 @@ QUEIJO MOZZARELLA CONTINENTE 12,Charcutaria&Queijos,Queijo mozzarella fresco,Lac
 BAC DESFIADO SALGA SECO CONT KG,Peixaria,Bacalhau,Carne & Peixe,Manual
 PURE MACA ANDROS S/ACUCAR 730G,Mercearia Doce,Puré de maça,Snacks & Doces,Manual
 SKYR SOL CNT EQ COCO 150G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
-CAPSULAS DESCAFEINADO L OR 2OCA,Pequeno Almoco,Café,Bebidas,Manual
+CAPSULAS DESCAFEINADO L OR 2OCA,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 BATATA ESPECIAL COZER SC 3KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
 BATATA BRANCA 0 DESP 4 KG,Frutas e Legumes,Batatas,Frutas & Legumes,Manual
 RC RENOVA DESIGN XXL 3R,Limpeza do Lar,Rolo papel de cozinha,Casa,Manual
@@ -391,7 +391,7 @@ DET LIQ PERSIL SABA&B 100D,Limpeza do Lar,Detergente roupa,Casa,Manual
 PAST MAQ LOICA AIO CNT 70UN,Limpeza do Lar,Detergente maquina loiça,Casa,Manual
 ALHO PICADO MARGAO FRASCO 60G,Mercearia Salgada,Alho,Frutas & Legumes,Manual
 MASSA FETTUCCINE MILANEZA 500G,Bens Essenciais,Massa,Cereais,Manual
-CAPSULAS CAFE L OR COLOMBIA 40U,Pequeno Almoco,Café,Bebidas,Manual
+CAPSULAS CAFE L OR COLOMBIA 40U,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 FEIJAO FRADE COMPAL 234G,Mercearia Salgada,Feijao,Cereais,Manual
 PORCO ENTREMEADA .,Talho,Carne porco,Carne & Peixe,Manual
 PORCO ENTRECOSTO,Talho,Carne porco,Carne & Peixe,Manual
@@ -414,7 +414,7 @@ CHAMPO HERBAL ORANGE VOLUME 350,Beleza,Champô,Higiene & Saúde,Manual
 REQUEIJAO DE OVELHA AZEITAO KG,Charcutaria&Queijos,Requeijão,Lacticínios,Manual
 FRANGO INTEIRO SACO,Talho,Frango,Carne & Peixe,Manual
 CENOURA KG,Frutas e Legumes,Cenouras,Frutas & Legumes,Manual
-CAFE LOR RISTRETTO DESCAF 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE LOR RISTRETTO DESCAF 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 COUVE LOMBARDA CNT KG,Frutas e Legumes,Couve lombarda,Frutas & Legumes,Manual
 FEIJAO CATARINO CONTINENTE 500G,Bens Essenciais,Feijao,Cereais,Manual
 MINI TOSTAS CONTINENTE 350GR,Padaria,Tostas,Padaria & Pastelaria,Manual
@@ -432,7 +432,7 @@ MASSA MACARRAO GD MILANEZA 500G,Bens Essenciais,Massa,Cereais,Manual
 PAO PASSAS 300G,Padaria,Pão,Padaria & Pastelaria,Manual
 CEREAIS CHOCAPIC 900GR,Pequeno Almoco,Chocapic,Cereais,Manual
 LARANJA IGP ALGARVE,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
-FILTROS CAFE CONTINENTE 100UN,Limpeza do Lar,Café,Bebidas,Manual
+FILTROS CAFE CONTINENTE 100UN,Limpeza do Lar,Filtros de café,Bebidas,Manual
 CHAM HERBAL HIDRA COC 400ML,Beleza,Chá,Bebidas,Manual
 MIRTILO 500 G,Frutas e Legumes,Mirtilos,Frutas & Legumes,Manual
 TARTE GELADA BAUNILHA VIENNETTA,Congelados,Açúcar de baunilha,Ingredientes & Temperos,Manual
@@ -453,7 +453,7 @@ FIAMBRE PERNA EXTRA NOBRE FATIA,Charcutaria&Queijos,Fiambre,Charcutaria,Manual
 MACA GALA R0 ALCOBACA KG,Frutas e Legumes,Maçã royal gala,Frutas & Legumes,Manual
 FIAMBRE PERNA EXT FAT FINAS CNT,Charcutaria&Queijos,Fiambre,Charcutaria,Manual
 COGUMELO PLEUROTUS CNT 200G,Frutas e Legumes,Cogumelos,Frutas & Legumes,Manual
-CAFE DELTA Q BIO 10CAP,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA Q BIO 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
 UVA RED GLOBE,Frutas e Legumes,Uvas,Frutas & Legumes,Manual
 FEIJAO PRETO COMPAL 468G,Mercearia Salgada,Feijao,Cereais,Manual
 MISTURA FRUTOS BOSQUE CNT 200G,Frutas e Legumes,Frutos silvestres,Frutas & Legumes,Manual
@@ -674,15 +674,15 @@ MANJERICAO CNT EMB.20GR,Frutas e Legumes,Manjericão,Frutas & Legumes,Manual
 NOZ PECAN CNT 200G,Frutas e Legumes,Noz,Frutas & Legumes,Manual
 BLOCO 3 TOM C/I,DIY,Bloco de tomadas,Bricolage & Jardim,Manual
 PAO ABOBORA NOZES 100G,Padaria,Pão,Padaria & Pastelaria,Manual
-CAFE DELTA LOTE CHAVE MAQ 250G,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA LOTE CHAVE MAQ 250G,Pequeno Almoco,Café p/ maq. de filtro,Bebidas,Manual
 TIRAS SALMAO FUMAD FUMADO CNT.S,Charcutaria&Queijos,Salmão fumado,Charcutaria,Manual
 BOL.DO MARINHEIROS CLASSICA CUE,Mercearia Doce,Bolachas marinheiras,Padaria & Pastelaria,Manual
 BOVINO VAZIA AMERICA DO SUL AT,Talho,Carne vaca,Carne & Peixe,Manual
 VT FLOR DE PENALVA DAO 75,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
 VT VINHA MARIA RES DAO 75CL,Vinho e Espirituosas,Vinho tinto,Bebidas,Manual
-CAFE DELTA Q BRASIL 10CAP,Pequeno Almoco,Café,Bebidas,Manual
-CAFE DELTA Q COLOMBIA 10CAP,Pequeno Almoco,Café,Bebidas,Manual
-CAFE DELTA COLOMBIA UNIVER 220G,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA Q BRASIL 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
+CAFE DELTA Q COLOMBIA 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
+CAFE DELTA COLOMBIA UNIVER 220G,Pequeno Almoco,Café p/ maq. de filtro,Bebidas,Manual
 QJ DE OVELHA AMANTEIGADO SEIA C,Charcutaria&Queijos,Queijo ovelha/cabra,Lacticínios,Manual
 PORCO PERNIL INTEIRO KG,Talho,Carne porco,Carne & Peixe,Manual
 SPLIT LINDAHLS GRAN MOR 2*127G,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
@@ -709,7 +709,7 @@ ROBALO GRANDE FRESCO KG,Peixaria,Peixe,Carne & Peixe,Manual
 SALMAO POSTA FRESCO KG,Peixaria,Salmão,Carne & Peixe,Manual
 PORCO TIRAS VAO INT. CNT. KG LS,Talho,Carne porco,Carne & Peixe,Manual
 ESFREGAO VILEDA ULTRA FRESH 2+1,Limpeza do Lar,Esfregão,Casa,Manual
-CAFE DELTA PORTUGAL MU 220G,Pequeno Almoco,Café,Bebidas,Manual
+CAFE DELTA PORTUGAL MU 220G,Pequeno Almoco,Café p/ maq. de filtro,Bebidas,Manual
 LENCOS BOLSO CNT MINI 3F 15UN,Limpeza do Lar,Lenços,Casa,Manual
 PASTA COLGATE TOT ORIG 2X75ML,Higiene,Pasta de dentes,Higiene & Saúde,Manual
 MIOLO MEXILHAO CNT CONG 250G,Peixaria,Mexilhão,Carne & Peixe,Manual
