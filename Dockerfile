@@ -17,6 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ ./src/
 COPY prompts/ ./prompts/
 COPY config/ ./config/
+COPY utils/ ./utils/ 
 
 # Create directories for data
 RUN mkdir -p /data/invoices /data/processed_invoices /data/logs
