@@ -72,7 +72,7 @@ GENGIBRE CNT KG,Frutas e Legumes,Gengibre,Frutas & Legumes,Manual
 COGUMELO MARRON CNT 300G,Casa-Cozinha/Lavand,Cogumelos,Frutas & Legumes,Manual
 VB MURALHAS DE MONCAO DOC 75CL,Vinho e Espirituosas,Vinho verde,Bebidas,Manual
 IOG PROTEICO SOLIDO PESSEGO MAR,Laticinios/Beb. Veg.,Pêssego,Frutas & Legumes,Manual
-PIMENTAO DOCE CNT FRS 45G,Mercearia Salgada,Pimentão doce,Snacks & Doces,Manual
+PIMENTAO DOCE CNT FRS 45G,Mercearia Salgada,Pimentão doce,Ingredientes & Temperos,Manual
 CONJ 4 PILHAS A,DIY,Pilhas,Casa,Manual
 FLOCOS DE AVEIA FINO CNT EQ 1KG,Pequeno Almoco,Aveia,Cereais,Manual
 BOLACHA OREO TUBO 154G,Mercearia Doce,Bolachas,Snacks & Doces,Manual
@@ -177,7 +177,7 @@ PIP MIC DOCE CONTINENTE 3*100G,Mercearia Salgada,Doce,Snacks & Doces,Manual
 MORANGO PREMIUM NACIONAL 1 KG,Frutas e Legumes,Morangos,Frutas & Legumes,Manual
 COND. ELVIVE FULL RESIST 300M,Beleza,Amaciador cabelo,Higiene & Saúde,Manual
 CHA SENE FOLICUL HAPPYFLORA 50G,Pequeno Almoco,Chá,Bebidas,Manual
-SARD S/P E S/E EM AZEITE CNT SE,Mercearia Salgada,Azeite,Ingredientes & Temperos,Manual
+SARD S/P E S/E EM AZEITE CNT SE,Mercearia Salgada,Sardinha,Carne & Peixe,Manual
 LARANJA ZERO DESPERDICIO CAL.2/,Frutas e Legumes,Laranja,Frutas & Legumes,Manual
 FARINHA ESPIGA T55 1KG,Bens Essenciais,Farinha,Cereais,Manual
 FRANGO INT. CONTINENTE 2 UN KG,Talho,Frango,Carne & Peixe,Manual
@@ -733,3 +733,26 @@ BAT FRIT MENOS GORD CNT 170G,Mercearia Salgada,Batatas fritas,Snacks & Doces,Man
 PRESUNTO FAT 7M CNT,Charcutaria&Queijos,Presunto,Charcutaria,Manual
 QJ FETA DOP CONTINENTE,Charcutaria&Queijos,Queijo feta,Lacticínios,Manual
 VAQUEIRO LIQUIDA 500ML,Laticinios/Beb. Veg.,Manteiga líquida,Lacticínios,Manual
+PAO CRISTAL 110G,Padaria,Pão,Padaria & Pastelaria,Manual
+BIJOU 45G,Padaria,Pão,Padaria & Pastelaria,Manual
+QJ MOZZARELLA CONTINENTE,Charcutaria&Queijos,Queijo mozzarella fresco,Lacticínios,Manual
+MANTG AMEND CRE WAYUP 1KG,Mercearia Salgada,Manteiga de amendoim,Snacks e Doces,Manual
+DESINFETANTE SANYTOL MUL 750ML,Limpeza do Lar,Desinfetante multiusos,Casa,Manual
+MACA FUJI SR NACIONAL 1KG,Frutas e Legumes,Maças,Frutas & Legumes,Manual
+CHA TETLEY SUPERTEA SWEETDREAMS,Pequeno Almoco,Chá,Bebidas,Manual
+CHA TETLEY VERDE DETOX MENTA,Pequeno Almoco,Chá,Bebidas,Manual
+INFUSAO TETLEY CAMOMILA 20SAQ,Pequeno Almoco,Chá,Bebidas,Manual
+INFUSAO TWININ FOCUS MANGO 18,Pequeno Almoco,Chá,Bebidas,Manual
+INFUSAO LIPTON SOS CABECA 20SAQ,Pequeno Almoco,Chá,Bebidas,Manual
+IOG SOL PROTEICO FRAMBOESA LIND,Laticinios/Beb. Veg.,Iogurtes,Lacticínios,Manual
+OLEO GIRASSOL FULA PURO 1L, Bens Essenciais,Óleo,Ingredientes & Temperos,Manual
+AMAC LIRIOS&MORANG COMFORT 110D,Limpeza do Lar,Amaciador roupa,Casa,Manual
+TIRA NODOAS KH-7 750ML,Limpeza do Lar,Tira nódoas,Casa,Manual
+DET PAST MAQ LOIC FINISH,Limpeza do Lar,Detergente maquina loiça,Casa,Manual
+ROLO COZ PACK FAM CNT 4=8,Limpeza do Lar,Rolo papel de cozinha,Casa,Manual
+CANELA MOIDA CONTINENTE SAQ 45G,Mercearia Salgada,Canela moída,Ingredientes & Temperos,Manual
+CANELA PAU MARGAO SAQ 30G,Mercearia Salgada,Canela em páu,Ingredientes & Temperos,Manual
+MOST.DIJON ORIG.MAILLE FRS 215G,Mercearia Salgada,Mostarda,Ingredientes & Temperos,Manual
+PAO ALDEIA 550G,Padaria,Pão,Padaria & Pastelaria,Manual
+INFUSAO LIPTON SILHUETA CAVALIN,Pequeno Almoco,Chá,Bebidas,Manual
+CAFE RISTRETTO LOR 10CAP,Pequeno Almoco,Cápsulas de café,Bebidas,Manual
